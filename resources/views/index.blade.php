@@ -31,12 +31,11 @@
                 <div class="caption">
                   <h3>
                     <a href="">
-                      Название: {{ mb_substr($promotion->promotionname, 0, 30) }}{{ (strlen($promotion->promotionname) >= 30) ? '...' : '' }}
+                      {{ mb_substr($promotion->promotionname, 0, 30) }}{{ (strlen($promotion->promotionname) >= 30) ? '...' : '' }}
                     </a>
                   </h3>
-                  <p>Описание: {{ mb_substr($promotion->promotiondesc, 0, 100) }}{{ (strlen($promotion->promotiondesc) >= 100) ? '...' : '' }}</p>
-                  <p>Категория: ...</p>
-                  <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+                  <p>{{ mb_substr($promotion->promotiondesc, 0, 100) }}{{ (strlen($promotion->promotiondesc) >= 100) ? '...' : '' }}</p>
+                  <p>{{ $promotion->company }} / {{ $promotion->category->name }}</p>
                 </div>
               </div>
             </div>
@@ -59,17 +58,15 @@
         <div class="panel-body">
           @if (count($categories) > 0)
           @foreach ($categories as $category)
-          <div class="media">
-            <div class="media-body">
-              <strong class="media-heading">
-                <a href="">
-                  category_name
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <a href="{{ route('category.show', $category->id) }}">
+                  {{ $category->name }}
                 </a>
-              </strong>
-              <p>{{ $category->name }}</p>
+              </div>
             </div>
           </div>
-          <hr>
           @endforeach
           @else
           <p>Нет доступных категорий.</p>

@@ -50,8 +50,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="">Войти</a></li>
-                            <li><a href="">Зарегистрироваться</a></li>
+                            <!-- <li><a href="">Войти</a></li>
+                            <li><a href="">Зарегистрироваться</a></li> -->
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
