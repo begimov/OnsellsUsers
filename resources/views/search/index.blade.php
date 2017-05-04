@@ -20,7 +20,7 @@
       </div>
 
       <div class="panel panel-default">
-        <div class="panel-heading">Интересные акции</div>
+        <div class="panel-heading">Результаты поиска</div>
         <div class="panel-body">
 
           <div class="row">
@@ -45,9 +45,8 @@
             </div>
             @endforeach
             @else
-            <p>Нет новых добавленных акций.</p>
+            <p class="text-center">По запросу <em>{{ $query }}</em> ничего не найдено.</p>
             @endif
-
           </div>
 
         </div>
@@ -55,29 +54,5 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">Категории</div>
-        <div class="panel-body">
-          @if (count($categories) > 0)
-          @foreach ($categories as $category)
-          <div class="col-md-3">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <a href="{{ route('category.show', $category->id) }}">
-                  {{ $category->name }}
-                </a>
-              </div>
-            </div>
-          </div>
-          @endforeach
-          @else
-          <p>Нет доступных категорий.</p>
-          @endif
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 @endsection
