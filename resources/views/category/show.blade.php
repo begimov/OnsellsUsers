@@ -53,10 +53,10 @@
             </div>
           </div>
           @endforeach
+          {{ $promotions->links() }}
           @else
           <p>Нет добавленных акций.</p>
-          @endif
-          {{ $promotions->links() }}
+          @endif  
         </div>
 
       </div>

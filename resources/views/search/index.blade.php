@@ -44,6 +44,7 @@
               </div>
             </div>
             @endforeach
+            {{ $promotions->links() }}
             @else
             <p class="text-center">По запросу <em>{{ $query }}</em> ничего не найдено.</p>
             @endif
