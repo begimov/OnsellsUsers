@@ -30,11 +30,11 @@
             <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 @if (count($promotion->images) > 0)
-                <img src="" alt="{{ $promotion->promotionname }}" width="200" height="200">
+                <img src="{{ $promotion->mediumImgPath() }}" alt="{{ $promotion->promotionname }}" width="200" height="200">
                 @endif
                 <div class="caption">
                   <h3>
-                    <a href="">
+                    <a href="{{ route('promotion.show', $promotion->id) }}">
                       {{ mb_substr($promotion->promotionname, 0, 30) }}{{ (strlen($promotion->promotionname) >= 30) ? '...' : '' }}
                     </a>
                   </h3>

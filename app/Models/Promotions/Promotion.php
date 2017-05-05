@@ -10,4 +10,19 @@ class Promotion extends Model
     {
         return $this->belongsTo('App\Models\Promotions\Category');
     }
+
+    public function images()
+    {
+        return $this->hasMany('App\Models\Image');
+    }
+
+    public function smallImgPath()
+    {
+        return $this->images()->where('type', 'small')->first()->path;
+    }
+
+    public function mediumImgPath()
+    {
+        return $this->images()->where('type', 'medium')->first()->path;
+    }
 }

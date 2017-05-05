@@ -13,6 +13,7 @@ class SearchController extends Controller
         $promotions = Promotion::where('company', 'like', "%{$query}%")
           ->orWhere('promotionname', 'like', "%{$query}%")
           ->orWhere('promotiondesc', 'like', "%{$query}%")
+          ->latest()
           ->get();
         return view('search.index', compact('promotions', 'query'));
     }
