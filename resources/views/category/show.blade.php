@@ -39,7 +39,7 @@
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
               @if (count($promotion->images) > 0)
-              <img src="{{ $promotion->mediumImgPath() }}" alt="{{ $promotion->promotionname }}" width="200" height="200">
+              <img src="{{ $promotion->mediumImgPath() }}" alt="{{ $promotion->promotionname }}">
               @endif
               <div class="caption">
                 <h3>
