@@ -11,7 +11,7 @@ class IndexController extends Controller
     public function index()
     {
       // TODO: active 1
-        $promotions = Promotion::where('active', 0)->latest()->simplePaginate(1);
+        $promotions = Promotion::where('active', 0)->latest()->simplePaginate(6);
         return view('index', compact('promotions', 'categories'));
     }
 }

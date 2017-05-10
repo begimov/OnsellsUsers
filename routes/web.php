@@ -15,6 +15,6 @@ Route::get('/', 'IndexController@index');
 
 Route::get('/categories/{category}', 'Promotions\CategoryController@show')->name('category.show');
 
-Route::get('/search', 'SearchController@index');
+Route::get('/search', 'SearchController@index')->name('search.index');
 
 Route::get('/promotions/{promotion}', 'Promotions\PromotionController@show')->name('promotion.show');
