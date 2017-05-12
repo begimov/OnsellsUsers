@@ -18,3 +18,8 @@ Route::get('/categories/{category}', 'Promotions\CategoryController@show')->name
 Route::get('/search', 'SearchController@index')->name('search.index');
 
 Route::get('/promotions/{promotion}', 'Promotions\PromotionController@show')->name('promotion.show');
+
+// WebAPI
+Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
+  Route::get('/locations', 'LocationController@index');
+});
