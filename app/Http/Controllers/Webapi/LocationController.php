@@ -13,8 +13,9 @@ class LocationController extends Controller
       // TODO: Validation for lat and lng
       $lat = $request->lat;
       $lng = $request->lng;
+      $radius = $request->radius;
       // \DB::enableQueryLog();
-      $locations = Location::distance(10000,"{$lat},{$lng}")->with('promotion')->take(100)->get();
+      $locations = Location::distance($radius,"{$lat},{$lng}")->with('promotion')->take(100)->get();
       // dd(\DB::getQueryLog());
       return $locations->toArray();
   }
