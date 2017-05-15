@@ -10,7 +10,7 @@
         <div class="panel-body">
           @if (count($promotion->images) > 0)
             <p>
-              <img class="media-object" src="{{ $promotion->mediumImgPath() }}" alt="{{ $promotion->promotionname }}">
+              <img class="media-object img-responsive" src="{{ $promotion->mediumImgPath() }}" alt="{{ $promotion->promotionname }}">
             </p>
           @endif
             <p>{!! nl2br(e($promotion->promotiondesc)) !!}</p>

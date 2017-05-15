@@ -81,8 +81,16 @@ function initMap() {
 
       if (response.length !== 0) {
         for (i = 0; i < response.length; i++) {
-          store = response[i]
-          infoMarkup.push('<div><strong>' + store.promotion.company + '</strong><p>' + store.promotion.promotionname + '</p></div>');
+          store = response[i];
+          infoMarkup.push('<p><strong>'
+            + store.promotion.company.substr(0, 20)
+            + '</strong></p><p><a href="promotions/'
+            + store.promotion.id
+            + '"><strong>'
+            + store.promotion.promotionname.substr(0, 30)
+            + '</strong></a></p><p>'
+            + store.promotion.promotiondesc.substr(0, 60)
+            + '</p>');
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(store.location[0], store.location[1]),
             map: map
