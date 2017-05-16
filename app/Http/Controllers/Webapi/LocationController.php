@@ -15,7 +15,7 @@ class LocationController extends Controller
       $lng = $request->lng;
       $radius = $request->radius;
       // \DB::enableQueryLog();
-      $locations = Location::distance($radius,"{$lat},{$lng}")->with('promotion')->take(100)->get();
+      $locations = Location::distance($radius + $radius/(5/($radius/800)),"{$lat},{$lng}")->with('promotion')->take(100)->get();
       // dd(\DB::getQueryLog());
       return $locations->toArray();
   }

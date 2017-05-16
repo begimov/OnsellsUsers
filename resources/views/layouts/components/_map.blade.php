@@ -69,7 +69,7 @@ function initMap() {
       data: {
         lat: lat,
         lng: lng,
-        radius: radius + 700
+        radius: radius
       }
     }).done(function (response) {
       var i;
