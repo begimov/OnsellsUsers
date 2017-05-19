@@ -23,3 +23,8 @@ Route::get('/promotions/{promotion}', 'Promotions\PromotionController@show')->na
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
   Route::get('/locations', 'LocationController@index');
 });
+
+// External redirects
+Route::get('/redirect/{url}', function ($url) {
+    return redirect()->to("http://{$url}");
+})->name('redirect.external');

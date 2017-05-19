@@ -4,12 +4,22 @@ namespace App\Models\Promotions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 
 class Promotion extends Model
 {
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('active', function (Builder $builder) {
+            $builder->where('active', 1);
+        });
+    }
 
     public function category()
     {

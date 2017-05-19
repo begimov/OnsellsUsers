@@ -14,7 +14,7 @@ class SearchController extends Controller
           ->orWhere('promotionname', 'like', "%{$query}%")
           ->orWhere('promotiondesc', 'like', "%{$query}%")
           ->latest()
-          ->simplePaginate(1);
+          ->simplePaginate(9);
         return view('search.index', compact('promotions', 'query'));
     }
 }
