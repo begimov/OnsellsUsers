@@ -10,8 +10,11 @@ class IndexController extends Controller
 {
     public function index()
     {
-      // TODO: active 1
-        $promotions = Promotion::latest()->simplePaginate(9);
+        $promotions = Promotion::with('images')
+          ->with('mediumImage')
+          ->with('category')
+          ->latest()
+          ->simplePaginate(9);
         return view('index', compact('promotions', 'categories'));
     }
 }

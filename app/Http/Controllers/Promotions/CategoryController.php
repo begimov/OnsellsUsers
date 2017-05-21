@@ -14,9 +14,19 @@ class CategoryController extends Controller
         $subcategories = $category->subcategories;
 
         if ($category->isParentCategory()) {
-          $promotions = $category->parentCategoryPromotions()->latest()->simplePaginate(9);
+          $promotions = $category->parentCategoryPromotions()
+            ->with('images')
+            ->with('mediumImage')
+            ->with('category')
+            ->latest()
+            ->simplePaginate(9);
         } else {
-          $promotions = $category->promotions()->latest()->simplePaginate(9);
+          $promotions = $category->promotions()
+            ->with('images')
+            ->with('mediumImage')
+            ->with('category')
+            ->latest()
+            ->simplePaginate(9);
         }
 
         return view('category.show', compact('category', 'subcategories', 'promotions'));

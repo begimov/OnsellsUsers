@@ -40,4 +40,9 @@ class Promotion extends Model
     {
         return $this->images()->where('type', 'medium')->first()->path;
     }
+
+    public function mediumImage()
+    {
+        return $this->hasOne('App\Models\Image')->where('type', 'medium');
+    }
 }

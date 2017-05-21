@@ -5,7 +5,7 @@
         <div class="thumbnail">
           @if (count($promotion->images) > 0)
             <a href="{{ route('promotion.show', $promotion->id) }}">
-              <img class="img-rounded" src="{{ $promotion->mediumImgPath() }}" alt="{{ $promotion->promotionname }}">
+              <img class="img-rounded" src="{{ $promotion->mediumImage->path }}" alt="{{ $promotion->promotionname }}">
             </a>
           @endif
           <div class="caption">
