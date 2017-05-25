@@ -10,7 +10,7 @@
       </button>
       <!-- Branding Image -->
       <a class="navbar-brand" href="{{ url('/') }}">
-        {{ config('app.name', 'Onsells') }}
+        <img src="{{ asset('img/navigation/logo.png') }}">
       </a>
     </div>
 
