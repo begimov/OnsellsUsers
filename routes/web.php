@@ -25,6 +25,10 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
 });
 
 // External redirects
-Route::get('/redirect/{url}', function ($url) {
+Route::get('/redirect/{promotion}', function (App\Models\Promotions\Promotion $promotion) {
+  $url = $promotion->website;
+  if ((substr($url, 0, 7) !== 'http://') && (substr($url, 0, 8) !== 'https://')) {
     return redirect()->to("http://{$url}");
+  }
+  return redirect()->to($url);
 })->name('redirect.external');
