@@ -28,4 +28,9 @@ class Category extends Model
           'parent_id', 'category_id', 'id'
         );
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -7,7 +7,7 @@
             <ol class="breadcrumb">
               @foreach ($subcategories as $subcategory)
                 <li>
-                  <a href="{{ route('category.show', $subcategory->id) }}">
+                  <a href="{{ route('category.show', $subcategory) }}">
                     {{ $subcategory->name }}
                   </a>
                 </li>
