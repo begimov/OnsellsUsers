@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Promotions\Category;
 use App\Models\Promotions\Promotion;
+use App\Traits\AjaxPaginationResponse;
 
 class CategoryController extends Controller
 {
-    public function show(Category $category)
+    use AjaxPaginationResponse;
+
+    public function show(Request $request, Category $category)
     {
         $subcategories = $category->subcategories;
 
@@ -19,14 +22,18 @@ class CategoryController extends Controller
             ->with('mediumImage')
             ->with('category')
             ->latest()
-            ->simplePaginate(9);
+            ->paginate(9);
         } else {
           $promotions = $category->promotions()
             ->with('images')
             ->with('mediumImage')
             ->with('category')
             ->latest()
-            ->simplePaginate(9);
+            ->paginate(9);
+        }
+
+        if ($request->ajax()) {
+            return $this->ajaxNextPageResponse($promotions);
         }
 
         return view('category.show', compact('category', 'subcategories', 'promotions'));

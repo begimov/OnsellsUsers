@@ -1,27 +1,49 @@
-<div class="row">
-  @if (count($promotions) > 0)
-    @foreach ($promotions as $promotion)
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          @if (count($promotion->images) > 0)
-            <a href="{{ route('promotion.show', $promotion->id) }}">
-              <img class="img-rounded" src="{{ $promotion->mediumImage->path }}" alt="{{ $promotion->promotionname }}">
-            </a>
-          @endif
-          <div class="caption">
-            <h4>
-              <a href="{{ route('promotion.show', $promotion->id) }}">
-                {{ str_limit($promotion->promotionname, 20) }}
-              </a>
-            </h4>
-            <p>{{ str_limit($promotion->promotiondesc, 30) }}</p>
-            <p>{{ str_limit($promotion->company . ' / ' . $promotion->category->name, 30) }}</p>
-          </div>
-        </div>
-      </div>
-    @endforeach
-    @else
-      <p class="text-center">Нет найденных акций.</p>
-  @endif
+<div class="row" id="post-data">
+  @include('layouts.components.partials._promotioncard')
 </div>
-<div>{{ $promotions->links() }}</div>
+<!-- <div>{{ $promotions->links() }}</div> -->
+<div class="ajax-load text-center" style="display:none">
+	<p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Загрузка акций...</p>
+</div>
+
+@section('postJquery')
+@parent
+	var page = 1;
+  var loadMore = true;
+	$(window).scroll(function() {
+	    if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+        if (loadMore) {
+          page++;
+          loadMore = false;
+	        loadMoreData(page);
+        }
+	    }
+	});
+
+	function loadMoreData(page){
+	  $.ajax(
+	        {
+	            url: '?page=' + page,
+	            type: "get",
+	            beforeSend: function()
+	            {
+	                $('.ajax-load').show();
+	            }
+	        })
+	        .done(function(data)
+	        {
+	            if(data.html.length == 0){
+	                $('.ajax-load').html("");
+                  loadMore = false;
+	                return;
+	            }
+	            $('.ajax-load').hide();
+	            $("#post-data").append(data.html);
+              loadMore = true;
+	        })
+	        .fail(function(jqXHR, ajaxOptions, thrownError)
+	        {
+	              alert('Сервер не отвечает...');
+	        });
+	}
+@endsection

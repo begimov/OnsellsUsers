@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Promotions\Promotion;
+use App\Traits\AjaxPaginationResponse;
 
 class SearchController extends Controller
 {
+    use AjaxPaginationResponse;
+
     public function index(Request $request)
     {
         $query = $request->q;
@@ -17,7 +20,11 @@ class SearchController extends Controller
           ->orWhere('promotionname', 'like', "%{$query}%")
           ->orWhere('promotiondesc', 'like', "%{$query}%")
           ->latest()
-          ->simplePaginate(9);
-        return view('search.index', compact('promotions', 'query'));
+          ->paginate(9);
+
+        if ($request->ajax()) {
+            return $this->ajaxNextPageResponse($promotions);
+        }
+        return view('search.index', compact('promotions'));
     }
 }
