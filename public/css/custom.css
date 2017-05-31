@@ -49,6 +49,10 @@ body {
   background-color: #fff;
 }
 
+.equal-min-height {
+  min-height: 350px;
+}
+
 /* CategoriesListing component */
 .panel > .panel-heading {
   background-image: none;
