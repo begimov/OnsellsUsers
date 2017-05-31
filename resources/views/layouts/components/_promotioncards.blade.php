@@ -11,7 +11,7 @@
 	var page = 1;
   var loadMore = true;
 	$(window).scroll(function() {
-	    if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+	    if($('body').scrollTop() + $(window).height() >= $(document).height()) {
         if (loadMore) {
           page++;
           loadMore = false;
