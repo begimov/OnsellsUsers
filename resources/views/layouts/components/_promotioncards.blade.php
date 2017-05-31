@@ -10,7 +10,7 @@
 @parent
 	var page = 1;
   var loadMore = true;
-	$(window).scroll(function() {
+	$(document).scroll(function() {
 	    if($('body').scrollTop() + $(window).height() >= $(document).height()) {
         if (loadMore) {
           page++;
