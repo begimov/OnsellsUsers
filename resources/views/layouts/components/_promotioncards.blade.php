@@ -10,8 +10,8 @@
 @parent
 	var page = 1;
   var loadMore = true;
-	$(document).scroll(function() {
-	    if($('body').scrollTop() + $(window).height() >= $(document).height()) {
+	$(window).scroll(function() {
+	    if($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
         if (loadMore) {
           page++;
           loadMore = false;
