@@ -44,6 +44,14 @@ body {
   color: #fff;
 }
 
+.map-filter-category {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  z-index: 2;
+  max-width: 200px;
+}
+
 /* Promotions cards */
 .thumbnail {
   background-color: #fff;
