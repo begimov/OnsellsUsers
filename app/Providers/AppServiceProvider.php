@@ -15,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::where('parent_id', null)->get();
+        // TODO: sharing witn each view including subview? how many useless queries are executed? Check in debugbar.
+        $categories = Category::where('parent_id', null)->with('subcategories')->get();
         View::share(compact('categories'));
     }
 

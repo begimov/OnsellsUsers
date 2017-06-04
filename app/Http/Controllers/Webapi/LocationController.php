@@ -11,7 +11,6 @@ class LocationController extends Controller
 {
     public function index(SearchLocationRequest $request)
     {
-
         $lat = $request->lat;
         $lng = $request->lng;
         $radius = $request->radius;
