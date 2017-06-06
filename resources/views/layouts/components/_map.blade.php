@@ -27,6 +27,53 @@
   var infoWindow;
   var markersArray = [];
 
+  var iconBase = 'img/map/';
+  var icons = {
+    1: {
+      type: 'avto',
+      icon: iconBase + 'ic_01_avto.png'
+    },
+    2: {
+      type: 'vse-dlya-doma',
+      icon: iconBase + 'ic_02_vse-dlya-doma.png'
+    },
+    3: {
+      type: 'deti',
+      icon: iconBase + 'ic_03_deti.png'
+    },
+    4: {
+      type: 'eda',
+      icon: iconBase + 'ic_04_eda.png'
+    },
+    5: {
+      type: 'zoo',
+      icon: iconBase + 'ic_05_zoo.png'
+    },
+    6: {
+      type: 'krasota-i-zdorovye',
+      icon: iconBase + 'ic_06_krasota-i-zdorovye.png'
+    },
+    7: {
+      type: 'magaziny',
+      icon: iconBase + 'ic_07_magaziny.png'
+    },
+    8: {
+      type: 'obuchenie',
+      icon: iconBase + 'ic_08_obuchenie.png'
+    },
+    9: {
+      type: 'razvlecheniya',
+      icon: iconBase + 'ic_09_razvlecheniya.png'
+    },
+    10: {
+      type: 'uslugi',
+      icon: iconBase + 'ic_10_uslugi.png'
+    },
+    "default": {
+      icon: iconBase + 'ic_default.png'
+    }
+  };
+
   function initMap() {
     var defaultCenterLat = 59.9307772;
     var defaultCenterLng = 30.3276762;
@@ -137,7 +184,10 @@
               + '</p>');
             marker = new google.maps.Marker({
               position: new google.maps.LatLng(store.location[0], store.location[1]),
-              map: map
+              map: map,
+              icon: (icons[store.promotion.category.parent_id])
+                ? (icons[store.promotion.category.parent_id].icon)
+                : (icons['default'].icon)
             });
             markersArray.push(marker);
             google.maps.event.addListener(marker, 'click', (function (marker, i) {

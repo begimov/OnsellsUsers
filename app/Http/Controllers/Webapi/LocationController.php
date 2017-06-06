@@ -21,12 +21,12 @@ class LocationController extends Controller
             $locations = Location::distance($searchRadius,"{$lat},{$lng}")
                 ->whereHas('promotion', function ($query) use ($category){
                     $query->where('active', 1);
-                })->with('promotion')->take(100)->get();
+                })->with('promotion')->with('promotion.category')->take(100)->get();
         } else {
             $locations = Location::distance($searchRadius,"{$lat},{$lng}")
                 ->whereHas('promotion', function ($query) use ($category){
                     $query->where('active', 1)->where('category_id', $category);
-                })->with('promotion')->take(100)->get();
+                })->with('promotion')->with('promotion.category')->take(100)->get();
         }
         // dd(\DB::getQueryLog());
         return $locations->toArray();
