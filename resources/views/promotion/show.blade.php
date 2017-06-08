@@ -37,9 +37,21 @@
             {{ $promotion->phone }}
           </p>
         </div>
+        <div class="panel-footer">
+          <div class="ya-share2"
+            data-services="vkontakte,odnoklassniki,whatsapp,telegram,twitter"
+            data-title="{{ str_limit($promotion->promotionname, 30) }}"
+            data-description="{{ str_limit($promotion->promotiondesc, 60) }}"
+            data-image="{{ url($promotion->mediumImgPath()) }}"></div>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
+@endsection
+
+@section('scripts')
+  <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+  <script src="https://yastatic.net/share2/share.js" async="async"></script>
 @endsection
