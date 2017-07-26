@@ -38,10 +38,16 @@
           </p>
           <p>
             <hr>
+            @if (session('status'))
+              <div class="alert alert-success">
+                {{ session('status') }}
+              </div>
+            @else
             @if (Auth::guest())
               <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button">Войти и получить скидку</a>
             @else
               <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button">Получить скидку</a>
+            @endif
             @endif
           </p>
         </div>
