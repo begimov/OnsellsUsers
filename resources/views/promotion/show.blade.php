@@ -39,9 +39,9 @@
           <p>
             <hr>
             @if (Auth::guest())
-              <a class="btn btn-primary" href="" role="button">Войти и получить скидку</a>
+              <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button">Войти и получить скидку</a>
             @else
-              <a class="btn btn-primary" href="" role="button">Получить скидку</a>
+              <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button">Получить скидку</a>
             @endif
           </p>
         </div>

@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'IndexController@index');
 
 Route::get('/categories/{category}', 'Promotions\CategoryController@show')->name('category.show');
@@ -18,6 +7,9 @@ Route::get('/categories/{category}', 'Promotions\CategoryController@show')->name
 Route::get('/search', 'SearchController@index')->name('search.index');
 
 Route::get('/promotions/{promotion}', 'Promotions\PromotionController@show')->name('promotion.show');
+
+// Application for discount
+Route::get('/promotions/{promotion}/application/create', 'Promotions\ApplicationController@create')->name('application.create');
 
 // WebAPI
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
@@ -33,6 +25,8 @@ Route::get('/redirect/{promotion}', function (App\Models\Promotions\Promotion $p
   return redirect()->to($url);
 })->name('redirect.external');
 
+// Authentication
 Auth::routes();
 
+// User dashboard and profile
 Route::get('/home', 'HomeController@index')->name('home');
