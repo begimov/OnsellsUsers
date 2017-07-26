@@ -36,6 +36,14 @@
             <strong>Телефон:</strong><br>
             {{ $promotion->phone }}
           </p>
+          <p>
+            <hr>
+            @if (Auth::guest())
+              <a class="btn btn-primary" href="" role="button">Войти и получить скидку</a>
+            @else
+              <a class="btn btn-primary" href="" role="button">Получить скидку</a>
+            @endif
+          </p>
         </div>
         <div class="panel-footer">
           <div class="ya-share2"
