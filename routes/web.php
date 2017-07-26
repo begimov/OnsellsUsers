@@ -32,3 +32,7 @@ Route::get('/redirect/{promotion}', function (App\Models\Promotions\Promotion $p
   }
   return redirect()->to($url);
 })->name('redirect.external');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
