@@ -34,4 +34,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Application::class);
     }
+
+    public function applicationOfPromotion($promotionId)
+    {
+        return $this->applications()->where('promotion_id', $promotionId)->get();
+    }
 }
