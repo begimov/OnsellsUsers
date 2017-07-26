@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Promotions\Application;
+use App\Notifications\Auth\ResetPasswordNotification;
 
 class User extends Authenticatable
 {
@@ -38,5 +39,16 @@ class User extends Authenticatable
     public function applicationOfPromotion($promotionId)
     {
         return $this->applications()->where('promotion_id', $promotionId)->get();
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }
