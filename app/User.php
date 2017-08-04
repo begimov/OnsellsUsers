@@ -41,6 +41,11 @@ class User extends Authenticatable
         return $this->applications()->where('promotion_id', $promotionId)->get();
     }
 
+    public function appliedForPromotion($id)
+    {
+        return $this->applicationOfPromotion($id)->isNotEmpty();
+    }
+
     /**
      * Send the password reset notification.
      *
