@@ -46,9 +46,9 @@
           @if(!$applied)
             <p>
               @if (Auth::guest())
-                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button">Войти и получить скидку</a>
+                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Signin and get discount');">Войти и получить скидку</a>
               @else
-                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button">Получить скидку</a>
+                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</a>
               @endif
             </p>
           @endif
