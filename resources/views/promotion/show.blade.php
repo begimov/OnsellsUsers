@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('titleandmetatags')
-<title>{{ str_limit($promotion->promotionname, 70) }} :: {{ config('app.name', 'Onsells') }}</title>
-<meta name="description" content="{{ str_limit($promotion->promotiondesc, 150) }}">
-<meta name="keywords" content="">
+  <title>{{ str_limit($promotion->promotionname, 70) }} :: {{ config('app.name', 'Onsells') }}</title>
+  <meta name="description" content="{{ str_limit($promotion->promotiondesc, 150) }}">
+  <meta name="keywords" content="">
 @endsection
 
 @section('content')
