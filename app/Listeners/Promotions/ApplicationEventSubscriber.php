@@ -10,7 +10,8 @@ class ApplicationEventSubscriber
 {
     public function onApplicationCreated(ApplicationCreated $event) {
         $application = $event->application;
-        dd($application);
+        $promotion = $application->promotion;
+        dd($promotion->user);
     }
 
     /**
