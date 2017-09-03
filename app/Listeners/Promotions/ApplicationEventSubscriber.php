@@ -5,13 +5,14 @@ namespace App\Listeners\Promotions;
 use App\Events\Promotions\ApplicationCreated;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Notifications\Promotions\ApplicationCreated as ApplicationCreatedNotification;
 
 class ApplicationEventSubscriber
 {
     public function onApplicationCreated(ApplicationCreated $event) {
         $application = $event->application;
         $promotion = $application->promotion;
-        dd($promotion->user);
+        $promotion->user->notify(new ApplicationCreatedNotification());
     }
 
     /**

@@ -41,9 +41,10 @@ class ApplicationCreated extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject('Новая заявка от клиента на Onsells.ru')
+            ->greeting("Здравствуйте!")
+            ->line('Вы получили это письмо, так как пользователем был сделан запрос на покупку ваших услуг и/или товаров.')
+            ->action('Получить клиента', config('app.admin_url'));
     }
 
     /**
