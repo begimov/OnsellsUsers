@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Promotions\Promotion;
 use App\Models\Promotions\Application;
 use Illuminate\Support\Facades\Auth;
+use App\Events\Promotions\ApplicationCreated;
 
 class ApplicationController extends Controller
 {
@@ -25,6 +26,8 @@ class ApplicationController extends Controller
             $application->user()->associate($user);
             $application->promotion()->associate($promotion);
             $application->save();
+
+            event(new ApplicationCreated($application));
         }
 
         return redirect()->route('promotion.show', [
