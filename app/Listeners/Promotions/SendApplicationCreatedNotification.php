@@ -26,6 +26,6 @@ class SendApplicationCreatedNotification
      */
     public function handle(ApplicationCreated $event)
     {
-        //
+        $application = $event->application;
     }
 }

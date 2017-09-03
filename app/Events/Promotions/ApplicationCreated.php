@@ -14,14 +14,16 @@ class ApplicationCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $application;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Application $application)
     {
-        //
+        $this->application = $application;
     }
 
     /**
