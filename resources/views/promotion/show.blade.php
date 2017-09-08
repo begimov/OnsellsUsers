@@ -74,7 +74,7 @@
   <div class="row">
       @if (count($promotions) > 0)
         @foreach ($promotions as $promotion)
-          <div class="col-sm-6 col-md-4 col-xs-6">
+          <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
               @if (count($promotion->images) > 0)
                 <a href="{{ route('promotion.show', $promotion->id) }}">
@@ -84,10 +84,9 @@
               <div class="caption text-center">
                 <h4>
                   <a href="{{ route('promotion.show', $promotion->id) }}">
-                    {{ str_limit($promotion->promotionname, 40) }}
+                    {{ str_limit($promotion->promotionname, 60) }}
                   </a>
                 </h4>
-                <p>{{ str_limit($promotion->company . ' / ' . $promotion->category->name, 30) }}</p>
               </div>
             </div>
           </div>
