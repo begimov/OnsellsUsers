@@ -3,7 +3,7 @@
 @section('titleandmetatags')
   <title>{{ str_limit($promotion->promotionname, 70) }} :: {{ config('app.name', 'Onsells') }}</title>
   <meta name="description" content="{{ str_limit($promotion->promotiondesc, 150) }}">
-  <meta name="keywords" content="{{ implode(", ", explode(" ", $promotion->promotionname . $promotion->promotiondesc)) }}">
+  <meta name="keywords" content="{{ $promotion->company . ', ' . implode(", ", explode(" ", $promotion->promotionname . ' ' . $promotion->promotiondesc)) }}">
 @endsection
 
 @section('content')
@@ -70,6 +70,31 @@
     </div>
 
   </div>
+
+  <div class="row">
+      @if (count($promotions) > 0)
+        @foreach ($promotions as $promotion)
+          <div class="col-sm-6 col-md-4 col-xs-6">
+            <div class="thumbnail">
+              @if (count($promotion->images) > 0)
+                <a href="{{ route('promotion.show', $promotion->id) }}">
+                  <img class="img-rounded" src="{{ $promotion->mediumImage->path }}" alt="{{ $promotion->promotionname }}">
+                </a>
+              @endif
+              <div class="caption text-center">
+                <h4>
+                  <a href="{{ route('promotion.show', $promotion->id) }}">
+                    {{ str_limit($promotion->promotionname, 40) }}
+                  </a>
+                </h4>
+                <p>{{ str_limit($promotion->company . ' / ' . $promotion->category->name, 30) }}</p>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      @endif
+  </div>
+
 </div>
 @endsection
 
