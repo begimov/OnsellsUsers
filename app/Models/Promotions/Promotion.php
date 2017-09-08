@@ -45,4 +45,9 @@ class Promotion extends Model
     {
         return $this->hasOne('App\Models\Image')->where('type', 'medium');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\Promotions\User');
+    }
 }
