@@ -8,6 +8,7 @@ use App\Models\Promotions\Promotion;
 use App\Models\Promotions\Application;
 use Illuminate\Support\Facades\Auth;
 use App\Events\Promotions\ApplicationCreated;
+use App\Http\Requests\Promotions\StoreApplicationRequest;
 
 class ApplicationController extends Controller
 {
@@ -16,9 +17,16 @@ class ApplicationController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(Promotion $promotion)
+    public function store(StoreApplicationRequest $request, Promotion $promotion)
     {
         $user = Auth::user();
+        $phone = $request->phone;
+
+        if ($user->phone !== $phone) {
+            $user->phone = $phone;
+            $user->save();
+        }
+
         $exisitngApplication = $user->applicationOfPromotion($promotion->id);
 
         if (!count($exisitngApplication)) {

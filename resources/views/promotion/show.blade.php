@@ -52,9 +52,21 @@
           @if(!$applied)
             <p>
               @if (Auth::guest())
-                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Signin and get discount');">Войти и получить скидку</a>
+                <a class="btn btn-primary" href="{{ route('login') }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Signin and get discount');">Войти и получить скидку</a>
               @else
-                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</a>
+                <form action="{{ route('application.store', $promotion->id) }}" method="post">
+                  <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    {{ csrf_field() }}
+                    <label>Номер телефона для связи и быстрого получения скидки:</label>
+                    <input type="phone" class="form-control" name="phone" value="{{ Auth::user()->phone ?: old('phone') }}" placeholder="Введите ваш номер...">
+                    @if ($errors->has('phone'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('phone') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                  <button type="submit" class="btn btn-primary" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</button>
+                </form>
               @endif
             </p>
           @endif
