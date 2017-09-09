@@ -19,9 +19,14 @@ class ApplicationController extends Controller
 
     public function store(StoreApplicationRequest $request, Promotion $promotion)
     {
-      // TODO: delete
-      dd($request->all(), $promotion);
         $user = Auth::user();
+        $phone = $request->phone;
+
+        if ($user->phone !== $phone) {
+            $user->phone = $phone;
+            $user->save();
+        }
+
         $exisitngApplication = $user->applicationOfPromotion($promotion->id);
 
         if (!count($exisitngApplication)) {
