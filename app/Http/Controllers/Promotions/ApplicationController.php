@@ -17,7 +17,7 @@ class ApplicationController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(StoreApplicationRequest $request, Promotion $promotion)
+    public function store(StoreApplicationRequest $request, Promotion $promotion)
     {
       // TODO: delete
       dd($request->all(), $promotion);
