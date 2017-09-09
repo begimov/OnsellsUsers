@@ -52,9 +52,17 @@
           @if(!$applied)
             <p>
               @if (Auth::guest())
-                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Signin and get discount');">Войти и получить скидку</a>
+                <a class="btn btn-primary" href="{{ route('login') }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Signin and get discount');">Войти и получить скидку</a>
               @else
-                <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</a>
+                <form action="{{ route('application.create', $promotion->id) }}" method="post">
+
+                  <div class="form-group">
+                    {{ csrf_field() }}
+                    <input type="phone" class="form-control" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    {{-- <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</a> --}}
+                  </div>
+                  <button type="submit" class="btn btn-primary" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</button>
+                </form>
               @endif
             </p>
           @endif

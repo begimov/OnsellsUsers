@@ -9,7 +9,7 @@ Route::get('/search', 'SearchController@index')->name('search.index');
 Route::get('/promotions/{promotion}', 'Promotions\PromotionController@show')->name('promotion.show');
 
 // Application for discount
-Route::get('/promotions/{promotion}/application/create', 'Promotions\ApplicationController@create')->name('application.create');
+Route::post('/promotions/{promotion}/application/create', 'Promotions\ApplicationController@create')->name('application.create');
 
 // WebAPI
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {

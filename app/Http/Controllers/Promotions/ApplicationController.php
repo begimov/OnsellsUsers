@@ -16,8 +16,9 @@ class ApplicationController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(Promotion $promotion)
+    public function create(Request $request, Promotion $promotion)
     {
+      dd($request->all(), $promotion);
         $user = Auth::user();
         $exisitngApplication = $user->applicationOfPromotion($promotion->id);
 
