@@ -18,6 +18,7 @@ class ApplicationController extends Controller
 
     public function create(Request $request, Promotion $promotion)
     {
+      // TODO: delete
       dd($request->all(), $promotion);
         $user = Auth::user();
         $exisitngApplication = $user->applicationOfPromotion($promotion->id);

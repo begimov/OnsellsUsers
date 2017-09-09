@@ -55,11 +55,10 @@
                 <a class="btn btn-primary" href="{{ route('login') }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Signin and get discount');">Войти и получить скидку</a>
               @else
                 <form action="{{ route('application.create', $promotion->id) }}" method="post">
-
                   <div class="form-group">
                     {{ csrf_field() }}
-                    <input type="phone" class="form-control" name="phone" value="" placeholder="Введите ваш номер телефона">
-                    {{-- <a class="btn btn-primary" href="{{ route('application.create', $promotion->id) }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</a> --}}
+                    <label>Номер телефона для связи и быстрого получения скидки:</label>
+                    <input type="phone" class="form-control" name="phone" value="" placeholder="Введите ваш номер...">
                   </div>
                   <button type="submit" class="btn btn-primary" onclick="ga('send', 'event', 'Buttons', 'Click', 'Get discount');">Получить скидку</button>
                 </form>
