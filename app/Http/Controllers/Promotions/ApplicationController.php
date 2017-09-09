@@ -8,6 +8,7 @@ use App\Models\Promotions\Promotion;
 use App\Models\Promotions\Application;
 use Illuminate\Support\Facades\Auth;
 use App\Events\Promotions\ApplicationCreated;
+use App\Http\Requests\Promotions\StoreApplicationRequest;
 
 class ApplicationController extends Controller
 {
@@ -16,7 +17,7 @@ class ApplicationController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(Request $request, Promotion $promotion)
+    public function create(StoreApplicationRequest $request, Promotion $promotion)
     {
       // TODO: delete
       dd($request->all(), $promotion);
