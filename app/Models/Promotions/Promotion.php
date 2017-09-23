@@ -50,4 +50,9 @@ class Promotion extends Model
     {
         return $this->belongsTo('App\Models\Promotions\User');
     }
+
+    public function locations()
+    {
+        return $this->hasMany('App\Models\Promotions\Location');
+    }
 }
