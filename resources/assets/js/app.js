@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('index', require('./components/Index.vue'));
+Vue.component('catalog', require('./components/promotions/Catalog.vue'));
+Vue.component('promomap', require('./components/promotions/PromoMap.vue'));
 
 const app = new Vue({
     el: '#app'
