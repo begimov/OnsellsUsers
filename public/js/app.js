@@ -12876,14 +12876,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions', ['isActiveComponentCatalog', 'isActiveComponentPromoMap'])),
-    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions', ['switchActiveComponent'])),
-    mounted() {
-        //
-    }
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions', ['isActiveComponentCatalog', 'isActiveComponentPromoMap'])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions', ['switchActiveComponent'])),
+  mounted() {
+    //
+  }
 });
 
 /***/ }),
@@ -43278,10 +43282,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-6 col-sm-6 col-xs-6 text-center"
-  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('ul', {
+    staticClass: "nav nav-tabs nav-justified"
+  }, [_c('li', {
     class: {
-      'text-left': _vm.isActiveComponentCatalog
+      'active': _vm.isActiveComponentCatalog
+    },
+    attrs: {
+      "role": "presentation"
     }
   }, [_c('a', {
     attrs: {
@@ -43293,11 +43302,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('catalog')
       }
     }
-  }, [_vm._v("В КАТАЛОГЕ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6 col-sm-6 col-xs-6 text-center"
-  }, [_c('div', {
+  }, [_vm._v("\n            В КАТАЛОГЕ\n          ")])]), _vm._v(" "), _c('li', {
     class: {
-      'text-left': _vm.isActiveComponentPromoMap
+      'active': _vm.isActiveComponentPromoMap
+    },
+    attrs: {
+      "role": "presentation"
     }
   }, [_c('a', {
     attrs: {
@@ -43309,7 +43319,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('promomap')
       }
     }
-  }, [_vm._v("НА КАРТЕ")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            НА КАРТЕ\n          ")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e(), _vm._v(" "), (_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)])
 },staticRenderFns: []}
