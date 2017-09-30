@@ -15,6 +15,8 @@ Route::post('/promotions/{promotion}/applications', 'Promotions\ApplicationContr
 // WebAPI
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
   Route::get('/locations', 'LocationController@index');
+  //V2 WebAPI routes
+  //
 });
 
 // External redirects
@@ -31,3 +33,9 @@ Auth::routes();
 
 // User dashboard and profile
 Route::get('/home', 'HomeController@index')->name('home');
+
+// TODO: SWITCH
+//V2
+Route::group(['prefix' => 'v2', 'namespace' => 'V2'], function () {
+  Route::get('/', 'IndexController@index');
+});
