@@ -16074,6 +16074,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(51);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16088,7 +16098,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'markers'])),
   mounted() {
     //
   }
@@ -17101,9 +17113,12 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // materialOptions (state) {
-  //   return state.options.materials
-  // },
+  center(state) {
+    return state.center;
+  },
+  markers(state) {
+    return state.markers;
+  }
 });
 
 /***/ }),
@@ -17145,7 +17160,14 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  promomap: 'test'
+  center: { lat: 10.0, lng: 10.0 },
+  markers: [{
+    name: 'Name 1',
+    position: { lat: 10.0, lng: 10.0 }
+  }, {
+    name: 'Name 1',
+    position: { lat: 11.0, lng: 11.0 }
+  }]
 });
 
 /***/ }),
@@ -52592,18 +52614,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('gmap-map', {
     staticStyle: {
-      "width": "500px",
+      "width": "100%",
       "height": "300px"
     },
     attrs: {
-      "center": {
-        lat: 10,
-        lng: 10
-      },
-      "zoom": 7,
-      "map-type-id": "terrain"
+      "center": _vm.center,
+      "zoom": 7
     }
-  })], 1)])
+  }, _vm._l((_vm.markers), function(m, index) {
+    return _c('gmap-marker', {
+      key: index,
+      attrs: {
+        "position": m.position,
+        "clickable": true,
+        "draggable": true
+      },
+      on: {
+        "click": function($event) {
+          _vm.center = m.position
+        }
+      }
+    })
+  }))], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

@@ -1,5 +1,8 @@
 export default {
-  // materialOptions (state) {
-  //   return state.options.materials
-  // },
+  center (state) {
+    return state.center
+  },
+  markers (state) {
+    return state.markers
+  },
 }
