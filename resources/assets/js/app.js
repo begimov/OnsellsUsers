@@ -23,6 +23,7 @@ Vue.component('search', require('./components/base/Search.vue'));
 Vue.component('index', require('./components/promotions/Index.vue'));
 Vue.component('catalog', require('./components/promotions/Catalog.vue'));
 Vue.component('promomap', require('./components/promotions/PromoMap.vue'));
+Vue.component('promo-card', require('./components/promotions/promotion/PromoCard.vue'));
 
 const app = new Vue({
     el: '#app',

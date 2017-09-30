@@ -5,6 +5,11 @@
         <search v-model="searchQuery" v-on:input="textSearch"></search>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <promo-card v-for="promotion in promotions" :key="promotion.id"></promo-card>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,6 +26,7 @@ export default {
       'isActiveComponentCatalog',
       'isActiveComponentPromoMap',
       'getSearchQuery',
+      'promotions',
     ]),
     'searchQuery': {
       get () {

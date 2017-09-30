@@ -1,3 +1,7 @@
 export default {
-  searchQuery: '1212'
+  searchQuery: '',
+  promotions: [
+    {id: 1, name:'Promo1'},
+    {id: 2, name:'Promo2'},
+  ]
 }

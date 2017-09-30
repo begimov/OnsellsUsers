@@ -11975,6 +11975,7 @@ Vue.component('search', __webpack_require__(76));
 Vue.component('index', __webpack_require__(58));
 Vue.component('catalog', __webpack_require__(57));
 Vue.component('promomap', __webpack_require__(59));
+Vue.component('promo-card', __webpack_require__(80));
 
 const app = new Vue({
   el: '#app',
@@ -12847,6 +12848,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -12855,7 +12861,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       timer: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['isActiveComponentCatalog', 'isActiveComponentPromoMap', 'getSearchQuery']), {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['isActiveComponentCatalog', 'isActiveComponentPromoMap', 'getSearchQuery', 'promotions']), {
     'searchQuery': {
       get() {
         return this.getSearchQuery;
@@ -13064,6 +13070,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 /* harmony default export */ __webpack_exports__["a"] = ({
   getSearchQuery(state) {
     return state.searchQuery;
+  },
+  promotions(state) {
+    return state.promotions;
   }
 });
 
@@ -13106,7 +13115,8 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  searchQuery: '1212'
+  searchQuery: '',
+  promotions: [{ id: 1, name: 'Promo1' }, { id: 2, name: 'Promo2' }]
 });
 
 /***/ }),
@@ -43307,7 +43317,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "searchQuery"
     }
-  })], 1)])])
+  })], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, _vm._l((_vm.promotions), function(promotion) {
+    return _c('promo-card', {
+      key: promotion.id
+    })
+  }))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -43514,6 +43532,84 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-6147631c", module.exports)
+  }
+}
+
+/***/ }),
+/* 78 */,
+/* 79 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data() {
+    return {};
+  },
+  computed: {
+    //
+  },
+  methods: {
+    //
+  },
+  mounted() {
+    //
+  }
+});
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(79),
+  /* template */
+  __webpack_require__(81),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/OnsellsUsers/resources/assets/js/components/promotions/promotion/PromoCard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PromoCard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-207f14ee", Component.options)
+  } else {
+    hotAPI.reload("data-v-207f14ee", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_vm._v("\n  PROMO CARD\n")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-207f14ee", module.exports)
   }
 }
 
