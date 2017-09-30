@@ -11,11 +11,11 @@
         :position="m.position"
         :clickable="true"
         :draggable="true"
-        @click="center=m.position">
+        @click="updateCenter(m.position)">
         </gmap-marker>
-    </gmap-map>
-</div>
-</div>
+      </gmap-map>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -25,6 +25,11 @@ export default {
     ...mapGetters('promotions/promomap', [
       'center',
       'markers',
+    ]),
+  },
+  methods: {
+    ...mapActions('promotions/promomap', [
+      'updateCenter',
     ]),
   },
   mounted() {

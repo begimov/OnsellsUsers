@@ -16101,6 +16101,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'markers'])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/promomap', ['updateCenter'])),
   mounted() {
     //
   }
@@ -17102,9 +17103,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // updateMaterialParams ({ commit }, value) {
-  //   commit('updateMaterialParams', value)
-  // },
+  updateCenter({ commit }, value) {
+    commit('updateCenter', value);
+  }
 });
 
 /***/ }),
@@ -17149,9 +17150,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // updateMaterialParams (state, value) {
-  //     state.params.materials = value
-  // },
+  updateCenter(state, value) {
+    state.center = value;
+  }
 });
 
 /***/ }),
@@ -52631,7 +52632,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.center = m.position
+          _vm.updateCenter(m.position)
         }
       }
     })

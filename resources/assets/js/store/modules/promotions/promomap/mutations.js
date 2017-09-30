@@ -1,5 +1,5 @@
 export default {
-  // updateMaterialParams (state, value) {
-  //     state.params.materials = value
-  // },
+  updateCenter (state, value) {
+      state.center = value
+  },
 }
