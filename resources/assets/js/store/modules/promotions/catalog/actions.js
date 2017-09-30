@@ -1,7 +1,7 @@
 import api from '../../../api'
 
 export default {
-  // updateMaterialParams ({ commit }, value) {
-  //   commit('updateMaterialParams', value)
-  // },
+  updateSearchQuery ({ commit }, value) {
+    commit('updateSearchQuery', value)
+  },
 }

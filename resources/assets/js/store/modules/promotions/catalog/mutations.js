@@ -1,5 +1,5 @@
 export default {
-  // updateMaterialParams (state, value) {
-  //     state.params.materials = value
-  // },
+  updateSearchQuery (state, value) {
+      state.searchQuery = value
+  },
 }

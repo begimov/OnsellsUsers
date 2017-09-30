@@ -1,5 +1,5 @@
 export default {
-  // materialOptions (state) {
-  //   return state.options.materials
-  // },
+  getSearchQuery (state) {
+    return state.searchQuery
+  },
 }

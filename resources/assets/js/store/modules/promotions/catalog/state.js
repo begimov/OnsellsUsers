@@ -1,3 +1,3 @@
 export default {
-  query: ''
+  searchQuery: '1212'
 }

@@ -12850,8 +12850,29 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['isActiveComponentCatalog', 'isActiveComponentPromoMap'])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/catalog', ['switchActiveComponent'])),
+  data() {
+    return {
+      timer: 0
+    };
+  },
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['isActiveComponentCatalog', 'isActiveComponentPromoMap', 'getSearchQuery']), {
+    'searchQuery': {
+      get() {
+        return this.getSearchQuery;
+      },
+      set(value) {
+        this.updateSearchQuery(value);
+      }
+    }
+  }),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/catalog', ['switchActiveComponent', 'updateSearchQuery']), {
+    textSearch() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(function () {
+        console.log('SEARCH');
+      }.bind(this), 1000);
+    }
+  }),
   mounted() {
     //
   }
@@ -13030,9 +13051,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // updateMaterialParams ({ commit }, value) {
-  //   commit('updateMaterialParams', value)
-  // },
+  updateSearchQuery({ commit }, value) {
+    commit('updateSearchQuery', value);
+  }
 });
 
 /***/ }),
@@ -13041,9 +13062,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // materialOptions (state) {
-  //   return state.options.materials
-  // },
+  getSearchQuery(state) {
+    return state.searchQuery;
+  }
 });
 
 /***/ }),
@@ -13074,9 +13095,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // updateMaterialParams (state, value) {
-  //     state.params.materials = value
-  // },
+  updateSearchQuery(state, value) {
+    state.searchQuery = value;
+  }
 });
 
 /***/ }),
@@ -13085,7 +13106,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  query: ''
+  searchQuery: '1212'
 });
 
 /***/ }),
