@@ -43323,7 +43323,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-12"
   }, _vm._l((_vm.promotions), function(promotion) {
     return _c('promo-card', {
-      key: promotion.id
+      key: promotion.id,
+      attrs: {
+        "promotion": promotion
+      }
     })
   }))])])
 },staticRenderFns: []}
@@ -43548,8 +43551,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['promotion'],
   data() {
     return {};
   },
@@ -43560,7 +43565,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     //
   },
   mounted() {
-    //
+    console.log(this.promotion);
   }
 });
 
@@ -43603,7 +43608,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("\n  PROMO CARD\n")])
+  return _c('div', [_vm._v("\n  " + _vm._s(_vm.promotion.id) + "\n  " + _vm._s(_vm.promotion.name) + "\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
