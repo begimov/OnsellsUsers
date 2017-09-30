@@ -1,5 +1,5 @@
 export default {
-  // updateMaterialParams (state, value) {
-  //     state.params.materials = value
-  // },
+  switchActiveComponent (state, value) {
+      state.activeComponent = value
+  },
 }

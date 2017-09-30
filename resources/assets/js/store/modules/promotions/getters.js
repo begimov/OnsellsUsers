@@ -1,5 +1,8 @@
 export default {
-  // materialOptions (state) {
-  //   return state.options.materials
-  // },
+  isActiveComponentCatalog (state) {
+    return state.activeComponent === 'catalog'
+  },
+  isActiveComponentPromoMap (state) {
+    return state.activeComponent === 'promomap'
+  },
 }

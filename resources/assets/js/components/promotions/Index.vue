@@ -2,21 +2,37 @@
   <div>
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-        В КАТАЛОГЕ
+        <div :class="{'text-left': isActiveComponentCatalog}">
+          <a href="#" @click.prevent="switchActiveComponent('catalog')">В КАТАЛОГЕ</a>
+        </div>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-        НА КАРТЕ
+        <div :class="{'text-left': isActiveComponentPromoMap}">
+          <a href="#" @click.prevent="switchActiveComponent('promomap')">НА КАРТЕ</a>
+        </div>
       </div>
     </div>
     <div class="row">
-      <catalog></catalog>
-      <promomap></promomap>
+      <catalog v-if="isActiveComponentCatalog"></catalog>
+      <promomap v-if="isActiveComponentPromoMap"></promomap>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
+  computed: {
+      ...mapGetters('promotions', [
+          'isActiveComponentCatalog',
+          'isActiveComponentPromoMap',
+      ]),
+  },
+  methods: {
+    ...mapActions('promotions', [
+        'switchActiveComponent',
+    ]),
+  },
   mounted() {
     //
   }
