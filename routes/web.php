@@ -34,8 +34,8 @@ Auth::routes();
 // User dashboard and profile
 Route::get('/home', 'HomeController@index')->name('home');
 
-// TODO: SWITCH
-//V2
+// TODO: SWITCH to '/'
+// 'prefix' => 'v2' & 'namespace' => 'V2'
 Route::group(['prefix' => 'v2', 'namespace' => 'V2'], function () {
   Route::get('/', 'IndexController@index');
 });
