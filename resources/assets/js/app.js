@@ -17,7 +17,7 @@ import store from './store'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('index', require('./components/Index.vue'));
+Vue.component('index', require('./components/promotions/Index.vue'));
 Vue.component('catalog', require('./components/promotions/Catalog.vue'));
 Vue.component('promomap', require('./components/promotions/PromoMap.vue'));
 

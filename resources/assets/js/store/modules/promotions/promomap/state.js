@@ -1,3 +1,3 @@
 export default {
-  catalog: 'test'
+  promomap: 'test'
 }
