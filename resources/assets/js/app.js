@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import store from './store'
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -20,5 +22,6 @@ Vue.component('catalog', require('./components/promotions/Catalog.vue'));
 Vue.component('promomap', require('./components/promotions/PromoMap.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });
