@@ -16097,6 +16097,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -17166,7 +17167,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
     name: 'Name 1',
     position: { lat: 10.0, lng: 10.0 }
   }, {
-    name: 'Name 1',
+    name: 'Name 2',
     position: { lat: 11.0, lng: 11.0 }
   }]
 });
@@ -52635,7 +52636,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.updateCenter(m.position)
         }
       }
-    })
+    }, [_c('gmap-info-window', [_vm._v(_vm._s(m.name))])], 1)
   }))], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true

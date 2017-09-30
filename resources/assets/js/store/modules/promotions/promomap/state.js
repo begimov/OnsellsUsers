@@ -6,7 +6,7 @@ export default {
       position: {lat: 10.0, lng: 10.0},
     },
     {
-      name: 'Name 1',
+      name: 'Name 2',
       position: {lat: 11.0, lng: 11.0},
     }
   ]

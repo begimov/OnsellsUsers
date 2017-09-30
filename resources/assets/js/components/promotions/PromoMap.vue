@@ -12,6 +12,7 @@
         :clickable="true"
         :draggable="true"
         @click="updateCenter(m.position)">
+        <gmap-info-window>{{ m.name }}</gmap-info-window>
         </gmap-marker>
       </gmap-map>
     </div>
