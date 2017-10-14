@@ -2,6 +2,7 @@
   <div>
     <div class="row">
       <div class="col-md-12">
+        <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
         <ul class="nav nav-tabs nav-justified">
           <li role="presentation" :class="{'active': isActiveComponentCatalog}">
             <a href="#" @click.prevent="switchActiveComponent('catalog')">
@@ -30,6 +31,7 @@ export default {
     ...mapGetters('promotions', [
       'isActiveComponentCatalog',
       'isActiveComponentPromoMap',
+      'isLoading',
     ]),
   },
   methods: {

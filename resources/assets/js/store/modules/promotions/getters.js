@@ -5,4 +5,7 @@ export default {
   isActiveComponentPromoMap (state) {
     return state.activeComponent === 'promomap'
   },
+  isLoading (state) {
+    return state.isLoading
+  },
 }

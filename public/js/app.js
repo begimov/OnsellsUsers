@@ -16060,10 +16060,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions', ['isActiveComponentCatalog', 'isActiveComponentPromoMap'])),
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions', ['isActiveComponentCatalog', 'isActiveComponentPromoMap', 'isLoading'])),
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions', ['switchActiveComponent'])),
   mounted() {
     //
@@ -16992,8 +16993,10 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
     commit('updateSearchQuery', value);
   },
   getPromotions({ commit }, params) {
+    commit('promotions/isLoading', true, { root: true });
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
       commit('updatePromotions', res.data.promotions);
+      commit('promotions/isLoading', false, { root: true });
     });
   }
 });
@@ -17069,6 +17072,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   },
   isActiveComponentPromoMap(state) {
     return state.activeComponent === 'promomap';
+  },
+  isLoading(state) {
+    return state.isLoading;
   }
 });
 
@@ -17110,6 +17116,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 /* harmony default export */ __webpack_exports__["a"] = ({
   switchActiveComponent(state, value) {
     state.activeComponent = value;
+  },
+  isLoading(state, value) {
+    state.isLoading = value;
   }
 });
 
@@ -52878,7 +52887,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('ul', {
+  }, [_c('div', {
+    class: {
+      'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
+    }
+  }), _vm._v(" "), _c('ul', {
     staticClass: "nav nav-tabs nav-justified"
   }, [_c('li', {
     class: {
