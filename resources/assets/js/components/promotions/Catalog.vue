@@ -41,6 +41,7 @@ export default {
     ...mapActions('promotions/catalog', [
       'switchActiveComponent',
       'updateSearchQuery',
+      'getPromotions',
     ]),
     textSearch () {
       clearTimeout(this.timer);
@@ -50,7 +51,7 @@ export default {
     },
   },
   mounted() {
-    //
+    this.getPromotions()
   }
 }
 </script>

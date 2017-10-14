@@ -16,7 +16,7 @@ Route::post('/promotions/{promotion}/applications', 'Promotions\ApplicationContr
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
   Route::get('/locations', 'LocationController@index');
   //V2 WebAPI routes
-  //
+  Route::get('/promotions', 'Promotions\PromotionController@index');
 });
 
 // External redirects
