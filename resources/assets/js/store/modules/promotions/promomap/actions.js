@@ -7,8 +7,7 @@ export default {
   getLocations ({ commit }, params) {
     commit('promotions/isLoading', true, { root: true })
     api.promomap.getLocations(params).then(res => {
-      console.log(res)
-      // commit('updatePromotions', res.data.promotions)
+      commit('updateLocations', res.data)
       commit('promotions/isLoading', false, { root: true })
     })
   },

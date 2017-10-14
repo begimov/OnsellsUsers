@@ -1,13 +1,4 @@
 export default {
-  center: {lat: 10.0, lng: 10.0},
-  markers: [
-    {
-      name: 'Name 1',
-      position: {lat: 10.0, lng: 10.0},
-    },
-    {
-      name: 'Name 2',
-      position: {lat: 11.0, lng: 11.0},
-    }
-  ]
+  center: {lat: 59.9307772, lng: 30.3276762},
+  locations: []
 }

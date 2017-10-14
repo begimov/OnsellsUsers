@@ -17149,8 +17149,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   getLocations({ commit }, params) {
     commit('promotions/isLoading', true, { root: true });
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(params).then(res => {
-      console.log(res);
-      // commit('updatePromotions', res.data.promotions)
+      commit('updateLocations', res.data);
       commit('promotions/isLoading', false, { root: true });
     });
   }
@@ -17198,9 +17197,12 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  updateCenter(state, value) {
-    state.center = value;
-  }
+    updateCenter(state, value) {
+        state.center = value;
+    },
+    updateLocations(state, value) {
+        state.locations = value;
+    }
 });
 
 /***/ }),
@@ -17209,14 +17211,8 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  center: { lat: 10.0, lng: 10.0 },
-  markers: [{
-    name: 'Name 1',
-    position: { lat: 10.0, lng: 10.0 }
-  }, {
-    name: 'Name 2',
-    position: { lat: 11.0, lng: 11.0 }
-  }]
+  center: { lat: 59.9307772, lng: 30.3276762 },
+  locations: []
 });
 
 /***/ }),
@@ -53964,7 +53960,7 @@ module.exports = __webpack_require__(90);
 /* harmony default export */ __webpack_exports__["a"] = ({
   getLocations(params) {
     return new Promise((resolve, reject) => {
-      axios.get(`/webapi/locations?lat=1&lng=1&radius=100&category=1`, { params }).then(res => {
+      axios.get(`/webapi/locations?lat=59.9307772&lng=30.3276762&radius=10000&category=0`, { params }).then(res => {
         resolve(res);
       });
     });
