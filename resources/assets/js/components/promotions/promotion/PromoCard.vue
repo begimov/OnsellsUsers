@@ -7,11 +7,11 @@
         <div class="caption">
           <h4>
             <a :href="'/promotions/' + promotion.id" target="_blank">
-              {{ promotion.promotionname | strLimit(20) }}
+              {{ promotion.promotionname | strLimit(20) }}...
             </a>
           </h4>
-          <p>{{ promotion.promotiondesc | strLimit(30) }}</p>
-          <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}</p>
+          <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
+          <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
         </div>
       </div>
     </div>

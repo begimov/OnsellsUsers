@@ -2505,10 +2505,13 @@ module.exports = defaults;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__promotions_catalog__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__promotions_promomap__ = __webpack_require__(291);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  catalog: __WEBPACK_IMPORTED_MODULE_0__promotions_catalog__["a" /* default */]
+  catalog: __WEBPACK_IMPORTED_MODULE_0__promotions_catalog__["a" /* default */],
+  promomap: __WEBPACK_IMPORTED_MODULE_1__promotions_promomap__["a" /* default */]
 });
 
 /***/ }),
@@ -16105,9 +16108,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'markers'])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/promomap', ['updateCenter'])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/promomap', ['updateCenter', 'getLocations'])),
   mounted() {
-    //
+    this.getLocations();
   }
 });
 
@@ -17142,6 +17145,14 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 /* harmony default export */ __webpack_exports__["a"] = ({
   updateCenter({ commit }, value) {
     commit('updateCenter', value);
+  },
+  getLocations({ commit }, params) {
+    commit('promotions/isLoading', true, { root: true });
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(params).then(res => {
+      console.log(res);
+      // commit('updatePromotions', res.data.promotions)
+      commit('promotions/isLoading', false, { root: true });
+    });
   }
 });
 
@@ -52775,7 +52786,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)))])])])])
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -53937,6 +53948,28 @@ function install(Vue, options) {
 __webpack_require__(89);
 module.exports = __webpack_require__(90);
 
+
+/***/ }),
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  getLocations(params) {
+    return new Promise((resolve, reject) => {
+      axios.get(`/webapi/locations?lat=1&lng=1&radius=100&category=1`, { params }).then(res => {
+        resolve(res);
+      });
+    });
+  }
+});
 
 /***/ })
 /******/ ]);

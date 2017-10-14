@@ -31,10 +31,11 @@ export default {
   methods: {
     ...mapActions('promotions/promomap', [
       'updateCenter',
+      'getLocations',
     ]),
   },
   mounted() {
-    //
+    this.getLocations()
   }
 }
 </script>
