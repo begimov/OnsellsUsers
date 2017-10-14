@@ -16140,13 +16140,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['promotion'],
   data() {
-    return {};
+    return {
+      //
+    };
   },
   computed: {
     //
   },
   methods: {
     //
+  },
+  filters: {
+    strLimit: function (str, length) {
+      if (!str) return '';
+      str = str.toString();
+      return str.substring(0, length);
+    }
   },
   mounted() {
     //
@@ -52750,25 +52759,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-sm-6 col-md-4"
   }, [_c('div', {
     staticClass: "thumbnail equal-min-height"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "caption"
-  }, [_c('h4', [_c('a', {
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("\n            " + _vm._s(_vm.promotion.promotionname) + "\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.promotion.promotiondesc))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.promotion.company + ' / ' + _vm.promotion.category.name))])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
+  }, [_c('a', {
     attrs: {
       "href": ""
     }
   }, [_c('img', {
     staticClass: "img-rounded",
     attrs: {
-      "src": ""
+      "src": _vm.promotion.medium_image.path
     }
-  })])
-}]}
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "caption"
+  }, [_c('h4', [_c('a', {
+    attrs: {
+      "href": '/promotions/' + _vm.promotion.id,
+      "target": "_blank"
+    }
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)))])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

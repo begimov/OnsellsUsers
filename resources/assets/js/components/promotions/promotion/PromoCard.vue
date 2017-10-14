@@ -2,16 +2,16 @@
   <div class="col-sm-6 col-md-4">
       <div class="thumbnail equal-min-height">
           <a href="">
-            <img class="img-rounded" src="">
+            <img class="img-rounded" :src="promotion.medium_image.path">
           </a>
         <div class="caption">
           <h4>
-            <a href="">
-              {{ promotion.promotionname }}
+            <a :href="'/promotions/' + promotion.id" target="_blank">
+              {{ promotion.promotionname | strLimit(20) }}
             </a>
           </h4>
-          <p>{{ promotion.promotiondesc }}</p>
-          <p>{{ promotion.company + ' / ' + promotion.category.name }}</p>
+          <p>{{ promotion.promotiondesc | strLimit(30) }}</p>
+          <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}</p>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@ export default {
   props: ['promotion'],
   data () {
     return {
-
+      //
     }
   },
   computed: {
@@ -30,6 +30,13 @@ export default {
   },
   methods: {
     //
+  },
+  filters: {
+    strLimit: function (str, length) {
+      if (!str) return ''
+      str = str.toString()
+      return str.substring(0, length)
+    }
   },
   mounted() {
     //
