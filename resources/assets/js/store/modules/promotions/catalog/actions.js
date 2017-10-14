@@ -4,9 +4,9 @@ export default {
   updateSearchQuery ({ commit }, value) {
     commit('updateSearchQuery', value)
   },
-  getPromotions({ commit }, value) {
-    api.catalog.getPromotions().then(res => {
-      console.log(res)
+  getPromotions({ commit }, params) {
+    api.catalog.getPromotions(params).then(res => {
+      commit('updatePromotions', res.data.promotions)
     })
   }
 }

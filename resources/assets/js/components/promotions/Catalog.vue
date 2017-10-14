@@ -46,7 +46,9 @@ export default {
     textSearch () {
       clearTimeout(this.timer);
       this.timer = setTimeout(function(){
-          console.log('SEARCH');
+          this.getPromotions({
+            searchQuery: this.searchQuery
+          })
       }.bind(this), 1000)
     },
   },

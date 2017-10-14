@@ -16015,7 +16015,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(function () {
-        console.log('SEARCH');
+        this.getPromotions({
+          searchQuery: this.searchQuery
+        });
       }.bind(this), 1000);
     }
   }),
@@ -16977,9 +16979,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   updateSearchQuery({ commit }, value) {
     commit('updateSearchQuery', value);
   },
-  getPromotions({ commit }, value) {
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions().then(res => {
-      console.log(res);
+  getPromotions({ commit }, params) {
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
+      commit('updatePromotions', res.data.promotions);
     });
   }
 });
@@ -17026,9 +17028,12 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  updateSearchQuery(state, value) {
-    state.searchQuery = value;
-  }
+    updateSearchQuery(state, value) {
+        state.searchQuery = value;
+    },
+    updatePromotions(state, promotions) {
+        state.promotions = promotions;
+    }
 });
 
 /***/ }),
@@ -17038,7 +17043,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
   searchQuery: '',
-  promotions: [{ id: 1, name: 'Promo1' }, { id: 2, name: 'Promo2' }]
+  promotions: []
 });
 
 /***/ }),
