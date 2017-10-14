@@ -16123,6 +16123,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['promotion'],
@@ -52725,8 +52737,29 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("\n  " + _vm._s(_vm.promotion.id) + "\n  " + _vm._s(_vm.promotion.name) + "\n")])
-},staticRenderFns: []}
+  return _c('div', {
+    staticClass: "col-sm-6 col-md-4"
+  }, [_c('div', {
+    staticClass: "thumbnail equal-min-height"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "caption"
+  }, [_c('h4', [_c('a', {
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("\n            " + _vm._s(_vm.promotion.promotionname) + "\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.promotion.promotiondesc))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.promotion.company + ' / ' + _vm.promotion.category.name))])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": ""
+    }
+  }, [_c('img', {
+    staticClass: "img-rounded",
+    attrs: {
+      "src": ""
+    }
+  })])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

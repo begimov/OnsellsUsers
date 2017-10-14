@@ -14,6 +14,7 @@ class PromotionController extends Controller
         $promotions = Promotion::where('company', 'like', "%{$query}%")
         ->orWhere('promotionname', 'like', "%{$query}%")
         ->orWhere('promotiondesc', 'like', "%{$query}%")
+        ->with(['category'])
         ->limit(100)
         ->get();
         return response()->json([
