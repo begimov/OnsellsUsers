@@ -16110,6 +16110,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16139,6 +16150,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       } else {
         // Browser doesn't support Geolocation
       }
+    },
+    radiusChanged(radius) {
+      this.getLocations(radius);
     }
   }),
   mounted() {
@@ -16996,9 +17010,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  getLocations(params) {
+  getLocations(radius) {
     return new Promise((resolve, reject) => {
-      axios.get(`/webapi/locations?lat=59.9307772&lng=30.3276762&radius=10000&category=0`, { params }).then(res => {
+      axios.get(`/webapi/locations`, {
+        params: {
+          radius,
+          lat: 59.9307772,
+          lng: 30.3276762,
+          category: 0
+        }
+      }).then(res => {
         resolve(res);
       });
     });
@@ -17194,9 +17215,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   updateCenter({ commit }, value) {
     commit('updateCenter', value);
   },
-  getLocations({ commit }, params) {
+  getLocations({ commit }, radius = 5000) {
     commit('promotions/isLoading', true, { root: true });
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(params).then(res => {
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(radius).then(res => {
       commit('updateLocations', res.data);
       commit('promotions/isLoading', false, { root: true });
     });
@@ -52762,7 +52783,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "center": _vm.center,
       "zoom": 12
     }
-  }, _vm._l((_vm.locations), function(m, index) {
+  }, [_vm._l((_vm.locations), function(m, index) {
     return _c('gmap-marker', {
       key: index,
       attrs: {
@@ -52797,7 +52818,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": ("/promotions/" + (m.promotion.id))
       }
     }, [_vm._v(_vm._s(m.promotion.promotionname))])])], 1)
-  }))], 1)])
+  }), _vm._v(" "), _c('gmap-circle', {
+    attrs: {
+      "center": _vm.center,
+      "editable": true,
+      "radius": 5000
+    },
+    on: {
+      "radius_changed": _vm.radiusChanged
+    }
+  })], 2)], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
