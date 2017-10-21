@@ -16103,16 +16103,66 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
-      infoShow: false
+      icons: {
+        1: {
+          type: "avto",
+          icon: "/img/map/" + "ic_01_avto.png"
+        },
+        2: {
+          type: "vse-dlya-doma",
+          icon: "/img/map/" + "ic_02_vse-dlya-doma.png"
+        },
+        3: {
+          type: "deti",
+          icon: "/img/map/" + "ic_03_deti.png"
+        },
+        4: {
+          type: "eda",
+          icon: "/img/map/" + "ic_04_eda.png"
+        },
+        5: {
+          type: "zoo",
+          icon: "/img/map/" + "ic_05_zoo.png"
+        },
+        6: {
+          type: "krasota-i-zdorovye",
+          icon: "/img/map/" + "ic_06_krasota-i-zdorovye.png"
+        },
+        7: {
+          type: "magaziny",
+          icon: "/img/map/" + "ic_07_magaziny.png"
+        },
+        8: {
+          type: "obuchenie",
+          icon: "/img/map/" + "ic_08_obuchenie.png"
+        },
+        9: {
+          type: "razvlecheniya",
+          icon: "/img/map/" + "ic_09_razvlecheniya.png"
+        },
+        10: {
+          type: "uslugi",
+          icon: "/img/map/" + "ic_10_uslugi.png"
+        },
+        default: {
+          icon: "/img/map/" + "ic_default.png"
+        }
+      }
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'locations'])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/promomap', ['updateCenter', 'getLocations'])),
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations"])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations"])),
   mounted() {
     this.getLocations();
   }
@@ -52693,7 +52743,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           lat: parseFloat(m.location[0]),
           lng: parseFloat(m.location[1])
         },
-        "clickable": true
+        "clickable": true,
+        "icon": (_vm.icons[m.promotion.category.parent_id]) ?
+          (_vm.icons[m.promotion.category.parent_id].icon) :
+          (_vm.icons['default'].icon)
       },
       on: {
         "click": function($event) {
@@ -52703,11 +52756,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           })
         }
       }
-    }, [(_vm.infoShow) ? _c('gmap-info-window', [_c('a', {
+    }, [_c('gmap-info-window', {
+      attrs: {
+        "opened": false
+      }
+    }, [_c('a', {
       attrs: {
         "href": ("/promotions/" + (m.promotion.id))
       }
-    }, [_vm._v(_vm._s(m.promotion.promotionname))])]) : _vm._e()], 1)
+    }, [_vm._v(_vm._s(m.promotion.promotionname))])])], 1)
   }))], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
