@@ -16103,11 +16103,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'markers'])),
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'locations'])),
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/promomap', ['updateCenter', 'getLocations'])),
   mounted() {
     this.getLocations();
@@ -17179,8 +17178,8 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   center(state) {
     return state.center;
   },
-  markers(state) {
-    return state.markers;
+  locations(state) {
+    return state.locations;
   }
 });
 
@@ -52675,26 +52674,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('gmap-map', {
     staticStyle: {
       "width": "100%",
-      "height": "300px"
+      "height": "500px"
     },
     attrs: {
       "center": _vm.center,
       "zoom": 12
     }
-  }, _vm._l((_vm.markers), function(m, index) {
+  }, _vm._l((_vm.locations), function(m, index) {
     return _c('gmap-marker', {
       key: index,
       attrs: {
-        "position": m.position,
-        "clickable": true,
-        "draggable": true
+        "position": {
+          lat: parseFloat(m.location[0]),
+          lng: parseFloat(m.location[1])
+        },
+        "clickable": true
       },
       on: {
         "click": function($event) {
           _vm.updateCenter(m.position)
         }
       }
-    }, [_c('gmap-info-window', [_vm._v(_vm._s(m.name))])], 1)
+    }, [_c('gmap-info-window', [_vm._v(_vm._s(m.promotion.promotionname))])], 1)
   }))], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true

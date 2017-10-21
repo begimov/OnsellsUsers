@@ -2,7 +2,7 @@ export default {
   center (state) {
     return state.center
   },
-  markers (state) {
-    return state.markers
+  locations (state) {
+    return state.locations
   },
 }

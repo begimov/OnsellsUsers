@@ -4,15 +4,14 @@
       <gmap-map
       :center="center"
       :zoom="12"
-      style="width: 100%; height: 300px">
+      style="width: 100%; height: 500px">
         <gmap-marker
         :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
+        v-for="(m, index) in locations"
+        :position="{lat:parseFloat(m.location[0]), lng:parseFloat(m.location[1])}"
         :clickable="true"
-        :draggable="true"
         @click="updateCenter(m.position)">
-        <gmap-info-window>{{ m.name }}</gmap-info-window>
+        <gmap-info-window>{{ m.promotion.promotionname }}</gmap-info-window>
         </gmap-marker>
       </gmap-map>
     </div>
@@ -25,7 +24,7 @@ export default {
   computed: {
     ...mapGetters('promotions/promomap', [
       'center',
-      'markers',
+      'locations',
     ]),
   },
   methods: {
