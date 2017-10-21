@@ -16169,9 +16169,25 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       this.updateCenter(position);
       this.showInfo = [];
       this.showInfo[index] = true;
+    },
+    locate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          this.updateCenter(pos);
+        }, function () {
+          // Browser supports Geolocation but smth went wrong
+        });
+      } else {
+        // Browser doesn't support Geolocation
+      }
     }
   }),
   mounted() {
+    this.locate();
     this.getLocations();
   }
 });
