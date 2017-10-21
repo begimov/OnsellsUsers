@@ -52695,7 +52695,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.updateCenter(m.position)
         }
       }
-    }, [_c('gmap-info-window', [_vm._v(_vm._s(m.promotion.promotionname))])], 1)
+    }, [_c('gmap-info-window', [_c('a', {
+      attrs: {
+        "href": ("/promotions/" + (m.promotion.id))
+      }
+    }, [_vm._v(_vm._s(m.promotion.promotionname))])])], 1)
   }))], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true

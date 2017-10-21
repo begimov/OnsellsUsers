@@ -11,7 +11,7 @@
         :position="{lat:parseFloat(m.location[0]), lng:parseFloat(m.location[1])}"
         :clickable="true"
         @click="updateCenter(m.position)">
-        <gmap-info-window>{{ m.promotion.promotionname }}</gmap-info-window>
+        <gmap-info-window><a :href="`/promotions/${m.promotion.id}`">{{ m.promotion.promotionname }}</a></gmap-info-window>
         </gmap-marker>
       </gmap-map>
     </div>
