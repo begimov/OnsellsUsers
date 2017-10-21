@@ -16115,55 +16115,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
-      showInfo: [],
-      icons: {
-        1: {
-          type: "avto",
-          icon: "/img/map/" + "ic_01_avto.png"
-        },
-        2: {
-          type: "vse-dlya-doma",
-          icon: "/img/map/" + "ic_02_vse-dlya-doma.png"
-        },
-        3: {
-          type: "deti",
-          icon: "/img/map/" + "ic_03_deti.png"
-        },
-        4: {
-          type: "eda",
-          icon: "/img/map/" + "ic_04_eda.png"
-        },
-        5: {
-          type: "zoo",
-          icon: "/img/map/" + "ic_05_zoo.png"
-        },
-        6: {
-          type: "krasota-i-zdorovye",
-          icon: "/img/map/" + "ic_06_krasota-i-zdorovye.png"
-        },
-        7: {
-          type: "magaziny",
-          icon: "/img/map/" + "ic_07_magaziny.png"
-        },
-        8: {
-          type: "obuchenie",
-          icon: "/img/map/" + "ic_08_obuchenie.png"
-        },
-        9: {
-          type: "razvlecheniya",
-          icon: "/img/map/" + "ic_09_razvlecheniya.png"
-        },
-        10: {
-          type: "uslugi",
-          icon: "/img/map/" + "ic_10_uslugi.png"
-        },
-        default: {
-          icon: "/img/map/" + "ic_default.png"
-        }
-      }
+      showInfo: []
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations"])),
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations", "icons"])),
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations"]), {
     clicked(index, position) {
       this.updateCenter(position);
@@ -17259,6 +17214,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   },
   locations(state) {
     return state.locations;
+  },
+  icons(state) {
+    return state.icons;
   }
 });
 
@@ -17305,7 +17263,52 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
   center: { lat: 59.9307772, lng: 30.3276762 },
-  locations: []
+  locations: [],
+  icons: {
+    1: {
+      type: "avto",
+      icon: "/img/map/" + "ic_01_avto.png"
+    },
+    2: {
+      type: "vse-dlya-doma",
+      icon: "/img/map/" + "ic_02_vse-dlya-doma.png"
+    },
+    3: {
+      type: "deti",
+      icon: "/img/map/" + "ic_03_deti.png"
+    },
+    4: {
+      type: "eda",
+      icon: "/img/map/" + "ic_04_eda.png"
+    },
+    5: {
+      type: "zoo",
+      icon: "/img/map/" + "ic_05_zoo.png"
+    },
+    6: {
+      type: "krasota-i-zdorovye",
+      icon: "/img/map/" + "ic_06_krasota-i-zdorovye.png"
+    },
+    7: {
+      type: "magaziny",
+      icon: "/img/map/" + "ic_07_magaziny.png"
+    },
+    8: {
+      type: "obuchenie",
+      icon: "/img/map/" + "ic_08_obuchenie.png"
+    },
+    9: {
+      type: "razvlecheniya",
+      icon: "/img/map/" + "ic_09_razvlecheniya.png"
+    },
+    10: {
+      type: "uslugi",
+      icon: "/img/map/" + "ic_10_uslugi.png"
+    },
+    default: {
+      icon: "/img/map/" + "ic_default.png"
+    }
+  }
 });
 
 /***/ }),

@@ -5,4 +5,7 @@ export default {
   locations (state) {
     return state.locations
   },
+  icons (state) {
+    return state.icons
+  },
 }
