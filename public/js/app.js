@@ -16106,6 +16106,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data() {
+    return {
+      infoShow: false
+    };
+  },
   computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/promomap', ['center', 'locations'])),
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/promomap', ['updateCenter', 'getLocations'])),
   mounted() {
@@ -52692,14 +52697,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.updateCenter(m.position)
+          _vm.updateCenter({
+            lat: parseFloat(m.location[0]),
+            lng: parseFloat(m.location[1])
+          })
         }
       }
-    }, [_c('gmap-info-window', [_c('a', {
+    }, [(_vm.infoShow) ? _c('gmap-info-window', [_c('a', {
       attrs: {
         "href": ("/promotions/" + (m.promotion.id))
       }
-    }, [_vm._v(_vm._s(m.promotion.promotionname))])])], 1)
+    }, [_vm._v(_vm._s(m.promotion.promotionname))])]) : _vm._e()], 1)
   }))], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true

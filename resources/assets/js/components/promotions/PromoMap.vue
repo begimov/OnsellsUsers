@@ -10,8 +10,8 @@
         v-for="(m, index) in locations"
         :position="{lat:parseFloat(m.location[0]), lng:parseFloat(m.location[1])}"
         :clickable="true"
-        @click="updateCenter(m.position)">
-        <gmap-info-window><a :href="`/promotions/${m.promotion.id}`">{{ m.promotion.promotionname }}</a></gmap-info-window>
+        @click="updateCenter({lat:parseFloat(m.location[0]), lng:parseFloat(m.location[1])})">
+        <gmap-info-window v-if="infoShow"><a :href="`/promotions/${m.promotion.id}`">{{ m.promotion.promotionname }}</a></gmap-info-window>
         </gmap-marker>
       </gmap-map>
     </div>
@@ -21,6 +21,11 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+  data() {
+    return {
+      infoShow: false
+    }
+  },
   computed: {
     ...mapGetters('promotions/promomap', [
       'center',
