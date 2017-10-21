@@ -13,9 +13,10 @@
         :icon="(icons[m.promotion.category.parent_id])
                 ? (icons[m.promotion.category.parent_id].icon)
                 : (icons['default'].icon)"
-        @click="updateCenter({lat:parseFloat(m.location[0]), lng:parseFloat(m.location[1])})">
+        @click="clicked(index, {lat:parseFloat(m.location[0]), lng:parseFloat(m.location[1])})">
         <gmap-info-window
-        :opened="false">
+        @closeclick = "showInfo = []"
+        :opened="showInfo[index] ? showInfo[index] : false">
         <a :href="`/promotions/${m.promotion.id}`">{{ m.promotion.promotionname }}</a>
         </gmap-info-window>
         </gmap-marker>
@@ -29,6 +30,7 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
+      showInfo: [],
       icons: {
         1: {
           type: "avto",
@@ -80,7 +82,12 @@ export default {
     ...mapGetters("promotions/promomap", ["center", "locations"])
   },
   methods: {
-    ...mapActions("promotions/promomap", ["updateCenter", "getLocations"])
+    ...mapActions("promotions/promomap", ["updateCenter", "getLocations"]),
+    clicked(index, position) {
+      this.updateCenter(position)
+      this.showInfo = []
+      this.showInfo[index] = true
+    }
   },
   mounted() {
     this.getLocations();

@@ -16109,11 +16109,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
+      showInfo: [],
       icons: {
         1: {
           type: "avto",
@@ -16162,7 +16164,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     };
   },
   computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations"])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations"])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations"]), {
+    clicked(index, position) {
+      this.updateCenter(position);
+      this.showInfo = [];
+      this.showInfo[index] = true;
+    }
+  }),
   mounted() {
     this.getLocations();
   }
@@ -52750,7 +52758,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.updateCenter({
+          _vm.clicked(index, {
             lat: parseFloat(m.location[0]),
             lng: parseFloat(m.location[1])
           })
@@ -52758,7 +52766,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('gmap-info-window', {
       attrs: {
-        "opened": false
+        "opened": _vm.showInfo[index] ? _vm.showInfo[index] : false
+      },
+      on: {
+        "closeclick": function($event) {
+          _vm.showInfo = []
+        }
       }
     }, [_c('a', {
       attrs: {
