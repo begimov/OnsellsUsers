@@ -16121,18 +16121,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
-      showInfo: []
+      showInfo: [],
+      radius: 5000
     };
   },
   computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations", "icons"])),
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations"]), {
     clicked(index, position) {
-      this.updateCenter(position);
       this.showInfo = [];
       this.showInfo[index] = true;
     },
@@ -16152,12 +16160,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }
     },
     radiusChanged(radius) {
-      this.getLocations(radius);
+      this.radius = radius;
+      this.getLocations({ center: this.center, radius: this.radius });
+    },
+    centerChanged(e) {
+      const newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
+      this.updateCenter(newCenter);
+      this.getLocations({ center: newCenter, radius: this.radius });
     }
   }),
   mounted() {
     this.locate();
-    this.getLocations();
+    this.getLocations({ center: this.center, radius: this.radius });
   }
 });
 
@@ -17010,13 +17024,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  getLocations(radius) {
+  getLocations(circleObj) {
     return new Promise((resolve, reject) => {
       axios.get(`/webapi/locations`, {
         params: {
-          radius,
-          lat: 59.9307772,
-          lng: 30.3276762,
+          radius: circleObj.radius,
+          lat: circleObj.center.lat,
+          lng: circleObj.center.lng,
           category: 0
         }
       }).then(res => {
@@ -17215,9 +17229,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   updateCenter({ commit }, value) {
     commit('updateCenter', value);
   },
-  getLocations({ commit }, radius = 5000) {
+  getLocations({ commit }, circleObj) {
     commit('promotions/isLoading', true, { root: true });
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(radius).then(res => {
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(circleObj).then(res => {
       commit('updateLocations', res.data);
       commit('promotions/isLoading', false, { root: true });
     });
@@ -52815,17 +52829,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('a', {
       attrs: {
-        "href": ("/promotions/" + (m.promotion.id))
+        "href": ("/promotions/" + (m.promotion.id)),
+        "target": "_blank"
       }
     }, [_vm._v(_vm._s(m.promotion.promotionname))])])], 1)
   }), _vm._v(" "), _c('gmap-circle', {
     attrs: {
       "center": _vm.center,
+      "draggable": true,
       "editable": true,
-      "radius": 5000
+      "radius": _vm.radius,
+      "options": {
+        strokeColor: '#2ea1a6',
+        strokeOpacity: 0.8,
+        strokeWeight: 3,
+        fillColor: '#2ea1a6',
+        fillOpacity: 0.1
+      }
     },
     on: {
-      "radius_changed": _vm.radiusChanged
+      "radius_changed": _vm.radiusChanged,
+      "dragend": _vm.centerChanged
     }
   })], 2)], 1)])
 },staticRenderFns: []}

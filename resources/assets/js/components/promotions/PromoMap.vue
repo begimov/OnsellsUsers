@@ -19,16 +19,24 @@
         <gmap-info-window
         @closeclick = "showInfo = []"
         :opened="showInfo[index] ? showInfo[index] : false">
-        <a :href="`/promotions/${m.promotion.id}`">{{ m.promotion.promotionname }}</a>
+        <a :href="`/promotions/${m.promotion.id}`" target="_blank">{{ m.promotion.promotionname }}</a>
         </gmap-info-window>
         
         </gmap-marker>
 
         <gmap-circle
         :center="center"
+        :draggable="true"
         :editable="true"
-        :radius="5000"
-        @radius_changed="radiusChanged">
+        :radius="radius"
+        :options="{
+        strokeColor: '#2ea1a6',
+        strokeOpacity: 0.8,
+        strokeWeight: 3,
+        fillColor: '#2ea1a6',
+        fillOpacity: 0.1}"
+        @radius_changed="radiusChanged"
+        @dragend="centerChanged">
         </gmap-circle>
 
       </gmap-map>
@@ -41,7 +49,8 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      showInfo: []
+      showInfo: [],
+      radius: 5000
     };
   },
   computed: {
@@ -50,7 +59,6 @@ export default {
   methods: {
     ...mapActions("promotions/promomap", ["updateCenter", "getLocations"]),
     clicked(index, position) {
-      this.updateCenter(position);
       this.showInfo = [];
       this.showInfo[index] = true;
     },
@@ -73,12 +81,18 @@ export default {
       }
     },
     radiusChanged(radius) {
-      this.getLocations(radius)
+      this.radius = radius;
+      this.getLocations({center: this.center, radius: this.radius});
+    },
+    centerChanged(e) {
+      const newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
+      this.updateCenter(newCenter);
+      this.getLocations({center: newCenter, radius: this.radius});
     }
   },
   mounted() {
     this.locate();
-    this.getLocations();
+    this.getLocations({center: this.center, radius: this.radius});
   }
 };
 </script>

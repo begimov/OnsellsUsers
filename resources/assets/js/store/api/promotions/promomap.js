@@ -1,11 +1,11 @@
 export default {
-  getLocations(radius) {
+  getLocations(circleObj) {
     return new Promise((resolve, reject) => {
       axios.get(`/webapi/locations`, {
         params: {
-          radius,
-          lat: 59.9307772,
-          lng: 30.3276762,
+          radius: circleObj.radius,
+          lat: circleObj.center.lat,
+          lng: circleObj.center.lng,
           category: 0
         }
       }).then(res => {
