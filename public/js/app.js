@@ -16203,14 +16203,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['promotion', 'center'],
+  props: ["promotion", "center"],
   data() {
     return {
-      //
+      distanceRangeFlag: 0
     };
   },
   computed: {
@@ -16220,8 +16222,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         const lat = locations[0].location[0];
         const lng = locations[0].location[1];
         const distance = __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
-        return distance > 999 ? Math.round(distance / 10) / 100 + ' км' : Math.round(distance) + ' м';
+        this.distanceRangeFlag = distance < 4999 ? 0 : 1;
+        return distance;
       }
+    },
+    distanceClasses() {
+      return {
+        label: true,
+        "label-success": this.distanceRangeFlag === 0,
+        "label-danger": this.distanceRangeFlag === 1
+      };
     }
   },
   methods: {
@@ -16229,7 +16239,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   filters: {
     strLimit: function (str, length) {
-      if (!str) return '';
+      if (!str) return "";
       str = str.toString();
       return str.substring(0, length);
     }
@@ -52981,8 +52991,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "target": "_blank"
     }
   }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
-    staticClass: "label label-primary"
-  }, [_vm._v("Расстояние: " + _vm._s(_vm.distanceFromCenter))])]) : _vm._e()])])])
+    class: _vm.distanceClasses
+  }, [_vm._v("Расстояние: " + _vm._s(_vm.distanceFromCenter > 999 ?
+    Math.round(_vm.distanceFromCenter / 10) / 100 + " км" :
+    Math.round(_vm.distanceFromCenter) + " м"))])]) : _vm._e()])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
