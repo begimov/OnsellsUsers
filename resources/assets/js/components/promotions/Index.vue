@@ -31,7 +31,8 @@ export default {
     ...mapGetters("promotions", [
       "isActiveComponentCatalog",
       "isActiveComponentPromoMap",
-      "isLoading"
+      "isLoading",
+      "center"
     ])
   },
   methods: {

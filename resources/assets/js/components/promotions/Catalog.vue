@@ -7,9 +7,10 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <promo-card :promotion="promotion" v-for="promotion in promotions" :key="promotion.id"></promo-card>
+        <promo-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-card>
       </div>
     </div>
+    {{ center }}
   </div>
 </template>
 
@@ -27,6 +28,7 @@ export default {
     ...mapGetters('promotions/catalog', [
       'getSearchQuery',
       'promotions',
+      'center'
     ]),
     'searchQuery': {
       get () {

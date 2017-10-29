@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  props: ['promotion'],
+  props: ['promotion', 'center'],
   data () {
     return {
       //

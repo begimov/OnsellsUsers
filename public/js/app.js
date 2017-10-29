@@ -15997,6 +15997,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -16007,7 +16008,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       timer: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['getSearchQuery', 'promotions']), {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['getSearchQuery', 'promotions', 'center']), {
     'searchQuery': {
       get() {
         return this.getSearchQuery;
@@ -16071,7 +16072,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading"])),
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading", "center"])),
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions", ["switchActiveComponent", "updateCenter"]), {
     locate() {
       if (navigator.geolocation) {
@@ -16206,7 +16207,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['promotion'],
+  props: ['promotion', 'center'],
   data() {
     return {
       //
@@ -17114,6 +17115,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   },
   promotions(state) {
     return state.promotions;
+  },
+  center(state, getters, rootState, rootGetters) {
+    return rootGetters['promotions/center'];
   }
 });
 
@@ -52903,10 +52907,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('promo-card', {
       key: promotion.id,
       attrs: {
-        "promotion": promotion
+        "promotion": promotion,
+        "center": _vm.center
       }
     })
-  }))])])
+  }))]), _vm._v("\n  " + _vm._s(_vm.center) + "\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

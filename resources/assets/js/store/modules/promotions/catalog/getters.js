@@ -5,4 +5,7 @@ export default {
   promotions (state) {
     return state.promotions
   },
+  center (state, getters, rootState, rootGetters) {
+    return rootGetters['promotions/center']
+  },
 }
