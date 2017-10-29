@@ -7,53 +7,52 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <promo-card :promotion="promotion" v-for="promotion in promotions" :key="promotion.id"></promo-card>
+        <promo-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from "vuex";
+
 export default {
-  data () {
+  data() {
     return {
-      timer: 0,
-    }
+      timer: 0
+    };
   },
   computed: {
-    ...mapGetters('promotions/catalog', [
-      'isActiveComponentCatalog',
-      'isActiveComponentPromoMap',
-      'getSearchQuery',
-      'promotions',
+    ...mapGetters("promotions/catalog", [
+      "getSearchQuery",
+      "promotions",
+      "center"
     ]),
-    'searchQuery': {
-      get () {
-        return this.getSearchQuery
+    searchQuery: {
+      get() {
+        return this.getSearchQuery;
       },
-      set (value) {
-        this.updateSearchQuery(value)
+      set(value) {
+        this.updateSearchQuery(value);
       }
-    },
+    }
   },
   methods: {
-    ...mapActions('promotions/catalog', [
-      'switchActiveComponent',
-      'updateSearchQuery',
-      'getPromotions',
-    ]),
-    textSearch () {
+    ...mapActions("promotions/catalog", ["updateSearchQuery", "getPromotions"]),
+    textSearch() {
       clearTimeout(this.timer);
-      this.timer = setTimeout(function(){
+      this.timer = setTimeout(
+        function() {
           this.getPromotions({
             searchQuery: this.searchQuery
-          })
-      }.bind(this), 1000)
-    },
+          });
+        }.bind(this),
+        1000
+      );
+    }
   },
   mounted() {
-    this.getPromotions()
+    this.getPromotions();
   }
-}
+};
 </script>

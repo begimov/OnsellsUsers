@@ -8,4 +8,7 @@ export default {
   isLoading (state) {
     return state.isLoading
   },
+  center (state) {
+    return state.center
+  },
 }

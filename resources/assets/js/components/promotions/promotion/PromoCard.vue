@@ -12,34 +12,55 @@
           </h4>
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
+          <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter > 999 
+            ? Math.round(distanceFromCenter / 10) / 100 + " км"
+            : Math.round(distanceFromCenter) + " м" }}</span></h4>
         </div>
       </div>
     </div>
 </template>
 
 <script>
+import helpers from "../../../helpers";
+
 export default {
-  props: ['promotion'],
-  data () {
+  props: ["promotion", "center"],
+  data() {
     return {
-      //
-    }
+      distanceRangeFlag: 0
+    };
   },
   computed: {
-    //
+    distanceFromCenter() {
+      const locations = this.promotion.locations;
+      if (locations.length) {
+        const lat = locations[0].location[0];
+        const lng = locations[0].location[1];
+        const distance = helpers.geo.distance(this.center, { lat, lng });
+        this.distanceRangeFlag = distance < 4999 ? 0 : 1
+        return distance;
+      }
+    },
+    distanceClasses() {
+      return {
+        label: true,
+        "label-success": this.distanceRangeFlag === 0,
+        "label-danger": this.distanceRangeFlag === 1
+      };
+    }
   },
   methods: {
     //
   },
   filters: {
-    strLimit: function (str, length) {
-      if (!str) return ''
-      str = str.toString()
-      return str.substring(0, length)
+    strLimit: function(str, length) {
+      if (!str) return "";
+      str = str.toString();
+      return str.substring(0, length);
     }
   },
   mounted() {
     //
   }
-}
+};
 </script>

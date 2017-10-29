@@ -5,4 +5,7 @@ export default {
   isLoading (state, value) {
     state.isLoading = value
   },
+  updateCenter (state, value) {
+      state.center = value
+  },
 }
