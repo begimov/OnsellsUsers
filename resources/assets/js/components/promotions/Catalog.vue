@@ -23,8 +23,6 @@ export default {
   },
   computed: {
     ...mapGetters('promotions/catalog', [
-      'isActiveComponentCatalog',
-      'isActiveComponentPromoMap',
       'getSearchQuery',
       'promotions',
     ]),

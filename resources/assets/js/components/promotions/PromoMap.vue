@@ -62,24 +62,6 @@ export default {
       this.showInfo = [];
       this.showInfo[index] = true;
     },
-    locate() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          position => {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            this.updateCenter(pos);
-          },
-          function() {
-            // Browser supports Geolocation but smth went wrong
-          }
-        );
-      } else {
-        // Browser doesn't support Geolocation
-      }
-    },
     radiusChanged(radius) {
       this.radius = radius;
       this.getLocations({center: this.center, radius: this.radius});
@@ -91,7 +73,6 @@ export default {
     }
   },
   mounted() {
-    this.locate();
     this.getLocations({center: this.center, radius: this.radius});
   }
 };

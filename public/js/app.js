@@ -16004,7 +16004,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       timer: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['isActiveComponentCatalog', 'isActiveComponentPromoMap', 'getSearchQuery', 'promotions']), {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['getSearchQuery', 'promotions']), {
     'searchQuery': {
       get() {
         return this.getSearchQuery;
@@ -16067,10 +16067,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions', ['isActiveComponentCatalog', 'isActiveComponentPromoMap', 'isLoading'])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions', ['switchActiveComponent'])),
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading"])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions", ["switchActiveComponent", "updateCenter"]), {
+    locate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          this.updateCenter(pos);
+        }, function () {
+          // Browser supports Geolocation but smth went wrong
+        });
+      } else {
+        // Browser doesn't support Geolocation
+      }
+    }
+  }),
   mounted() {
-    //
+    this.locate();
   }
 });
 
@@ -16144,21 +16160,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       this.showInfo = [];
       this.showInfo[index] = true;
     },
-    locate() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          this.updateCenter(pos);
-        }, function () {
-          // Browser supports Geolocation but smth went wrong
-        });
-      } else {
-        // Browser doesn't support Geolocation
-      }
-    },
     radiusChanged(radius) {
       this.radius = radius;
       this.getLocations({ center: this.center, radius: this.radius });
@@ -16170,7 +16171,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }
   }),
   mounted() {
-    this.locate();
     this.getLocations({ center: this.center, radius: this.radius });
   }
 });
@@ -17072,6 +17072,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 /* harmony default export */ __webpack_exports__["a"] = ({
   switchActiveComponent({ commit }, value) {
     commit('switchActiveComponent', value);
+  },
+  updateCenter({ commit }, value) {
+    commit('updateCenter', value);
   }
 });
 
@@ -17214,6 +17217,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   },
   isLoading(state, value) {
     state.isLoading = value;
+  },
+  updateCenter(state, value) {
+    state.center = value;
   }
 });
 
@@ -17353,7 +17359,8 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
   isLoading: false,
-  activeComponent: 'catalog'
+  activeComponent: 'catalog',
+  center: { lat: 59.9307772, lng: 30.3276762 }
 });
 
 /***/ }),
