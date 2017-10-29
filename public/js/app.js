@@ -17177,6 +17177,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   },
   isLoading(state) {
     return state.isLoading;
+  },
+  center(state) {
+    return state.center;
   }
 });
 
