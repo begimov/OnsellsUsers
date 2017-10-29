@@ -15,6 +15,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import helpers from '../../helpers'
+
 export default {
   data () {
     return {
@@ -51,6 +53,7 @@ export default {
   },
   mounted() {
     this.getPromotions()
+    console.log(helpers.geo.distance({lat: 59.9332846, lng: 30.3148440},{lat: 59.9235655, lng: 30.3294218}))
   }
 }
 </script>

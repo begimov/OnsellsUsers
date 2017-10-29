@@ -15979,6 +15979,7 @@ module.exports = function spread(callback) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(292);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -15996,6 +15997,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16026,6 +16029,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   }),
   mounted() {
     this.getPromotions();
+    console.log(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance({ lat: 59.9332846, lng: 30.3148440 }, { lat: 59.9235655, lng: 30.3294218 }));
   }
 });
 
@@ -54122,6 +54126,48 @@ function install(Vue, options) {
 __webpack_require__(89);
 module.exports = __webpack_require__(90);
 
+
+/***/ }),
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__geo__ = __webpack_require__(293);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  geo: __WEBPACK_IMPORTED_MODULE_0__geo__["a" /* default */]
+});
+
+/***/ }),
+/* 293 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    distance(p1, p2) {
+        const R = 6371e3;
+        const ps1 = this.toRadians(p1.lat);
+        const ps2 = this.toRadians(p2.lat);
+        const dp = this.toRadians(p2.lat - p1.lat);
+        const dl = this.toRadians(p2.lng - p1.lng);
+
+        const a = Math.sin(dp / 2) * Math.sin(dp / 2) + Math.cos(ps1) * Math.cos(ps2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return R * c;
+    },
+    toRadians(ang) {
+        return Math.PI * ang / 180;
+    }
+});
 
 /***/ })
 /******/ ]);
