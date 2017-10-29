@@ -12,7 +12,7 @@
           </h4>
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
-          <h4 v-if="distanceFromCenter"><span class="label label-primary">Расстояние {{ distanceFromCenter }}</span></h4>
+          <h4 v-if="distanceFromCenter"><span class="label label-primary">Расстояние: {{ distanceFromCenter }}</span></h4>
         </div>
       </div>
     </div>
@@ -34,7 +34,8 @@ export default {
       if (locations.length) {
         const lat = locations[0].location[0]
         const lng = locations[0].location[1]
-        return Math.round(helpers.geo.distance(this.center, { lat, lng }));
+        const distance = helpers.geo.distance(this.center, { lat, lng })
+        return distance > 999 ? Math.round(distance / 10) / 100 + ' км' : Math.round(distance) + ' м'
       }
     }
   },
