@@ -15997,7 +15997,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -16008,8 +16007,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       timer: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])('promotions/catalog', ['getSearchQuery', 'promotions', 'center']), {
-    'searchQuery': {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/catalog", ["getSearchQuery", "promotions", "center"]), {
+    searchQuery: {
       get() {
         return this.getSearchQuery;
       },
@@ -16018,7 +16017,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }
     }
   }),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])('promotions/catalog', ['updateSearchQuery', 'getPromotions']), {
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/catalog", ["updateSearchQuery", "getPromotions"]), {
     textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(function () {
@@ -16026,11 +16025,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           searchQuery: this.searchQuery
         });
       }.bind(this), 1000);
+    },
+    distanceFromCenter(promotion) {
+      if (promotion.locations.length) {
+        const lat = promotion.locations[0].location[0];
+        const lng = promotion.locations[0].location[1];
+        return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+      }
     }
   }),
   mounted() {
     this.getPromotions();
-    console.log(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance({ lat: 59.9332846, lng: 30.3148440 }, { lat: 59.9235655, lng: 30.3294218 }));
   }
 });
 
@@ -16205,9 +16210,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['promotion', 'center'],
+  props: ['promotion', 'distanceFromCenter'],
   data() {
     return {
       //
@@ -52908,10 +52914,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       key: promotion.id,
       attrs: {
         "promotion": promotion,
-        "center": _vm.center
+        "distanceFromCenter": _vm.distanceFromCenter(promotion)
       }
     })
-  }))]), _vm._v("\n  " + _vm._s(_vm.center) + "\n")])
+  }))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -52972,7 +52978,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")])])])])
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v("\n        " + _vm._s(_vm.distanceFromCenter) + "\n      ")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

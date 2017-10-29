@@ -12,6 +12,7 @@
           </h4>
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
+          {{distanceFromCenter}}
         </div>
       </div>
     </div>
@@ -19,7 +20,7 @@
 
 <script>
 export default {
-  props: ['promotion', 'center'],
+  props: ['promotion', 'distanceFromCenter'],
   data () {
     return {
       //

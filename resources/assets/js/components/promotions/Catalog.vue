@@ -7,55 +7,60 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <promo-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-card>
+        <promo-card :promotion="promotion" :distanceFromCenter="distanceFromCenter(promotion)" v-for="promotion in promotions" :key="promotion.id"></promo-card>
       </div>
     </div>
-    {{ center }}
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-import helpers from '../../helpers'
+import { mapActions, mapGetters } from "vuex";
+import helpers from "../../helpers";
 
 export default {
-  data () {
+  data() {
     return {
-      timer: 0,
-    }
+      timer: 0
+    };
   },
   computed: {
-    ...mapGetters('promotions/catalog', [
-      'getSearchQuery',
-      'promotions',
-      'center'
+    ...mapGetters("promotions/catalog", [
+      "getSearchQuery",
+      "promotions",
+      "center"
     ]),
-    'searchQuery': {
-      get () {
-        return this.getSearchQuery
+    searchQuery: {
+      get() {
+        return this.getSearchQuery;
       },
-      set (value) {
-        this.updateSearchQuery(value)
+      set(value) {
+        this.updateSearchQuery(value);
       }
-    },
+    }
   },
   methods: {
-    ...mapActions('promotions/catalog', [
-      'updateSearchQuery',
-      'getPromotions',
-    ]),
-    textSearch () {
+    ...mapActions("promotions/catalog", ["updateSearchQuery", "getPromotions"]),
+    textSearch() {
       clearTimeout(this.timer);
-      this.timer = setTimeout(function(){
+      this.timer = setTimeout(
+        function() {
           this.getPromotions({
             searchQuery: this.searchQuery
-          })
-      }.bind(this), 1000)
+          });
+        }.bind(this),
+        1000
+      );
     },
+    distanceFromCenter(promotion) {
+      if (promotion.locations.length) {
+        const lat = promotion.locations[0].location[0]
+        const lng = promotion.locations[0].location[1]
+        return helpers.geo.distance(this.center, { lat, lng });
+      }
+    }
   },
   mounted() {
-    this.getPromotions()
-    console.log(helpers.geo.distance({lat: 59.9332846, lng: 30.3148440},{lat: 59.9235655, lng: 30.3294218}))
+    this.getPromotions();
   }
-}
+};
 </script>
