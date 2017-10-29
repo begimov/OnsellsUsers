@@ -12,9 +12,7 @@
           </h4>
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
-          <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter > 999 
-            ? Math.round(distanceFromCenter / 10) / 100 + " км"
-            : Math.round(distanceFromCenter) + " м" }}</span></h4>
+          <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter | formatDistance }}</span></h4>
         </div>
       </div>
     </div>
@@ -37,7 +35,7 @@ export default {
         const lat = locations[0].location[0];
         const lng = locations[0].location[1];
         const distance = helpers.geo.distance(this.center, { lat, lng });
-        this.distanceRangeFlag = distance < 4999 ? 0 : 1
+        this.distanceRangeFlag = distance < 4999 ? 0 : 1;
         return distance;
       }
     },
@@ -57,6 +55,11 @@ export default {
       if (!str) return "";
       str = str.toString();
       return str.substring(0, length);
+    },
+    formatDistance: function(distance) {
+      return distance > 999
+        ? Math.round(distance / 10) / 100 + " км"
+        : Math.round(distance) + " м";
     }
   },
   mounted() {
