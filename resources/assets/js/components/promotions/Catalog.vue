@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <promo-card :promotion="promotion" :distanceFromCenter="distanceFromCenter(promotion)" v-for="promotion in promotions" :key="promotion.id"></promo-card>
+        <promo-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-card>
       </div>
     </div>
   </div>
@@ -15,7 +15,6 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import helpers from "../../helpers";
 
 export default {
   data() {
@@ -50,13 +49,6 @@ export default {
         }.bind(this),
         1000
       );
-    },
-    distanceFromCenter(promotion) {
-      if (promotion.locations.length) {
-        const lat = promotion.locations[0].location[0]
-        const lng = promotion.locations[0].location[1]
-        return helpers.geo.distance(this.center, { lat, lng });
-      }
     }
   },
   mounted() {

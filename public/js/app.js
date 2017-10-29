@@ -15979,7 +15979,6 @@ module.exports = function spread(callback) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(292);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -15997,7 +15996,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-
 
 
 
@@ -16025,13 +16023,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           searchQuery: this.searchQuery
         });
       }.bind(this), 1000);
-    },
-    distanceFromCenter(promotion) {
-      if (promotion.locations.length) {
-        const lat = promotion.locations[0].location[0];
-        const lng = promotion.locations[0].location[1];
-        return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
-      }
     }
   }),
   mounted() {
@@ -16191,6 +16182,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(292);
 //
 //
 //
@@ -16212,15 +16204,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['promotion', 'distanceFromCenter'],
+  props: ['promotion', 'center'],
   data() {
     return {
       //
     };
   },
   computed: {
-    //
+    distanceFromCenter() {
+      const locations = this.promotion.locations;
+      if (locations.length) {
+        const lat = locations[0].location[0];
+        const lng = locations[0].location[1];
+        return __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+      }
+    }
   },
   methods: {
     //
@@ -52914,7 +52915,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       key: promotion.id,
       attrs: {
         "promotion": promotion,
-        "distanceFromCenter": _vm.distanceFromCenter(promotion)
+        "center": _vm.center
       }
     })
   }))])])
@@ -52978,7 +52979,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v("\n        " + _vm._s(_vm.distanceFromCenter) + "\n      ")])])])
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), _c('p', [_c('span', {
+    staticClass: "label label-primary"
+  }, [_vm._v("Расстояние " + _vm._s(_vm.distanceFromCenter))])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
