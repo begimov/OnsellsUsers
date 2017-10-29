@@ -12,7 +12,7 @@
           </h4>
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
-          <p><span class="label label-primary">Расстояние {{ distanceFromCenter }}</span></p>
+          <h4 v-if="distanceFromCenter"><span class="label label-primary">Расстояние {{ distanceFromCenter }}</span></h4>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ export default {
       if (locations.length) {
         const lat = locations[0].location[0]
         const lng = locations[0].location[1]
-        return helpers.geo.distance(this.center, { lat, lng });
+        return Math.round(helpers.geo.distance(this.center, { lat, lng }));
       }
     }
   },

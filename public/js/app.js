@@ -16219,7 +16219,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (locations.length) {
         const lat = locations[0].location[0];
         const lng = locations[0].location[1];
-        return __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+        return Math.round(__WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng }));
       }
     }
   },
@@ -52979,9 +52979,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), _c('p', [_c('span', {
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
     staticClass: "label label-primary"
-  }, [_vm._v("Расстояние " + _vm._s(_vm.distanceFromCenter))])])])])])
+  }, [_vm._v("Расстояние " + _vm._s(_vm.distanceFromCenter))])]) : _vm._e()])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
