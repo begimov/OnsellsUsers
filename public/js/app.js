@@ -17168,15 +17168,24 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(121);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   updateSearchQuery({ commit }, value) {
     commit('updateSearchQuery', value);
   },
-  getPromotions({ commit }, params) {
+  getPromotions({ commit, state }, params) {
     commit('promotions/isLoading', true, { root: true });
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
+      if (state.searchQuery) {
+        const newPromotions = _.mapValues(res.data.promotions, function (promotion) {
+          promotion.distance = 1;
+          return promotion;
+        });
+        console.log(newPromotions);
+      }
       commit('updatePromotions', res.data.promotions);
       commit('promotions/isLoading', false, { root: true });
     });
