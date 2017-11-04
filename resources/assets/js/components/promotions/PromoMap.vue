@@ -1,6 +1,11 @@
 <template>
   <div>
     <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <search v-model="searchQuery" v-on:input="textSearch"></search>
+      </div>
+    </div>
+    <div class="row">
       <gmap-map
       :center="center"
       :zoom="12"
@@ -54,10 +59,18 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("promotions/promomap", ["center", "locations", "icons"])
+    ...mapGetters("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]),
+    searchQuery: {
+      get() {
+        return this.getSearchQuery;
+      },
+      set(value) {
+        this.updateSearchQuery(value);
+      }
+    }
   },
   methods: {
-    ...mapActions("promotions/promomap", ["updateCenter", "getLocations"]),
+    ...mapActions("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]),
     clicked(index, position) {
       this.showInfo = [];
       this.showInfo[index] = true;
@@ -82,17 +95,29 @@ export default {
     },
     radiusChanged(radius) {
       this.radius = radius;
-      this.getLocations({center: this.center, radius: this.radius});
+      this.reloadLocations();
     },
     centerChanged(e) {
       const newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
       this.updateCenter(newCenter);
-      this.getLocations({center: newCenter, radius: this.radius});
+      this.reloadLocations();
+    },
+    textSearch() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(
+        function() {
+          this.reloadLocations();
+        }.bind(this),
+        1000
+      );
+    },
+    reloadLocations() {
+      this.getLocations({center: this.center, radius: this.radius, searchQuery: this.searchQuery});
     }
   },
   mounted() {
     this.locate();
-    this.getLocations({center: this.center, radius: this.radius});
+    this.reloadLocations();
   }
 };
 </script>

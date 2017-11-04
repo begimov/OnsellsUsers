@@ -7,5 +7,8 @@ export default {
   },
   icons (state) {
     return state.icons
-  }
+  },
+  getSearchQuery (state) {
+    return state.searchQuery
+  },
 }
