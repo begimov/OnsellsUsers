@@ -13,7 +13,11 @@
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
           <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter | formatDistance }}</span></h4>
-          <h4 ><span>Популярность: <span v-for="application in promotion.applications" :key="application.id"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span></span></h4>
+          <h4>
+            <span v-for="n in popularity" :key="n">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            </span>
+          </h4>
         </div>
       </div>
     </div>
@@ -46,6 +50,10 @@ export default {
         "label-success": this.distanceRangeFlag === 0,
         "label-danger": this.distanceRangeFlag === 1
       };
+    },
+    popularity() {
+      const applicationsCount = this.promotion.applications.length
+      return applicationsCount <= 5 ? applicationsCount : 5
     }
   },
   methods: {

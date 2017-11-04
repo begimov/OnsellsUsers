@@ -16220,6 +16220,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -16247,6 +16251,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         "label-success": this.distanceRangeFlag === 0,
         "label-danger": this.distanceRangeFlag === 1
       };
+    },
+    popularity() {
+      const applicationsCount = this.promotion.applications.length;
+      return applicationsCount <= 5 ? applicationsCount : 5;
     }
   },
   methods: {
@@ -53045,16 +53053,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
     class: _vm.distanceClasses
-  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', [_c('span', [_vm._v("Популярность: "), _vm._l((_vm.promotion.applications), function(application) {
+  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', _vm._l((_vm.popularity), function(n) {
     return _c('span', {
-      key: application.id
+      key: n
     }, [_c('span', {
       staticClass: "glyphicon glyphicon-star",
       attrs: {
         "aria-hidden": "true"
       }
     })])
-  })], 2)])])])])
+  }))])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

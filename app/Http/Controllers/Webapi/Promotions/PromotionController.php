@@ -11,12 +11,17 @@ class PromotionController extends Controller
     public function index(Request $request)
     {
         $query = $request->searchQuery;
+        
         $promotions = Promotion::where('company', 'like', "%{$query}%")
         ->orWhere('promotionname', 'like', "%{$query}%")
         ->orWhere('promotiondesc', 'like', "%{$query}%")
         ->with(['category', 'images', 'mediumImage', 'locations', 'applications'])
-        ->limit(100)
-        ->get();
+        ->get()
+        ->sortBy(function($promotion)
+        {
+            return $promotion->applications->count();
+        })->slice(0, 100);
+
         return response()->json([
             'promotions' => $promotions,
         ]);
