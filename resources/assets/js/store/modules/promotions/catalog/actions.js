@@ -7,14 +7,11 @@ export default {
   },
   getPromotions({ commit, state, rootGetters }, params) {
     commit('promotions/isLoading', true, { root: true })
-
     api.catalog.getPromotions(params).then(res => {
-
       if (state.searchQuery) {
-        const newPromotions = _.sortBy(sortByDistance(
-          res.data.promotions, rootGetters['promotions/center']),
+        const newPromotions = _.sortBy(
+          sortByDistance(res.data.promotions, rootGetters['promotions/center']),
           [function (o) { return o.distance; }])
-
         commit('updatePromotions', newPromotions)
       } else {
         commit('updatePromotions', res.data.promotions)

@@ -17178,14 +17178,11 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   },
   getPromotions({ commit, state, rootGetters }, params) {
     commit('promotions/isLoading', true, { root: true });
-
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
-
       if (state.searchQuery) {
         const newPromotions = _.sortBy(sortByDistance(res.data.promotions, rootGetters['promotions/center']), [function (o) {
           return o.distance;
         }]);
-
         commit('updatePromotions', newPromotions);
       } else {
         commit('updatePromotions', res.data.promotions);
