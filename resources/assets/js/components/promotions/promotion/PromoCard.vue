@@ -13,6 +13,7 @@
           <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
           <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
           <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter | formatDistance }}</span></h4>
+          <h4 ><span>Популярность: {{ promotion.applications.length }}</span></h4>
         </div>
       </div>
     </div>
