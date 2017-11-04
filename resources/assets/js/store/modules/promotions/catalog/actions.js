@@ -10,18 +10,19 @@ export default {
     api.catalog.getPromotions(params).then(res => {
       if (state.searchQuery) {
         const newPromotions = _.sortBy(
-          sortByDistance(res.data.promotions, rootGetters['promotions/center']),
+          calculateDistance(res.data.promotions, rootGetters['promotions/center']),
           [function (o) { return o.distance; }])
         commit('updatePromotions', newPromotions)
       } else {
-        commit('updatePromotions', res.data.promotions)
+        const newPromotions = _.sortBy(res.data.promotions, [function (o) { return o.applications.length; }])
+        commit('updatePromotions', newPromotions.reverse())
       }
       commit('promotions/isLoading', false, { root: true })
     })
   }
 }
 
-const sortByDistance = (promotions, center) => {
+const calculateDistance = (promotions, center) => {
   return _.mapValues(promotions, function (promotion) {
     if (promotion.locations.length) {
       const lat = promotion.locations[0].location[0]
