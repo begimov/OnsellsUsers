@@ -53045,7 +53045,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
     class: _vm.distanceClasses
-  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', [_c('span', [_vm._v("Популярность: " + _vm._s(_vm.promotion.applications.length))])])])])])
+  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', [_c('span', [_vm._v("Популярность: "), _vm._l((_vm.promotion.applications), function(application) {
+    return _c('span', {
+      key: application.id
+    }, [_c('span', {
+      staticClass: "glyphicon glyphicon-star",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    })])
+  })], 2)])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
