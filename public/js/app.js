@@ -16161,6 +16161,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       this.showInfo = [];
       this.showInfo[index] = true;
     },
+    locate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          this.updateCenter(pos);
+        }, function () {
+          // Browser supports Geolocation but smth went wrong
+        });
+      } else {
+        // Browser doesn't support Geolocation
+      }
+    },
     radiusChanged(radius) {
       this.radius = radius;
       this.getLocations({ center: this.center, radius: this.radius });
@@ -16172,6 +16187,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }
   }),
   mounted() {
+    this.locate();
     this.getLocations({ center: this.center, radius: this.radius });
   }
 });
@@ -16183,6 +16199,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(121);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16230,6 +16251,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         "label-success": this.distanceRangeFlag === 0,
         "label-danger": this.distanceRangeFlag === 1
       };
+    },
+    popularity() {
+      const applicationsCount = this.promotion.applications.length;
+      return applicationsCount <= 5 ? applicationsCount : 5;
     }
   },
   methods: {
@@ -17143,20 +17168,40 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(121);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   updateSearchQuery({ commit }, value) {
     commit('updateSearchQuery', value);
   },
-  getPromotions({ commit }, params) {
+  getPromotions({ commit, state, rootGetters }, params) {
     commit('promotions/isLoading', true, { root: true });
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
-      commit('updatePromotions', res.data.promotions);
+      if (state.searchQuery) {
+        const newPromotions = _.sortBy(sortByDistance(res.data.promotions, rootGetters['promotions/center']), [function (o) {
+          return o.distance;
+        }]);
+        commit('updatePromotions', newPromotions);
+      } else {
+        commit('updatePromotions', res.data.promotions);
+      }
       commit('promotions/isLoading', false, { root: true });
     });
   }
 });
+
+const sortByDistance = (promotions, center) => {
+  return _.mapValues(promotions, function (promotion) {
+    if (promotion.locations.length) {
+      const lat = promotion.locations[0].location[0];
+      const lng = promotion.locations[0].location[1];
+      promotion.distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(center, { lat, lng });
+    }
+    return promotion;
+  });
+};
 
 /***/ }),
 /* 127 */
@@ -53028,7 +53073,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
     class: _vm.distanceClasses
-  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e()])])])
+  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', _vm._l((_vm.popularity), function(n) {
+    return _c('span', {
+      key: n
+    }, [_c('span', {
+      staticClass: "glyphicon glyphicon-star",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    })])
+  }))])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
