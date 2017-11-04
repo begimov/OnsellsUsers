@@ -16,11 +16,8 @@ class PromotionController extends Controller
         ->orWhere('promotionname', 'like', "%{$query}%")
         ->orWhere('promotiondesc', 'like', "%{$query}%")
         ->with(['category', 'images', 'mediumImage', 'locations', 'applications'])
-        ->get()
-        ->sortBy(function($promotion)
-        {
-            return $promotion->applications->count();
-        })->slice(0, 100);
+        ->limit(100)
+        ->get();
 
         return response()->json([
             'promotions' => $promotions,
