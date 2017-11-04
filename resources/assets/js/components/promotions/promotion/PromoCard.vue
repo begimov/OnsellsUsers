@@ -53,6 +53,7 @@ export default {
     },
     popularity() {
       const applicationsCount = this.promotion.applications.length
+      if (applicationsCount === 0) return 1
       return applicationsCount <= 5 ? applicationsCount : 5
     }
   },
