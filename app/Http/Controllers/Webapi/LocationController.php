@@ -11,6 +11,7 @@ class LocationController extends Controller
 {
     public function index(SearchLocationRequest $request)
     {
+        $searchQuery = $request->searchQuery;
         $lat = $request->lat;
         $lng = $request->lng;
         $radius = $request->radius;
@@ -19,14 +20,17 @@ class LocationController extends Controller
         // \DB::enableQueryLog();
         if ($category < 1) {
             $locations = Location::distance($searchRadius,"{$lat},{$lng}")
-                ->whereHas('promotion', function ($query) use ($category){
-                    $query->where('active', 1);
+                ->whereHas('promotion', function ($query) use ($category, $searchQuery){
+                    $query->where('active', 1)
+                    ->where('company', 'like', "%{$searchQuery}%")
+                    ->orWhere('promotionname', 'like', "%{$searchQuery}%")
+                    ->orWhere('promotiondesc', 'like', "%{$searchQuery}%");
                 })->with('promotion')->with('promotion.category')->take(100)->get();
         } else {
             $locations = Location::distance($searchRadius,"{$lat},{$lng}")
-                ->whereHas('promotion', function ($query) use ($category){
-                    $query->where('active', 1)->where('category_id', $category);
-                })->with('promotion')->with('promotion.category')->take(100)->get();
+            ->whereHas('promotion', function ($query) use ($category){
+                $query->where('active', 1)->where('category_id', $category);
+            })->with('promotion')->with('promotion.category')->take(100)->get();
         }
         // dd(\DB::getQueryLog());
         return $locations->toArray();
