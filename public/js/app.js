@@ -17176,21 +17176,35 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
   updateSearchQuery({ commit }, value) {
     commit('updateSearchQuery', value);
   },
-  getPromotions({ commit, state }, params) {
+  getPromotions({ commit, state, rootGetters }, params) {
     commit('promotions/isLoading', true, { root: true });
+
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
+
       if (state.searchQuery) {
-        const newPromotions = _.mapValues(res.data.promotions, function (promotion) {
-          promotion.distance = 1;
-          return promotion;
-        });
-        console.log(newPromotions);
+        const newPromotions = _.sortBy(sortByDistance(res.data.promotions, rootGetters['promotions/center']), [function (o) {
+          return o.distance;
+        }]);
+
+        commit('updatePromotions', newPromotions);
+      } else {
+        commit('updatePromotions', res.data.promotions);
       }
-      commit('updatePromotions', res.data.promotions);
       commit('promotions/isLoading', false, { root: true });
     });
   }
 });
+
+const sortByDistance = (promotions, center) => {
+  return _.mapValues(promotions, function (promotion) {
+    if (promotion.locations.length) {
+      const lat = promotion.locations[0].location[0];
+      const lng = promotion.locations[0].location[1];
+      promotion.distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(center, { lat, lng });
+    }
+    return promotion;
+  });
+};
 
 /***/ }),
 /* 127 */
