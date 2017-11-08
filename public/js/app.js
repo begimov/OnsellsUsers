@@ -16158,6 +16158,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16167,8 +16172,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       radius: 5000
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations", "icons"])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations"]), {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]), {
+    searchQuery: {
+      get() {
+        return this.getSearchQuery;
+      },
+      set(value) {
+        this.updateSearchQuery(value);
+      }
+    }
+  }),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]), {
     clicked(index, position) {
       this.showInfo = [];
       this.showInfo[index] = true;
@@ -16190,17 +16204,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     radiusChanged(radius) {
       this.radius = radius;
-      this.getLocations({ center: this.center, radius: this.radius });
+      this.reloadLocations();
     },
     centerChanged(e) {
       const newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
       this.updateCenter(newCenter);
-      this.getLocations({ center: newCenter, radius: this.radius });
+      this.reloadLocations();
+    },
+    textSearch() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(function () {
+        this.reloadLocations();
+      }.bind(this), 1000);
+    },
+    reloadLocations() {
+      this.getLocations({ center: this.center, radius: this.radius, searchQuery: this.searchQuery });
     }
   }),
   mounted() {
     this.locate();
-    this.getLocations({ center: this.center, radius: this.radius });
+    this.reloadLocations();
   }
 });
 
@@ -17109,14 +17132,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  getLocations(circleObj) {
+  getLocations(data) {
     return new Promise((resolve, reject) => {
       axios.get(`/webapi/locations`, {
         params: {
-          radius: circleObj.radius,
-          lat: circleObj.center.lat,
-          lng: circleObj.center.lng,
-          category: 0
+          radius: data.radius,
+          lat: data.center.lat,
+          lng: data.center.lng,
+          category: 0,
+          searchQuery: data.searchQuery
         }
       }).then(res => {
         resolve(res);
@@ -17349,12 +17373,15 @@ const calculateDistance = (promotions, center) => {
   updateCenter({ commit }, value) {
     commit('updateCenter', value);
   },
-  getLocations({ commit }, circleObj) {
+  getLocations({ commit }, data) {
     commit('promotions/isLoading', true, { root: true });
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(circleObj).then(res => {
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(data).then(res => {
       commit('updateLocations', res.data);
       commit('promotions/isLoading', false, { root: true });
     });
+  },
+  updateSearchQuery({ commit }, value) {
+    commit('updateSearchQuery', value);
   }
 });
 
@@ -17372,6 +17399,9 @@ const calculateDistance = (promotions, center) => {
   },
   icons(state) {
     return state.icons;
+  },
+  getSearchQuery(state) {
+    return state.searchQuery;
   }
 });
 
@@ -17408,6 +17438,9 @@ const calculateDistance = (promotions, center) => {
     },
     updateLocations(state, value) {
         state.locations = value;
+    },
+    updateSearchQuery(state, value) {
+        state.searchQuery = value;
     }
 });
 
@@ -17417,6 +17450,7 @@ const calculateDistance = (promotions, center) => {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
+  searchQuery: '',
   center: { lat: 59.9307772, lng: 30.3276762 },
   locations: [],
   icons: {
@@ -52908,6 +52942,21 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2"
+  }, [_c('search', {
+    on: {
+      "input": _vm.textSearch
+    },
+    model: {
+      value: (_vm.searchQuery),
+      callback: function($$v) {
+        _vm.searchQuery = $$v
+      },
+      expression: "searchQuery"
+    }
+  })], 1)]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('gmap-map', {
     staticStyle: {
