@@ -15985,67 +15985,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 110 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading", "center"])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions", ["switchActiveComponent", "updateCenter"]), {
-    locate() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          this.updateCenter(pos);
-        }, function () {
-          // Browser supports Geolocation but smth went wrong
-        });
-      } else {
-        // Browser doesn't support Geolocation
-      }
-    }
-  }),
-  mounted() {
-    this.locate();
-  }
-});
-
-/***/ }),
+/* 110 */,
 /* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -52824,7 +52764,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(110),
+  __webpack_require__(294),
   /* template */
   __webpack_require__(274),
   /* scopeId */
@@ -53238,21 +53178,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-12"
+    staticClass: "col-md-6"
   }, [_c('div', {
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
     }
-  }), _vm._v(" "), _c('ul', {
-    staticClass: "nav nav-tabs nav-justified"
-  }, [_c('li', {
+  }), _vm._v(" "), _c('a', {
     class: {
-      'active': _vm.isActiveComponentCatalog
+      'active': _vm.isActiveComponentCatalog, 'btn btn-primary btn-lg btn-block': true
     },
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('a', {
     attrs: {
       "href": "#"
     },
@@ -53262,14 +53196,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('catalog')
       }
     }
-  }, [_vm._v("\n            В КАТАЛОГЕ\n          ")])]), _vm._v(" "), _c('li', {
-    class: {
-      'active': _vm.isActiveComponentPromoMap
-    },
-    attrs: {
-      "role": "presentation"
-    }
+  }, [_vm._v("\n            В КАТАЛОГЕ\n          ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
   }, [_c('a', {
+    class: {
+      'active': _vm.isActiveComponentPromoMap, 'btn btn-primary btn-lg btn-block': true
+    },
     attrs: {
       "href": "#"
     },
@@ -53279,7 +53211,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('promomap')
       }
     }
-  }, [_vm._v("\n            НА КАРТЕ\n          ")])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            НА КАРТЕ\n      ")])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e(), _vm._v(" "), (_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)])
 },staticRenderFns: []}
@@ -54281,6 +54213,47 @@ function install(Vue, options) {
 __webpack_require__(90);
 module.exports = __webpack_require__(91);
 
+
+/***/ }),
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading", "center"])),
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions", ["switchActiveComponent", "updateCenter"]), {
+    locate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          this.updateCenter(pos);
+        }, function () {
+          // Browser supports Geolocation but smth went wrong
+        });
+      } else {
+        // Browser doesn't support Geolocation
+      }
+    }
+  }),
+  mounted() {
+    this.locate();
+  }
+});
 
 /***/ })
 /******/ ]);
