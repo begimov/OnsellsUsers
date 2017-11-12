@@ -53127,7 +53127,9 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "form-group search--container"
+    class: {
+      'input-group': _vm.query, 'form-group search--container ': true
+    }
   }, [_c('input', {
     directives: [{
       name: "model",
@@ -53149,7 +53151,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.query = $event.target.value
       }, _vm.changed]
     }
-  })])
+  }), _vm._v(" "), (_vm.query) ? _c('span', {
+    staticClass: "input-group-addon"
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-remove",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
