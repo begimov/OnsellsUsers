@@ -1,28 +1,17 @@
 <template>
-  <div class="col-sm-6 col-md-4">
-      <div class="thumbnail equal-min-height">
-          <a href="">
-            <img class="img-rounded" :src="promotion.medium_image.path">
-          </a>
-        <div class="caption">
-          <h4>
+  <div class="col-md-2 col-sm-4 col-xs-6">
+        <a :href="'/promotions/' + promotion.id" target="_blank" class="thumbnail thumbnail--mini-card">
+          <img class="img-rounded" :src="promotion.medium_image.path">
+        </a>
+        <p class="thumbnail--mini-card-desc">
+            <strong>{{ promotion.promotionname | strLimit(20) }}...</strong><br>
             <a :href="'/promotions/' + promotion.id" target="_blank">
-              {{ promotion.promotionname | strLimit(20) }}...
+              {{ promotion.promotiondesc | strLimit(30) }}...
             </a>
-          </h4>
-          <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
-          <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
-          <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter | formatDistance }}</span></h4>
-          <h4>
-            <span v-for="n in popularity" :key="n">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </span>
-          </h4>
-        </div>
-      </div>
+        </p>
     </div>
 </template>
-
+        
 <script>
 import helpers from "../../../helpers";
 

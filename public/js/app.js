@@ -54285,17 +54285,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -54388,37 +54377,26 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-sm-6 col-md-4"
-  }, [_c('div', {
-    staticClass: "thumbnail equal-min-height"
+    staticClass: "col-md-2 col-sm-4 col-xs-6"
   }, [_c('a', {
+    staticClass: "thumbnail thumbnail--mini-card",
     attrs: {
-      "href": ""
+      "href": '/promotions/' + _vm.promotion.id,
+      "target": "_blank"
     }
   }, [_c('img', {
     staticClass: "img-rounded",
     attrs: {
       "src": _vm.promotion.medium_image.path
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "caption"
-  }, [_c('h4', [_c('a', {
+  })]), _vm._v(" "), _c('p', {
+    staticClass: "thumbnail--mini-card-desc"
+  }, [_c('strong', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...")]), _c('br'), _vm._v(" "), _c('a', {
     attrs: {
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
-    class: _vm.distanceClasses
-  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', _vm._l((_vm.popularity), function(n) {
-    return _c('span', {
-      key: n
-    }, [_c('span', {
-      staticClass: "glyphicon glyphicon-star",
-      attrs: {
-        "aria-hidden": "true"
-      }
-    })])
-  }))])])])
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...\n          ")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
