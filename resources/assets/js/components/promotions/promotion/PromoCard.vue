@@ -1,18 +1,18 @@
 <template>
   <div class="col-sm-6 col-md-4">
-      <div class="thumbnail equal-min-height">
+      <div class="thumbnail thumbnail--promo-card">
           <a :href="'/promotions/' + promotion.id" target="_blank">
             <img class="img-rounded" :src="promotion.medium_image.path">
           </a>
-        <div class="caption">
+        <div class="caption text-center">
           <h4>
             <a :href="'/promotions/' + promotion.id" target="_blank">
-              {{ promotion.promotionname | strLimit(20) }}...
+              {{ promotion.promotionname | strLimit(20) }}
             </a>
           </h4>
-          <p>{{ promotion.promotiondesc | strLimit(30) }}...</p>
-          <p>{{ promotion.company + ' / ' + promotion.category.name  | strLimit(30) }}...</p>
-          <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">Расстояние: {{ distanceFromCenter | formatDistance }}</span></h4>
+          <h4 v-if="distanceFromCenter"><span v-bind:class="distanceClasses">{{ distanceFromCenter | formatDistance }}</span></h4>
+          <p>{{ promotion.promotiondesc | strLimit(100) }}</p>
+          <p>{{ promotion.category.name  | strLimit(30) }}</p>
           <h4>
             <span v-for="n in popularity" :key="n">
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -64,7 +64,7 @@ export default {
     strLimit: function(str, length) {
       if (!str) return "";
       str = str.toString();
-      return str.substring(0, length);
+      return length >= str.length ? str : str.substring(0, length) + '...';
     },
     formatDistance: function(distance) {
       return distance > 999
