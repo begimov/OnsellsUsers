@@ -17002,7 +17002,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }
     }
   }),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/catalog", ["updateSearchQuery", "getPromotions"]), {
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/catalog", ["updateSearchQuery", "getPromotions", "setIsDisplayingMiniCards"]), {
     textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(function () {
@@ -17146,8 +17146,11 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
       }
       commit('promotions/isLoading', false, { root: true });
 
-      state.isDisplayingMiniCards = state.searchQuery ? false : true;
+      commit('setIsDisplayingMiniCards', state.searchQuery ? false : true);
     });
+  },
+  setIsDisplayingMiniCards({ commit }, value) {
+    commit('setIsDisplayingMiniCards', value);
   }
 });
 
@@ -17215,6 +17218,9 @@ const calculateDistance = (promotions, center) => {
     },
     updatePromotions(state, promotions) {
         state.promotions = promotions;
+    },
+    setIsDisplayingMiniCards(state, value) {
+        state.isDisplayingMiniCards = value;
     }
 });
 
@@ -53272,7 +53278,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\n            На карте\n          ")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
-  }, [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e(), _vm._v(" "), (_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)])
+  }, [_c('keep-alive', [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e()], 1), _vm._v(" "), _c('keep-alive', [(_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

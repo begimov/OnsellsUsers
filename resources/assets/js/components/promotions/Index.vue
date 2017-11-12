@@ -24,8 +24,8 @@
       </div>
     </div>
     <div class="row">
-      <catalog v-if="isActiveComponentCatalog"></catalog>
-      <promomap v-if="isActiveComponentPromoMap"></promomap>
+      <keep-alive><catalog v-if="isActiveComponentCatalog"></catalog></keep-alive>
+      <keep-alive><promomap v-if="isActiveComponentPromoMap"></promomap></keep-alive>
     </div>
   </div>
 </template>

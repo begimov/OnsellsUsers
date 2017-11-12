@@ -23,7 +23,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions("promotions/catalog", ["updateSearchQuery", "getPromotions"]),
+    ...mapActions("promotions/catalog", [
+      "updateSearchQuery", 
+      "getPromotions",
+      "setIsDisplayingMiniCards"
+    ]),
     textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(
@@ -37,6 +41,6 @@ export default {
     }
   },
   mounted() {
-    this.getPromotions();
+    this.getPromotions()
   }
 };
