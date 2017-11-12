@@ -16223,32 +16223,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ["promotion", "center"],
   data() {
     return {
-      distanceRangeFlag: 0
+      //
     };
   },
   computed: {
-    distanceFromCenter() {
-      const locations = this.promotion.locations;
-      if (locations.length) {
-        const lat = locations[0].location[0];
-        const lng = locations[0].location[1];
-        const distance = __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
-        this.distanceRangeFlag = distance < 4999 ? 0 : 1;
-        return distance;
-      }
-    },
-    distanceClasses() {
-      return {
-        label: true,
-        "label-success": this.distanceRangeFlag === 0,
-        "label-danger": this.distanceRangeFlag === 1
-      };
-    },
-    popularity() {
-      const applicationsCount = this.promotion.applications.length;
-      if (applicationsCount === 0) return 1;
-      return applicationsCount <= 5 ? applicationsCount : 5;
-    }
+    //
   },
   methods: {
     //
@@ -16257,10 +16236,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     strLimit: function (str, length) {
       if (!str) return "";
       str = str.toString();
-      return str.substring(0, length);
-    },
-    formatDistance: function (distance) {
-      return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
+      return length >= str.length ? str : str.substring(0, length) + '...';
     }
   },
   mounted() {
@@ -53272,12 +53248,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": _vm.promotion.medium_image.path
     }
-  })]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...")]), _c('br'), _vm._v(" "), _c('a', {
+  })]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)))]), _c('br'), _vm._v(" "), _c('a', {
     attrs: {
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...\n          ")])])])
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "\n          ")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
