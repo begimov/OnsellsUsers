@@ -17,7 +17,7 @@ class PromotionController extends Controller
         ->orWhere('promotiondesc', 'like', "%{$query}%")
         ->with(['category', 'images', 'mediumImage', 'locations', 'applications'])
         ->latest()
-        ->limit(100)
+        ->limit(6)
         ->get();
 
         return response()->json([
