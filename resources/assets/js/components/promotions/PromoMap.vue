@@ -9,7 +9,7 @@
       <gmap-map
       :center="center"
       :zoom="12"
-      style="width: 100%; height: 500px">
+      style="width: 100%; height: 100%; position: absolute; z-index: 1; top: 50px; left: 0;">
 
         <gmap-marker
         :key="index"

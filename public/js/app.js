@@ -52892,7 +52892,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('gmap-map', {
     staticStyle: {
       "width": "100%",
-      "height": "500px"
+      "height": "100%",
+      "position": "absolute",
+      "z-index": "1",
+      "top": "50px",
+      "left": "0"
     },
     attrs: {
       "center": _vm.center,
@@ -52968,6 +52972,8 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
+    staticClass: "container"
+  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-8 col-md-offset-2"
@@ -52982,10 +52988,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "searchQuery"
     }
-  })], 1)]), _vm._v(" "), _c('div', {
+  })], 1)])]), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
     staticClass: "row"
-  }, [(_vm.isDisplayingMiniCards) ? _c('div', {
-    staticClass: "col-md-12 popular-cards--container"
+  }, [_c('div', {
+    staticClass: "popular-minicards--container"
   }, [_c('h4', {
     staticClass: "header"
   }, [_vm._v("Популярные акции")]), _vm._v(" "), _vm._l((_vm.promotions), function(promotion, index) {
@@ -52996,8 +53002,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "center": _vm.center
       }
     }) : _vm._e()
-  })], 2) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
-    staticClass: "col-md-12"
+  })], 2)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "popular-cards--container"
   }, _vm._l((_vm.promotions), function(promotion) {
     return _c('promo-card', {
       key: promotion.id,
@@ -53006,7 +53014,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "center": _vm.center
       }
     })
-  })) : _vm._e()])])
+  }))]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -53195,7 +53203,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
-    staticClass: "row"
+    staticClass: "row btn--root-container"
   }, [_c('div', {
     staticClass: "col-md-6 col-sm-6"
   }, [_c('div', {

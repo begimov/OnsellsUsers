@@ -1,16 +1,20 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <search v-model="searchQuery" v-on:input="textSearch"></search>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <search v-model="searchQuery" v-on:input="textSearch"></search>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 popular-cards--container" v-if="isDisplayingMiniCards">
+    <div class="row" v-if="isDisplayingMiniCards && promotions.length">
+      <div class="popular-minicards--container">
         <h4 class="header">Популярные акции</h4>
         <promo-mini-card  v-for="(promotion, index) in promotions" v-if="index < 6" :key="promotion.id" :promotion="promotion" :center="center"></promo-mini-card>
       </div>
-      <div class="col-md-12" v-if="!isDisplayingMiniCards">
+    </div>
+    <div class="row" v-if="!isDisplayingMiniCards">
+      <div class="popular-cards--container">
         <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row">
+    <div class="row btn--root-container">
       <div class="col-md-6 col-sm-6">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
