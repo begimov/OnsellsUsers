@@ -30,10 +30,8 @@ export default {
   },
   filters: {
     strLimit: function(str, length) {
-      if (!str) return "";
-      str = str.toString();
-      return length >= str.length ? str : str.substring(0, length) + '...';
-    }
+      return helpers.filters.strLimit(str, length)
+    },
   },
   mounted() {
     //

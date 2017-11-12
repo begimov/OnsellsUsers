@@ -2505,10 +2505,13 @@ module.exports = defaults;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__geo__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters__ = __webpack_require__(297);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  geo: __WEBPACK_IMPORTED_MODULE_0__geo__["a" /* default */]
+  geo: __WEBPACK_IMPORTED_MODULE_0__geo__["a" /* default */],
+  filters: __WEBPACK_IMPORTED_MODULE_1__filters__["a" /* default */]
 });
 
 /***/ }),
@@ -16182,9 +16185,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   filters: {
     strLimit: function (str, length) {
-      if (!str) return "";
-      str = str.toString();
-      return length >= str.length ? str : str.substring(0, length) + '...';
+      return __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].filters.strLimit(str, length);
     },
     formatDistance: function (distance) {
       return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
@@ -16234,9 +16235,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   filters: {
     strLimit: function (str, length) {
-      if (!str) return "";
-      str = str.toString();
-      return length >= str.length ? str : str.substring(0, length) + '...';
+      return __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].filters.strLimit(str, length);
     }
   },
   mounted() {
@@ -54434,6 +54433,26 @@ function install(Vue, options) {
 __webpack_require__(90);
 module.exports = __webpack_require__(91);
 
+
+/***/ }),
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    strLimit(str, length) {
+        if (!str) return "";
+        str = str.toString();
+        return length >= str.length ? str : str.substring(0, length) + '...';
+    }
+});
 
 /***/ })
 /******/ ]);
