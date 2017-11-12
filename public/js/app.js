@@ -52984,27 +52984,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)]), _vm._v(" "), _c('div', {
     staticClass: "row"
-  }, [_c('div', {
+  }, [(_vm.isDisplayingMiniCards) ? _c('div', {
     staticClass: "col-md-12 popular-cards--container"
   }, [_c('h4', {
     staticClass: "header"
   }, [_vm._v("Популярные акции")]), _vm._v(" "), _vm._l((_vm.promotions), function(promotion, index) {
-    return (index < 6 && _vm.isDisplayingMiniCards) ? _c('promo-mini-card', {
+    return (index < 6) ? _c('promo-mini-card', {
       key: promotion.id,
       attrs: {
         "promotion": promotion,
         "center": _vm.center
       }
     }) : _vm._e()
-  }), _vm._v(" "), _vm._l((_vm.promotions), function(promotion) {
-    return (!_vm.isDisplayingMiniCards) ? _c('promo-card', {
+  })], 2) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
+    staticClass: "col-md-12"
+  }, _vm._l((_vm.promotions), function(promotion) {
+    return _c('promo-card', {
       key: promotion.id,
       attrs: {
         "promotion": promotion,
         "center": _vm.center
       }
-    }) : _vm._e()
-  })], 2)])])
+    })
+  })) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

@@ -6,10 +6,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 popular-cards--container">
+      <div class="col-md-12 popular-cards--container" v-if="isDisplayingMiniCards">
         <h4 class="header">Популярные акции</h4>
-        <promo-mini-card  v-for="(promotion, index) in promotions" v-if="index < 6 && isDisplayingMiniCards" :key="promotion.id" :promotion="promotion" :center="center"></promo-mini-card>
-        <promo-card v-for="promotion in promotions" v-if="!isDisplayingMiniCards" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
+        <promo-mini-card  v-for="(promotion, index) in promotions" v-if="index < 6" :key="promotion.id" :promotion="promotion" :center="center"></promo-mini-card>
+      </div>
+      <div class="col-md-12" v-if="!isDisplayingMiniCards">
+        <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
       </div>
     </div>
   </div>
