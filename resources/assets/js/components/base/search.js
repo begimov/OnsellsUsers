@@ -7,6 +7,10 @@ export default {
   methods: {
     changed () {
       this.$emit('input', this.query)
+    },
+    clear () {
+      this.query = ''
+      this.changed()
     }
   },
   computed: {

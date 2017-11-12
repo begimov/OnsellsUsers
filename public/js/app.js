@@ -16961,6 +16961,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     changed() {
       this.$emit('input', this.query);
+    },
+    clear() {
+      this.query = '';
+      this.changed();
     }
   },
   computed: {
@@ -53153,12 +53157,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), (_vm.query) ? _c('span', {
     staticClass: "input-group-addon"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.clear($event)
+      }
+    }
   }, [_c('span', {
     staticClass: "glyphicon glyphicon-remove",
     attrs: {
       "aria-hidden": "true"
     }
-  })]) : _vm._e()])
+  })])]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
