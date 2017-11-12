@@ -1,4 +1,5 @@
 export default {
   searchQuery: '',
-  promotions: []
+  promotions: [],
+  displayMode: false
 }

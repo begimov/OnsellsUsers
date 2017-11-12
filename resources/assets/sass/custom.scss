@@ -16,12 +16,13 @@
     margin-top: -60px;
     position: absolute;
     z-index: 1;
+    color: #fff !important;
+}
+.popular-cards--container .header{
+    margin: 0 20px 10px 20px !important;
 }
 .thumbnail--mini-card {
     background-color: $brand-color !important;
     border-color: $brand-color;
     margin-bottom: 10px;
-}
-.thumbnail--mini-card-desc {
-    color: #fff !important;
 }

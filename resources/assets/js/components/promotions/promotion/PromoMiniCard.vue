@@ -3,7 +3,7 @@
         <a :href="'/promotions/' + promotion.id" target="_blank" class="thumbnail thumbnail--mini-card">
           <img class="img-rounded" :src="promotion.medium_image.path">
         </a>
-        <p class="thumbnail--mini-card-desc">
+        <p>
             <strong>{{ promotion.promotionname | strLimit(20) }}...</strong><br>
             <a :href="'/promotions/' + promotion.id" target="_blank">
               {{ promotion.promotiondesc | strLimit(30) }}...
