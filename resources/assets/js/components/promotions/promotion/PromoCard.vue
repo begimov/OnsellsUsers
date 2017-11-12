@@ -5,6 +5,9 @@
           <img class="img-rounded" :src="promotion.medium_image.path">
         </a>
         <div class="caption text-center promo-card-caption">
+          <img :src="(icons[promotion.category.parent_id])
+            ? (icons[promotion.category.parent_id].icon)
+            : (icons['default'].icon)">
           <h4>
             <a :href="'/promotions/' + promotion.id" target="_blank">
               {{ promotion.promotionname | strLimit(20) }}
@@ -26,6 +29,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 import helpers from "../../../helpers";
 
 export default {
@@ -36,6 +40,9 @@ export default {
     };
   },
   computed: {
+    ...mapGetters("promotions", [
+      "icons"
+    ]),
     distanceFromCenter() {
       const locations = this.promotion.locations;
       if (locations.length) {

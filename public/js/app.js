@@ -16118,7 +16118,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(29);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -16146,6 +16149,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -16156,13 +16163,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       distanceRangeFlag: 0
     };
   },
-  computed: {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["icons"]), {
     distanceFromCenter() {
       const locations = this.promotion.locations;
       if (locations.length) {
         const lat = locations[0].location[0];
         const lng = locations[0].location[1];
-        const distance = __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+        const distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
         this.distanceRangeFlag = distance < 4999 ? 0 : 1;
         return distance;
       }
@@ -16179,13 +16186,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (applicationsCount === 0) return 1;
       return applicationsCount <= 5 ? applicationsCount : 5;
     }
-  },
+  }),
   methods: {
     //
   },
   filters: {
     strLimit: function (str, length) {
-      return __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].filters.strLimit(str, length);
+      return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].filters.strLimit(str, length);
     },
     formatDistance: function (distance) {
       return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
@@ -53202,7 +53209,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "caption text-center promo-card-caption"
-  }, [_c('h4', [_c('a', {
+  }, [_c('img', {
+    attrs: {
+      "src": (_vm.icons[_vm.promotion.category.parent_id]) ?
+        (_vm.icons[_vm.promotion.category.parent_id].icon) :
+        (_vm.icons['default'].icon)
+    }
+  }), _vm._v(" "), _c('h4', [_c('a', {
     attrs: {
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
