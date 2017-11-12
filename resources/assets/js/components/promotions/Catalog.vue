@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 popular-cards--container">
-        <promo-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-card>
+        <promo-mini-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-mini-card>
       </div>
     </div>
   </div>

@@ -15131,6 +15131,7 @@ Vue.component('index', __webpack_require__(263));
 Vue.component('catalog', __webpack_require__(262));
 Vue.component('promomap', __webpack_require__(264));
 Vue.component('promo-card', __webpack_require__(265));
+Vue.component('promo-mini-card', __webpack_require__(296));
 
 const app = new Vue({
   el: '#app',
@@ -52980,7 +52981,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-md-12 popular-cards--container"
   }, _vm._l((_vm.promotions), function(promotion) {
-    return _c('promo-card', {
+    return _c('promo-mini-card', {
       key: promotion.id,
       attrs: {
         "promotion": promotion,
@@ -54262,6 +54263,170 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     this.locate();
   }
 });
+
+/***/ }),
+/* 295 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(58);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["promotion", "center"],
+  data() {
+    return {
+      distanceRangeFlag: 0
+    };
+  },
+  computed: {
+    distanceFromCenter() {
+      const locations = this.promotion.locations;
+      if (locations.length) {
+        const lat = locations[0].location[0];
+        const lng = locations[0].location[1];
+        const distance = __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+        this.distanceRangeFlag = distance < 4999 ? 0 : 1;
+        return distance;
+      }
+    },
+    distanceClasses() {
+      return {
+        label: true,
+        "label-success": this.distanceRangeFlag === 0,
+        "label-danger": this.distanceRangeFlag === 1
+      };
+    },
+    popularity() {
+      const applicationsCount = this.promotion.applications.length;
+      if (applicationsCount === 0) return 1;
+      return applicationsCount <= 5 ? applicationsCount : 5;
+    }
+  },
+  methods: {
+    //
+  },
+  filters: {
+    strLimit: function (str, length) {
+      if (!str) return "";
+      str = str.toString();
+      return str.substring(0, length);
+    },
+    formatDistance: function (distance) {
+      return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
+    }
+  },
+  mounted() {
+    //
+  }
+});
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(295),
+  /* template */
+  __webpack_require__(297),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/OnsellsUsers/resources/assets/js/components/promotions/promotion/PromoMiniCard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PromoMiniCard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-21b54365", Component.options)
+  } else {
+    hotAPI.reload("data-v-21b54365", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-6 col-md-4"
+  }, [_c('div', {
+    staticClass: "thumbnail equal-min-height"
+  }, [_c('a', {
+    attrs: {
+      "href": ""
+    }
+  }, [_c('img', {
+    staticClass: "img-rounded",
+    attrs: {
+      "src": _vm.promotion.medium_image.path
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "caption"
+  }, [_c('h4', [_c('a', {
+    attrs: {
+      "href": '/promotions/' + _vm.promotion.id,
+      "target": "_blank"
+    }
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "...\n          ")])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "...")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.company + ' / ' + _vm.promotion.category.name, 30)) + "...")]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
+    class: _vm.distanceClasses
+  }, [_vm._v("Расстояние: " + _vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('h4', _vm._l((_vm.popularity), function(n) {
+    return _c('span', {
+      key: n
+    }, [_c('span', {
+      staticClass: "glyphicon glyphicon-star",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    })])
+  }))])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-21b54365", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
