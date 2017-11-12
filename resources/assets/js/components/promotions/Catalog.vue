@@ -14,8 +14,10 @@
       </div>
     </div>
     <div class="row" v-if="!isDisplayingMiniCards">
-      <div class="popular-cards--container">
-        <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
+      <div class="popular-cards--container equal">
+        <div class="row equal">
+          <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
+        </div>
       </div>
     </div>
   </div>

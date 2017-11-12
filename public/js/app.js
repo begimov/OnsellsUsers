@@ -53155,7 +53155,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 2)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "popular-cards--container"
+    staticClass: "popular-cards--container equal"
+  }, [_c('div', {
+    staticClass: "row equal"
   }, _vm._l((_vm.promotions), function(promotion) {
     return _c('promo-card', {
       key: promotion.id,
@@ -53164,7 +53166,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "center": _vm.center
       }
     })
-  }))]) : _vm._e()])
+  }))])]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -53206,7 +53208,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-sm-6 col-md-4"
+    staticClass: "col-md-4 col-sm-6"
   }, [_c('div', {
     staticClass: "thumbnail thumbnail--promo-card"
   }, [_c('a', {

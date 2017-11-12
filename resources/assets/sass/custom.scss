@@ -33,7 +33,13 @@
     border-color: $brand-color;
     margin-bottom: 10px;
 }
+.row.equal {
+    display: flex !important;
+    display: -webkit-flex !important;
+    flex-wrap: wrap !important;
+}
 .thumbnail--promo-card {
     border: 0;
     padding: 0;
+    height: 100% !important;
 }

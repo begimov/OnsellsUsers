@@ -1,9 +1,9 @@
 <template>
-  <div class="col-sm-6 col-md-4">
+  <div class="col-md-4 col-sm-6">
       <div class="thumbnail thumbnail--promo-card">
-          <a :href="'/promotions/' + promotion.id" target="_blank">
-            <img class="img-rounded" :src="promotion.medium_image.path">
-          </a>
+        <a :href="'/promotions/' + promotion.id" target="_blank">
+          <img class="img-rounded" :src="promotion.medium_image.path">
+        </a>
         <div class="caption text-center">
           <h4>
             <a :href="'/promotions/' + promotion.id" target="_blank">
@@ -20,7 +20,7 @@
           </h4>
         </div>
       </div>
-    </div>
+  </div>
 </template>
 
 <script>
