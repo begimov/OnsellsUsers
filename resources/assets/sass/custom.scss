@@ -1,0 +1,35 @@
+.search--container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0 !important;
+    border-radius: 5px;
+    position: relative;
+    z-index: 10;
+}
+.btn--root {
+    background-color: $brand-color;
+    border-color: $brand-color;
+}
+.btn--root-container {
+    position: relative;
+    z-index: 10;
+}
+.popular-minicards--container {
+    background-color: $brand-color;
+    padding: 60px 20px 20px 20px;
+    margin-top: -60px;
+    position: absolute;
+    z-index: 1;
+    color: #fff !important;
+    .header{
+        margin: 0 20px 10px 20px !important;
+    }
+}
+.popular-cards--container {
+    padding: 0 20px 20px 20px;
+}
+.thumbnail--mini-card {
+    background-color: $brand-color !important;
+    border-color: $brand-color;
+    margin-bottom: 10px;
+}

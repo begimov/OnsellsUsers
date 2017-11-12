@@ -18,7 +18,12 @@ export default {
         commit('updatePromotions', newPromotions.reverse())
       }
       commit('promotions/isLoading', false, { root: true })
+
+      commit('setIsDisplayingMiniCards', state.searchQuery ? false : true)
     })
+  },
+  setIsDisplayingMiniCards({ commit }, value) {
+    commit('setIsDisplayingMiniCards', value)
   }
 }
 

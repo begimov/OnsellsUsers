@@ -1,58 +1,24 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <search v-model="searchQuery" v-on:input="textSearch"></search>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <search v-model="searchQuery" v-on:input="textSearch"></search>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <promo-card :promotion="promotion" :center="center" v-for="promotion in promotions" :key="promotion.id"></promo-card>
+    <div class="row" v-if="isDisplayingMiniCards && promotions.length">
+      <div class="popular-minicards--container">
+        <h4 class="header">Популярные акции</h4>
+        <promo-mini-card  v-for="(promotion, index) in promotions" v-if="index < 6" :key="promotion.id" :promotion="promotion" :center="center"></promo-mini-card>
+      </div>
+    </div>
+    <div class="row" v-if="!isDisplayingMiniCards">
+      <div class="popular-cards--container">
+        <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import { mapActions, mapGetters } from "vuex";
-
-export default {
-  data() {
-    return {
-      timer: 0
-    };
-  },
-  computed: {
-    ...mapGetters("promotions/catalog", [
-      "getSearchQuery",
-      "promotions",
-      "center"
-    ]),
-    searchQuery: {
-      get() {
-        return this.getSearchQuery;
-      },
-      set(value) {
-        this.updateSearchQuery(value);
-      }
-    }
-  },
-  methods: {
-    ...mapActions("promotions/catalog", ["updateSearchQuery", "getPromotions"]),
-    textSearch() {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(
-        function() {
-          this.getPromotions({
-            searchQuery: this.searchQuery
-          });
-        }.bind(this),
-        1000
-      );
-    }
-  },
-  mounted() {
-    this.getPromotions();
-  }
-};
-</script>
+<script src="./catalog.js"></script>

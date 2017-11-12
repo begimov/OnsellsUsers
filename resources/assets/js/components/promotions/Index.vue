@@ -1,63 +1,33 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-md-12">
-        <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
-        <ul class="nav nav-tabs nav-justified">
-          <li role="presentation" :class="{'active': isActiveComponentCatalog}">
-            <a href="#" @click.prevent="switchActiveComponent('catalog')">
-              В КАТАЛОГЕ
+    <div class="row btn--root-container">
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
+            <a href="#" @click.prevent="switchActiveComponent('catalog')" 
+              :class="{ 'active': isActiveComponentCatalog, 'btn btn-primary btn-lg btn-block btn--root': true }">
+              В каталоге
             </a>
-          </li>
-          <li role="presentation" :class="{'active': isActiveComponentPromoMap}">
-            <a href="#" @click.prevent="switchActiveComponent('promomap')">
-              НА КАРТЕ
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <a href="#" @click.prevent="switchActiveComponent('promomap')" 
+              :class="{ 'active': isActiveComponentPromoMap, 'btn btn-primary btn-lg btn-block btn--root': true }">
+              На карте
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
-      <catalog v-if="isActiveComponentCatalog"></catalog>
-      <promomap v-if="isActiveComponentPromoMap"></promomap>
+      <keep-alive><catalog v-if="isActiveComponentCatalog"></catalog></keep-alive>
+      <keep-alive><promomap v-if="isActiveComponentPromoMap"></promomap></keep-alive>
     </div>
   </div>
 </template>
 
-<script>
-import { mapActions, mapGetters } from "vuex";
-export default {
-  computed: {
-    ...mapGetters("promotions", [
-      "isActiveComponentCatalog",
-      "isActiveComponentPromoMap",
-      "isLoading",
-      "center"
-    ])
-  },
-  methods: {
-    ...mapActions("promotions", ["switchActiveComponent", "updateCenter"]),
-    locate() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          position => {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            this.updateCenter(pos);
-          },
-          function() {
-            // Browser supports Geolocation but smth went wrong
-          }
-        );
-      } else {
-        // Browser doesn't support Geolocation
-      }
-    }
-  },
-  mounted() {
-    this.locate();
-  }
-};
-</script>
+<script src="./indexcmp.js"></script>
