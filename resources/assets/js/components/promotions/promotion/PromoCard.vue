@@ -21,6 +21,7 @@
             </span>
             <span v-bind:class="distanceClasses" v-if="distanceFromCenter">{{ distanceFromCenter | formatDistance }}</span>
           </h4>
+          <hr>
           <p>{{ promotion.promotiondesc | strLimit(100) }}</p>
           <p>{{ promotion.category.name  | strLimit(30) }}</p>
         </div>

@@ -16152,6 +16152,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -53234,7 +53235,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })])
   })), _vm._v(" "), (_vm.distanceFromCenter) ? _c('span', {
     class: _vm.distanceClasses
-  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))])])])])
+  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
