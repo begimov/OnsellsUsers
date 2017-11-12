@@ -16113,98 +16113,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 111 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(29);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["promotion", "center"],
-  data() {
-    return {
-      distanceRangeFlag: 0
-    };
-  },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["icons"]), {
-    distanceFromCenter() {
-      const locations = this.promotion.locations;
-      if (locations.length) {
-        const lat = locations[0].location[0];
-        const lng = locations[0].location[1];
-        const distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
-        this.distanceRangeFlag = distance < 4999 ? 0 : 1;
-        return distance;
-      }
-    },
-    distanceClasses() {
-      return {
-        label: true,
-        "label-success": this.distanceRangeFlag === 0,
-        "label-danger": this.distanceRangeFlag === 1
-      };
-    },
-    popularity() {
-      const applicationsCount = this.promotion.applications.length;
-      if (applicationsCount === 0) return 1;
-      return applicationsCount <= 5 ? applicationsCount : 5;
-    }
-  }),
-  methods: {
-    //
-  },
-  filters: {
-    strLimit: function (str, length) {
-      return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].filters.strLimit(str, length);
-    },
-    formatDistance: function (distance) {
-      return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
-    }
-  },
-  mounted() {
-    //
-  }
-});
-
-/***/ }),
+/* 111 */,
 /* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -52943,7 +52852,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(111),
+  __webpack_require__(298),
   /* template */
   __webpack_require__(271),
   /* scopeId */
@@ -54468,6 +54377,66 @@ module.exports = __webpack_require__(91);
         str = str.toString();
         return length >= str.length ? str : str.substring(0, length) + '...';
     }
+});
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(29);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["promotion", "center"],
+  data() {
+    return {
+      distanceRangeFlag: 0
+    };
+  },
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["icons"]), {
+    distanceFromCenter() {
+      const locations = this.promotion.locations;
+      if (locations.length) {
+        const lat = locations[0].location[0];
+        const lng = locations[0].location[1];
+        const distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+        this.distanceRangeFlag = distance < 4999 ? 0 : 1;
+        return distance;
+      }
+    },
+    distanceClasses() {
+      return {
+        label: true,
+        "label-success": this.distanceRangeFlag === 0,
+        "label-danger": this.distanceRangeFlag === 1
+      };
+    },
+    popularity() {
+      const applicationsCount = this.promotion.applications.length;
+      if (applicationsCount === 0) return 1;
+      return applicationsCount <= 5 ? applicationsCount : 5;
+    }
+  }),
+  methods: {
+    //
+  },
+  filters: {
+    strLimit: function (str, length) {
+      return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].filters.strLimit(str, length);
+    },
+    formatDistance: function (distance) {
+      return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
+    }
+  },
+  mounted() {
+    //
+  }
 });
 
 /***/ })
