@@ -5,8 +5,8 @@ export default {
   locations (state) {
     return state.locations
   },
-  icons (state) {
-    return state.icons
+  icons (state, getters, rootState, rootGetters) {
+    return rootGetters['promotions/icons']
   },
   getSearchQuery (state) {
     return state.searchQuery

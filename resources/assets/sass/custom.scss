@@ -4,7 +4,8 @@
     margin: 20px 0 !important;
     border-radius: 5px;
     position: relative;
-    z-index: 10;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .btn--root {
     background-color: $brand-color;
@@ -12,7 +13,7 @@
 }
 .btn--root-container {
     position: relative;
-    z-index: 10;
+    z-index: 2;
 }
 .popular-minicards--container {
     background-color: $brand-color;
@@ -32,4 +33,21 @@
     background-color: $brand-color !important;
     border-color: $brand-color;
     margin-bottom: 10px;
+}
+.row.equal {
+    display: flex !important;
+    display: -webkit-flex !important;
+    flex-wrap: wrap !important;
+}
+.thumbnail--promo-card {
+    border: 0;
+    padding: 0;
+    height: 100% !important;
+}
+.promo-card-caption {
+    padding: 0 10px 0 10px !important;
+    margin-top: -20px;
+}
+.rating {
+    font-size: 0.8em;
 }

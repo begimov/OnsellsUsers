@@ -11,4 +11,7 @@ export default {
   center (state) {
     return state.center
   },
+  icons (state) {
+    return state.icons
+  },
 }
