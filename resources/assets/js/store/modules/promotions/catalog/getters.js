@@ -8,4 +8,7 @@ export default {
   center (state, getters, rootState, rootGetters) {
     return rootGetters['promotions/center']
   },
+  isDisplayingMiniCards (state) {
+    return state.isDisplayingMiniCards
+  },
 }

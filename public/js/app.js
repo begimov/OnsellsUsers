@@ -16988,7 +16988,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       timer: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/catalog", ["getSearchQuery", "promotions", "center"]), {
+  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/catalog", ["getSearchQuery", "promotions", "center", "isDisplayingMiniCards"]), {
     searchQuery: {
       get() {
         return this.getSearchQuery;
@@ -17141,6 +17141,8 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
         commit('updatePromotions', newPromotions.reverse());
       }
       commit('promotions/isLoading', false, { root: true });
+
+      state.isDisplayingMiniCards = state.searchQuery ? false : true;
     });
   }
 });
@@ -17170,6 +17172,9 @@ const calculateDistance = (promotions, center) => {
   },
   center(state, getters, rootState, rootGetters) {
     return rootGetters['promotions/center'];
+  },
+  isDisplayingMiniCards(state) {
+    return state.isDisplayingMiniCards;
   }
 });
 
@@ -17217,7 +17222,7 @@ const calculateDistance = (promotions, center) => {
 /* harmony default export */ __webpack_exports__["a"] = ({
   searchQuery: '',
   promotions: [],
-  displayMode: false
+  isDisplayingMiniCards: true
 });
 
 /***/ }),
@@ -52984,7 +52989,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h4', {
     staticClass: "header"
   }, [_vm._v("Популярные акции")]), _vm._v(" "), _vm._l((_vm.promotions), function(promotion, index) {
-    return (!_vm.getSearchQuery && index < 6) ? _c('promo-mini-card', {
+    return (index < 6 && _vm.isDisplayingMiniCards) ? _c('promo-mini-card', {
       key: promotion.id,
       attrs: {
         "promotion": promotion,
@@ -52992,7 +52997,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }) : _vm._e()
   }), _vm._v(" "), _vm._l((_vm.promotions), function(promotion) {
-    return (_vm.getSearchQuery) ? _c('promo-card', {
+    return (!_vm.isDisplayingMiniCards) ? _c('promo-card', {
       key: promotion.id,
       attrs: {
         "promotion": promotion,

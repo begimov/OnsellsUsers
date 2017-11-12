@@ -10,7 +10,8 @@ export default {
     ...mapGetters("promotions/catalog", [
       "getSearchQuery",
       "promotions",
-      "center"
+      "center",
+      "isDisplayingMiniCards"
     ]),
     searchQuery: {
       get() {

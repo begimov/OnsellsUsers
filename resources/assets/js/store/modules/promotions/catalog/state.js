@@ -1,5 +1,5 @@
 export default {
   searchQuery: '',
   promotions: [],
-  displayMode: false
+  isDisplayingMiniCards: true
 }
