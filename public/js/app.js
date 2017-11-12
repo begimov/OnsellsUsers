@@ -53178,14 +53178,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-6"
+    staticClass: "col-md-6 col-sm-6"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-10 col-md-offset-1"
   }, [_c('div', {
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
     }
   }), _vm._v(" "), _c('a', {
     class: {
-      'active': _vm.isActiveComponentCatalog, 'btn btn-primary btn-lg btn-block': true
+      'active': _vm.isActiveComponentCatalog, 'btn btn-primary btn-lg btn-block btn--root': true
     },
     attrs: {
       "href": "#"
@@ -53196,11 +53200,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('catalog')
       }
     }
-  }, [_vm._v("\n            В КАТАЛОГЕ\n          ")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
+  }, [_vm._v("\n            В каталоге\n          ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 col-sm-6"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-10 col-md-offset-1"
   }, [_c('a', {
     class: {
-      'active': _vm.isActiveComponentPromoMap, 'btn btn-primary btn-lg btn-block': true
+      'active': _vm.isActiveComponentPromoMap, 'btn btn-primary btn-lg btn-block btn--root': true
     },
     attrs: {
       "href": "#"
@@ -53211,7 +53219,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('promomap')
       }
     }
-  }, [_vm._v("\n            НА КАРТЕ\n      ")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            На карте\n          ")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e(), _vm._v(" "), (_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)])
 },staticRenderFns: []}

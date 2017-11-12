@@ -1,19 +1,26 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-6">
-        <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
             <a href="#" @click.prevent="switchActiveComponent('catalog')" 
-              :class="{ 'active': isActiveComponentCatalog, 'btn btn-primary btn-lg btn-block': true }">
-              В КАТАЛОГЕ
+              :class="{ 'active': isActiveComponentCatalog, 'btn btn-primary btn-lg btn-block btn--root': true }">
+              В каталоге
             </a>
-            
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <a href="#" @click.prevent="switchActiveComponent('promomap')" 
-              :class="{ 'active': isActiveComponentPromoMap, 'btn btn-primary btn-lg btn-block': true }">
-              НА КАРТЕ
-        </a>
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <a href="#" @click.prevent="switchActiveComponent('promomap')" 
+              :class="{ 'active': isActiveComponentPromoMap, 'btn btn-primary btn-lg btn-block btn--root': true }">
+              На карте
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
