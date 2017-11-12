@@ -17335,6 +17335,9 @@ const calculateDistance = (promotions, center) => {
   },
   center(state) {
     return state.center;
+  },
+  icons(state) {
+    return state.icons;
   }
 });
 
@@ -17421,8 +17424,8 @@ const calculateDistance = (promotions, center) => {
   locations(state) {
     return state.locations;
   },
-  icons(state) {
-    return state.icons;
+  icons(state, getters, rootState, rootGetters) {
+    return rootGetters['promotions/icons'];
   },
   getSearchQuery(state) {
     return state.searchQuery;
@@ -17476,7 +17479,18 @@ const calculateDistance = (promotions, center) => {
 /* harmony default export */ __webpack_exports__["a"] = ({
   searchQuery: '',
   center: { lat: 59.9307772, lng: 30.3276762 },
-  locations: [],
+  locations: []
+});
+
+/***/ }),
+/* 140 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  isLoading: false,
+  activeComponent: 'catalog',
+  center: { lat: 59.9307772, lng: 30.3276762 },
   icons: {
     1: {
       type: "avto",
@@ -17522,17 +17536,6 @@ const calculateDistance = (promotions, center) => {
       icon: "/img/map/" + "ic_default.png"
     }
   }
-});
-
-/***/ }),
-/* 140 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  isLoading: false,
-  activeComponent: 'catalog',
-  center: { lat: 59.9307772, lng: 30.3276762 }
 });
 
 /***/ }),
