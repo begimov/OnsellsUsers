@@ -16141,6 +16141,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -53208,7 +53210,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-4 col-sm-6"
+    staticClass: "col-md-3 col-sm-4 col-xs-6"
   }, [_c('div', {
     staticClass: "thumbnail thumbnail--promo-card"
   }, [_c('a', {
@@ -53222,24 +53224,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": _vm.promotion.medium_image.path
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "caption text-center"
+    staticClass: "caption text-center promo-card-caption"
   }, [_c('h4', [_c('a', {
     attrs: {
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "\n          ")])]), _vm._v(" "), (_vm.distanceFromCenter) ? _c('h4', [_c('span', {
-    class: _vm.distanceClasses
-  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))])]) : _vm._e(), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))]), _vm._v(" "), _c('h4', _vm._l((_vm.popularity), function(n) {
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "\n          ")])]), _vm._v(" "), _c('h4', [_c('span', {
+    staticClass: "label label-warning"
+  }, _vm._l((_vm.popularity), function(n) {
     return _c('span', {
-      key: n
+      key: n,
+      staticClass: "rating"
     }, [_c('span', {
       staticClass: "glyphicon glyphicon-star",
       attrs: {
         "aria-hidden": "true"
       }
     })])
-  }))])])])
+  })), _vm._v(" "), (_vm.distanceFromCenter) ? _c('span', {
+    class: _vm.distanceClasses
+  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
