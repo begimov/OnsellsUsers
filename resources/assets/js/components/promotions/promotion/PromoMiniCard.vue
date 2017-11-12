@@ -16,7 +16,7 @@
 import helpers from "../../../helpers";
 
 export default {
-  props: ["promotion", "center"],
+  props: ["promotion"],
   data() {
     return {
       //

@@ -16221,7 +16221,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["promotion", "center"],
+  props: ["promotion"],
   data() {
     return {
       //
@@ -53125,8 +53125,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return (index < 6) ? _c('promo-mini-card', {
       key: promotion.id,
       attrs: {
-        "promotion": promotion,
-        "center": _vm.center
+        "promotion": promotion
       }
     }) : _vm._e()
   })], 2)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
