@@ -53061,7 +53061,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "thumbnail equal-min-height"
   }, [_c('a', {
     attrs: {
-      "href": ""
+      "href": '/promotions/' + _vm.promotion.id,
+      "target": "_blank"
     }
   }, [_c('img', {
     staticClass: "img-rounded",

@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-6 col-md-4">
       <div class="thumbnail equal-min-height">
-          <a href="">
+          <a :href="'/promotions/' + promotion.id" target="_blank">
             <img class="img-rounded" :src="promotion.medium_image.path">
           </a>
         <div class="caption">
