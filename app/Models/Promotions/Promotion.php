@@ -41,6 +41,11 @@ class Promotion extends Model
         return $this->images()->where('type', 'medium')->first()->path;
     }
 
+    public function smallImage()
+    {
+        return $this->hasOne('App\Models\Image')->where('type', 'small');
+    }
+
     public function mediumImage()
     {
         return $this->hasOne('App\Models\Image')->where('type', 'medium');
