@@ -53222,7 +53222,10 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-3 col-sm-4 col-xs-6"
+    staticClass: "col-md-3 col-sm-4 col-xs-6",
+    staticStyle: {
+      "margin-bottom": "20px"
+    }
   }, [_c('div', {
     staticClass: "thumbnail thumbnail--promo-card"
   }, [_c('a', {
