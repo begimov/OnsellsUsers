@@ -53348,7 +53348,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-control",
     attrs: {
       "type": "text",
-      "placeholder": "Введите ключевые слова..."
+      "placeholder": "Введите название акции, товара или услуги..."
     },
     domProps: {
       "value": (_vm.query)
