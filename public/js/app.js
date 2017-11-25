@@ -53289,7 +53289,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-3 col-sm-4 col-xs-6",
+    staticClass: "col-lg-3 col-md-4 col-sm-6 col-xs-12 promo-card--container",
     staticStyle: {
       "margin-bottom": "20px"
     }

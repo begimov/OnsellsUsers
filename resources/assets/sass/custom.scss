@@ -34,19 +34,6 @@
     border-radius: 10px;
     margin-top: 20px;
 }
-@media (min-width: 768px) {
-    .feature-card--left, .feature-card--center, .feature-card--right {
-        width: 33.2%;
-    }
-}
-@media (max-width: 768px) {
-    .feature-card--left {
-        border: 1px dashed #939ea4;
-    }
-    .feature-card--right {
-        border: 1px dashed #939ea4;
-    }
-}
 .popular-cards--container {
     padding: 0 20px 20px 20px;
 }
@@ -75,4 +62,31 @@
 .help-block {
     margin: -5px 0;
     font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .feature-card--left {
+        border: 1px dashed #939ea4;
+    }
+    .feature-card--right {
+        border: 1px dashed #939ea4;
+    }
+}
+@media (min-width: 768px) {
+    .feature-card--left, .feature-card--center, .feature-card--right {
+        width: 33.2%;
+    }
+    .promo-card--container {
+        width: 49.8%;
+    }
+}
+@media (min-width: 992px) {
+    .promo-card--container {
+        width: 33.2%;
+    }
+}
+@media (min-width: 1200px) {
+    .promo-card--container {
+        width: 24.9%;
+    }
 }
