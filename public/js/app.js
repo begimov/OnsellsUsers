@@ -53136,8 +53136,8 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "container"
+  return _c('div', {
+    staticClass: "container-fluid"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
@@ -53153,21 +53153,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "searchQuery"
     }
-  })], 1)])]), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
-    staticClass: "row"
+  })], 1)]), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
+    staticClass: "row popular-minicards--container"
   }, [_c('div', {
-    staticClass: "popular-minicards--container"
+    staticClass: "col-md-12"
   }, [_c('h4', {
     staticClass: "header"
-  }, [_vm._v("Популярные акции")]), _vm._v(" "), _vm._l((_vm.promotions), function(promotion, index) {
+  }, [_vm._v("Популярные акции")]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, _vm._l((_vm.promotions), function(promotion, index) {
     return (index < 6) ? _c('promo-mini-card', {
       key: promotion.id,
       attrs: {
         "promotion": promotion
       }
     }) : _vm._e()
-  })], 2)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
+  }))])]) : _vm._e(), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
     staticClass: "row"
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-12"
   }, [_c('div', {
     staticClass: "popular-cards--container equal"
   }, [_c('div', {
@@ -53180,8 +53186,47 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "center": _vm.center
       }
     })
-  }))])]) : _vm._e()])
-},staticRenderFns: []}
+  }))])])]) : _vm._e()])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-4 col-sm-4 text-center"
+  }, [_c('h2', {
+    staticStyle: {
+      "font-size": "3em"
+    }
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-map-marker",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('p', [_vm._v("Onsells позволяет в режиме реального времени отслеживать акции и интересные предложения от компаний поблизости.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-4 col-sm-4 text-center"
+  }, [_c('h2', {
+    staticStyle: {
+      "font-size": "3em"
+    }
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-heart",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('p', [_vm._v("Мы знаем как важно не тратить лишнего и получать удовольствие от жизни. Наш сервис создан, чтобы Вы получали больше и лучше, за меньшие деньги!")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-4 col-sm-4 text-center"
+  }, [_c('h2', {
+    staticStyle: {
+      "font-size": "3em"
+    }
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-piggy-bank",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('p', [_vm._v("Найдите нужный товар или услугу по самой выгодной цене. Не упустите лучшие предложение. Экономьте время, сотни и тысячи рублей на ваших любимых услугах и развлечениях.")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
