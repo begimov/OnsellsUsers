@@ -53479,7 +53479,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
-    staticClass: "row btn--root-container"
+    staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-6 col-sm-6"
   }, [_c('div', {

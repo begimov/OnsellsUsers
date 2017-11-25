@@ -3,17 +3,11 @@
     padding: 20px;
     margin: 20px 0 !important;
     border-radius: 5px;
-    position: relative;
-    z-index: 2;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .btn--root {
     background-color: $brand-color;
     border-color: $brand-color;
-}
-.btn--root-container {
-    position: relative;
-    z-index: 2;
 }
 .popular-minicards--container {
     background-color: $brand-color;
@@ -22,9 +16,6 @@
 }
 .header{
     margin: 10px 5px 10px 5px !important;
-}
-.features--container {
-    margin-top: 20px;
 }
 .popular-cards--container {
     padding: 0 20px 20px 20px;
