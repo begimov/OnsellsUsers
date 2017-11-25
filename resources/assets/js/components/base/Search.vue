@@ -10,7 +10,7 @@
         </a>
       </span>
     </div>
-    <span class="help-block"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Например, скидка на меню 50%, кофе, стрижка, массаж.</span>
+    <span class="help-block help-block--searchbox"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Например, скидка на меню 50%, кофе, стрижка, массаж.</span>
   </div>
 </template>
 
