@@ -53191,7 +53191,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }) : _vm._e()
   }))])]) : _vm._e(), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
-    staticClass: "row"
+    staticClass: "row equal"
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
     staticClass: "row"
   }, [_c('div', {
@@ -53211,7 +53211,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))])])]) : _vm._e()])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-4 col-sm-4 text-center"
+    staticClass: "col-md-4 col-sm-4 text-center feature-card--left"
   }, [_c('h2', {
     staticStyle: {
       "font-size": "3em"
@@ -53224,7 +53224,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('p', [_vm._v("Onsells позволяет в режиме реального времени отслеживать акции и интересные предложения от компаний поблизости.")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-4 col-sm-4 text-center"
+    staticClass: "col-md-4 col-sm-4 text-center feature-card--center"
   }, [_c('h2', {
     staticStyle: {
       "font-size": "3em"
@@ -53237,7 +53237,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('p', [_vm._v("Мы знаем как важно не тратить лишнего и получать удовольствие от жизни. Наш сервис создан, чтобы Вы получали больше и лучше, за меньшие деньги!")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-4 col-sm-4 text-center"
+    staticClass: "col-md-4 col-sm-4 text-center feature-card--right"
   }, [_c('h2', {
     staticStyle: {
       "font-size": "3em"

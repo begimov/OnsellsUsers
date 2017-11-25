@@ -15,18 +15,18 @@
         </div>
       </div>
 
-      <div class="row" v-if="isDisplayingMiniCards && promotions.length">
-        <div class="col-md-4 col-sm-4 text-center">
-          <h2 style="font-size:3em;"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></h2>
-          <p>Onsells позволяет в&nbsp;режиме реального времени отслеживать акции и&nbsp;интересные предложения от&nbsp;компаний поблизости.</p>
+      <div class="row equal" v-if="isDisplayingMiniCards && promotions.length">
+        <div class="col-md-4 col-sm-4 text-center feature-card--left">
+            <h2 style="font-size:3em;"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></h2>
+            <p>Onsells позволяет в&nbsp;режиме реального времени отслеживать акции и&nbsp;интересные предложения от&nbsp;компаний поблизости.</p>
         </div>
-        <div class="col-md-4 col-sm-4 text-center">
-          <h2 style="font-size:3em;"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h2>
-          <p>Мы&nbsp;знаем как важно не&nbsp;тратить лишнего и&nbsp;получать удовольствие от&nbsp;жизни. Наш сервис создан, чтобы&nbsp;Вы получали больше и&nbsp;лучше, за меньшие деньги!</p>
+        <div class="col-md-4 col-sm-4 text-center feature-card--center">
+            <h2 style="font-size:3em;"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h2>
+            <p>Мы&nbsp;знаем как важно не&nbsp;тратить лишнего и&nbsp;получать удовольствие от&nbsp;жизни. Наш сервис создан, чтобы&nbsp;Вы получали больше и&nbsp;лучше, за меньшие деньги!</p>
         </div>
-        <div class="col-md-4 col-sm-4 text-center">
-          <h2 style="font-size:3em;"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span></h2>
-          <p>Найдите нужный товар или услугу по&nbsp;самой выгодной цене. Не&nbsp;упустите лучшие предложение. Экономьте время, сотни и&nbsp;тысячи рублей на&nbsp;ваших любимых услугах и&nbsp;развлечениях.</p>
+        <div class="col-md-4 col-sm-4 text-center feature-card--right">
+            <h2 style="font-size:3em;"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span></h2>
+            <p>Найдите нужный товар или услугу по&nbsp;самой выгодной цене. Не&nbsp;упустите лучшие предложение. Экономьте время, сотни и&nbsp;тысячи рублей на&nbsp;ваших любимых услугах и&nbsp;развлечениях.</p>
         </div>
       </div>
 

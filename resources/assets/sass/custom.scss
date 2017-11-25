@@ -17,6 +17,31 @@
 .header{
     margin: 10px 5px 10px 5px !important;
 }
+.feature-card--left {
+    border: 1px dashed #939ea4;
+    border-right: 0px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.feature-card--center {
+    border: 1px dashed #939ea4;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.feature-card--right {
+    border: 1px dashed #939ea4;
+    border-left: 0px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .feature-card--left {
+        border: 1px dashed #939ea4;
+    }
+    .feature-card--right {
+        border: 1px dashed #939ea4;
+    }
+}
 .popular-cards--container {
     padding: 0 20px 20px 20px;
 }
