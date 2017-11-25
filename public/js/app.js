@@ -53405,8 +53405,10 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
+    staticClass: "search--container"
+  }, [_c('div', {
     class: {
-      'input-group': _vm.query, 'form-group search--container ': true
+      'input-group': _vm.query, 'form-group': true
     }
   }, [_c('input', {
     directives: [{
@@ -53446,8 +53448,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])]) : _vm._e()])
-},staticRenderFns: []}
+  })])]) : _vm._e()]), _vm._v(" "), _vm._m(0)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "help-block"
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-info-sign",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" Например, скидка на меню 50%, кофе, стрижка, массаж.")])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
