@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-3 col-sm-4 col-xs-6">
+  <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom:20px;">
       <div class="thumbnail thumbnail--promo-card">
         <a :href="'/promotions/' + promotion.id" target="_blank">
           <img class="img-rounded" :src="promotion.medium_image.path">

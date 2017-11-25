@@ -3,27 +3,43 @@
     padding: 20px;
     margin: 20px 0 !important;
     border-radius: 5px;
-    position: relative;
-    z-index: 2;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .btn--root {
     background-color: $brand-color;
     border-color: $brand-color;
 }
-.btn--root-container {
-    position: relative;
-    z-index: 2;
-}
 .popular-minicards--container {
     background-color: $brand-color;
-    padding: 60px 20px 20px 20px;
-    margin-top: -60px;
-    position: absolute;
-    z-index: 1;
     color: #fff !important;
-    .header{
-        margin: 0 20px 10px 20px !important;
+    padding: 10px 10px 10px 10px;     
+}
+.header{
+    margin: 10px 5px 10px 5px !important;
+}
+.feature-card--left {
+    border: 1px dashed #939ea4;
+    border-right: 0px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.feature-card--center {
+    border: 1px dashed #939ea4;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.feature-card--right {
+    border: 1px dashed #939ea4;
+    border-left: 0px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .feature-card--left {
+        border: 1px dashed #939ea4;
+    }
+    .feature-card--right {
+        border: 1px dashed #939ea4;
     }
 }
 .popular-cards--container {
@@ -50,4 +66,8 @@
 }
 .rating {
     font-size: 0.8em;
+}
+.help-block {
+    margin: -5px 0;
+    font-size: 0.9em;
 }

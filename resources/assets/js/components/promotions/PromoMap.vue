@@ -9,7 +9,7 @@
       <gmap-map
       :center="center"
       :zoom="12"
-      style="width: 100%; height: 100%; position: absolute; z-index: 1; top: 50px; left: 0;">
+      style="width: 100%; height: 500px;">
 
         <gmap-marker
         :key="index"
@@ -24,7 +24,17 @@
         <gmap-info-window
         @closeclick = "showInfo = []"
         :opened="showInfo[index] ? showInfo[index] : false">
-        <a :href="`/promotions/${m.promotion.id}`" target="_blank">{{ m.promotion.promotionname }}</a>
+          <div class="media" style="max-width:300px;">
+            <div class="media-left">
+              <a href="#">
+                <a :href="`/promotions/${m.promotion.id}`" target="_blank"><img class="media-object" :src="m.promotion.small_image.path"></a>
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading" style="font-size:1.1em;"><a :href="`/promotions/${m.promotion.id}`" target="_blank">{{ m.promotion.promotionname | strLimit(25) }}</a></h4>
+              {{ m.promotion.promotiondesc | strLimit(110) }}
+            </div>
+          </div>     
         </gmap-info-window>
         
         </gmap-marker>
@@ -44,6 +54,11 @@
         @dragend="centerChanged">
         </gmap-circle>
 
+        <div slot="visible">
+          <div style="bottom: 50%; left: 50%; background-color: #2ea1a6; color: white; position: absolute; z-index: 100; padding:2px 5px; font-size:0.7em; border-radius: 3px;">
+            {{ radius/1000 >= 1 ? Math.round(radius/1000*100)/100 + " км" : Math.round(radius) + " м" }}
+          </div>
+        </div>
       </gmap-map>
     </div>
   </div>
@@ -51,6 +66,8 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import helpers from "../../helpers";
+
 export default {
   data() {
     return {
@@ -59,7 +76,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]),
+    ...mapGetters("promotions/promomap", [
+      "center",
+      "locations",
+      "icons",
+      "getSearchQuery"
+    ]),
     searchQuery: {
       get() {
         return this.getSearchQuery;
@@ -70,7 +92,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]),
+    ...mapActions("promotions/promomap", [
+      "updateCenter",
+      "getLocations",
+      "updateSearchQuery"
+    ]),
     clicked(index, position) {
       this.showInfo = [];
       this.showInfo[index] = true;
@@ -112,8 +138,17 @@ export default {
       );
     },
     reloadLocations() {
-      this.getLocations({center: this.center, radius: this.radius, searchQuery: this.searchQuery});
+      this.getLocations({
+        center: this.center,
+        radius: this.radius,
+        searchQuery: this.searchQuery
+      });
     }
+  },
+  filters: {
+    strLimit: function(str, length) {
+      return helpers.filters.strLimit(str, length)
+    },
   },
   mounted() {
     this.locate();
