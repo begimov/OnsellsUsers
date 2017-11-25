@@ -16059,6 +16059,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -53121,7 +53126,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "radius_changed": _vm.radiusChanged,
       "dragend": _vm.centerChanged
     }
-  })], 2)], 1)])
+  }), _vm._v(" "), _c('div', {
+    attrs: {
+      "slot": "visible"
+    },
+    slot: "visible"
+  }, [_c('div', {
+    staticStyle: {
+      "bottom": "50%",
+      "left": "50%",
+      "background-color": "#2ea1a6",
+      "color": "white",
+      "position": "absolute",
+      "z-index": "100",
+      "padding": "2px 5px",
+      "font-size": "0.7em",
+      "border-radius": "3px"
+    }
+  }, [_vm._v("\n          " + _vm._s(_vm.radius / 1000 >= 1 ? Math.round(_vm.radius / 1000 * 100) / 100 + " км" : Math.round(_vm.radius) + " м") + "\n        ")])])], 2)], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

@@ -54,6 +54,11 @@
         @dragend="centerChanged">
         </gmap-circle>
 
+        <div slot="visible">
+          <div style="bottom: 50%; left: 50%; background-color: #2ea1a6; color: white; position: absolute; z-index: 100; padding:2px 5px; font-size:0.7em; border-radius: 3px;">
+            {{ radius/1000 >= 1 ? Math.round(radius/1000*100)/100 + " км" : Math.round(radius) + " м" }}
+          </div>
+        </div>
       </gmap-map>
     </div>
   </div>
