@@ -1223,13 +1223,14 @@ var load = exports.load = function load(apiKey, version, libraries, loadCn) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export Store */
-/* unused harmony export install */
-/* unused harmony export mapState */
-/* unused harmony export mapMutations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapGetters; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapActions; });
-/* unused harmony export createNamespacedHelpers */
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
 /**
  * vuex v2.4.1
  * (c) 2017 Evan You
@@ -2125,23 +2126,34 @@ var index_esm = {
 };
 
 
-/* harmony default export */ __webpack_exports__["a"] = (index_esm);
+/* harmony default export */ __webpack_exports__["default"] = (index_esm);
 
 
 /***/ }),
 /* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__geo__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters__ = __webpack_require__(122);
 
 
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  geo: __WEBPACK_IMPORTED_MODULE_0__geo__["a" /* default */],
-  filters: __WEBPACK_IMPORTED_MODULE_1__filters__["a" /* default */]
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+
+var _geo = __webpack_require__(123);
+
+var _geo2 = _interopRequireDefault(_geo);
+
+var _filters = __webpack_require__(122);
+
+var _filters2 = _interopRequireDefault(_filters);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  geo: _geo2.default,
+  filters: _filters2.default
+};
 
 /***/ }),
 /* 22 */
@@ -2516,18 +2528,29 @@ module.exports = defaults;
 
 /***/ }),
 /* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__promotions_catalog__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__promotions_promomap__ = __webpack_require__(125);
 
 
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  catalog: __WEBPACK_IMPORTED_MODULE_0__promotions_catalog__["a" /* default */],
-  promomap: __WEBPACK_IMPORTED_MODULE_1__promotions_promomap__["a" /* default */]
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+
+var _catalog = __webpack_require__(124);
+
+var _catalog2 = _interopRequireDefault(_catalog);
+
+var _promomap = __webpack_require__(125);
+
+var _promomap2 = _interopRequireDefault(_promomap);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  catalog: _catalog2.default,
+  promomap: _promomap2.default
+};
 
 /***/ }),
 /* 31 */
@@ -15090,13 +15113,22 @@ exports.default = function (input) {
 
 /***/ }),
 /* 90 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(126);
+
+
+var _vue2GoogleMaps = __webpack_require__(289);
+
+var VueGoogleMaps = _interopRequireWildcard(_vue2GoogleMaps);
+
+var _store = __webpack_require__(126);
+
+var _store2 = _interopRequireDefault(_store);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -15108,8 +15140,7 @@ __webpack_require__(117);
 
 window.Vue = __webpack_require__(88);
 
-
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
+Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDpzauf64hWOPsFTTlbVaQlB7Dn9gVyhc4',
     libraries: 'places' // This is required if you use the Autocomplete plugin
@@ -15118,8 +15149,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     // (as you require)
   }
 });
-
-
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15136,9 +15165,9 @@ Vue.component('promomap', __webpack_require__(266));
 Vue.component('promo-card', __webpack_require__(267));
 Vue.component('promo-mini-card', __webpack_require__(268));
 
-const app = new Vue({
+var app = new Vue({
   el: '#app',
-  store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */]
+  store: _store2.default
 });
 
 /***/ }),
@@ -15990,114 +16019,123 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 110 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(21);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data() {
+var _vuex = __webpack_require__(20);
+
+var _helpers = __webpack_require__(21);
+
+var _helpers2 = _interopRequireDefault(_helpers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  data: function data() {
     return {
       showInfo: [],
       radius: 5000
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]), {
+
+  computed: _extends({}, (0, _vuex.mapGetters)("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]), {
     searchQuery: {
-      get() {
+      get: function get() {
         return this.getSearchQuery;
       },
-      set(value) {
+      set: function set(value) {
         this.updateSearchQuery(value);
       }
     }
   }),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]), {
-    clicked(index, position) {
+  methods: _extends({}, (0, _vuex.mapActions)("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]), {
+    clicked: function clicked(index, position) {
       this.showInfo = [];
       this.showInfo[index] = true;
     },
-    locate() {
+    locate: function locate() {
+      var _this = this;
+
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
+        navigator.geolocation.getCurrentPosition(function (position) {
           var pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          this.updateCenter(pos);
+          _this.updateCenter(pos);
         }, function () {
           // Browser supports Geolocation but smth went wrong
         });
@@ -16105,22 +16143,22 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         // Browser doesn't support Geolocation
       }
     },
-    radiusChanged(radius) {
+    radiusChanged: function radiusChanged(radius) {
       this.radius = radius;
       this.reloadLocations();
     },
-    centerChanged(e) {
-      const newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
+    centerChanged: function centerChanged(e) {
+      var newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
       this.updateCenter(newCenter);
       this.reloadLocations();
     },
-    textSearch() {
+    textSearch: function textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(function () {
         this.reloadLocations();
       }.bind(this), 1000);
     },
-    reloadLocations() {
+    reloadLocations: function reloadLocations() {
       this.getLocations({
         center: this.center,
         radius: this.radius,
@@ -16129,47 +16167,41 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }
   }),
   filters: {
-    strLimit: function (str, length) {
-      return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].filters.strLimit(str, length);
+    strLimit: function strLimit(str, length) {
+      return _helpers2.default.filters.strLimit(str, length);
     }
   },
-  mounted() {
+  mounted: function mounted() {
     this.locate();
     this.reloadLocations();
   }
-});
+};
 
 /***/ }),
 /* 111 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(21);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+var _helpers = __webpack_require__(21);
+
+var _helpers2 = _interopRequireDefault(_helpers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
   props: ["promotion"],
-  data() {
+  data: function data() {
     return {
       //
     };
   },
+
   computed: {
     //
   },
@@ -16177,14 +16209,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     //
   },
   filters: {
-    strLimit: function (str, length) {
-      return __WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* default */].filters.strLimit(str, length);
+    strLimit: function strLimit(str, length) {
+      return _helpers2.default.filters.strLimit(str, length);
     }
   },
-  mounted() {
+  mounted: function mounted() {
     //
   }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 112 */
@@ -16897,6 +16942,8 @@ exports.default = {
 /* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
 
 window._ = __webpack_require__(250);
 
@@ -16940,21 +16987,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 /* 118 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data() {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
     return {
       query: ''
     };
   },
+
   methods: {
-    changed() {
+    changed: function changed() {
       this.$emit('input', this.query);
     },
-    clear() {
+    clear: function clear() {
       this.query = '';
       this.changed();
     }
@@ -16962,40 +17014,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     //
   },
-  mounted() {
+  mounted: function mounted() {
     //
   }
-});
+};
 
 /***/ }),
 /* 119 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(20);
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _vuex = __webpack_require__(20);
 
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data() {
+exports.default = {
+  data: function data() {
     return {
       timer: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions/catalog", ["getSearchQuery", "promotions", "center", "isDisplayingMiniCards"]), {
+
+  computed: _extends({}, (0, _vuex.mapGetters)("promotions/catalog", ["getSearchQuery", "promotions", "center", "isDisplayingMiniCards"]), {
     searchQuery: {
-      get() {
+      get: function get() {
         return this.getSearchQuery;
       },
-      set(value) {
+      set: function set(value) {
         this.updateSearchQuery(value);
       }
     }
   }),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions/catalog", ["updateSearchQuery", "getPromotions", "setIsDisplayingMiniCards"]), {
-    textSearch() {
+  methods: _extends({}, (0, _vuex.mapActions)("promotions/catalog", ["updateSearchQuery", "getPromotions", "setIsDisplayingMiniCards"]), {
+    textSearch: function textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(function () {
         this.getPromotions({
@@ -17004,32 +17061,39 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }.bind(this), 1000);
     }
   }),
-  mounted() {
+  mounted: function mounted() {
     this.getPromotions();
   }
-});
+};
 
 /***/ }),
 /* 120 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(20);
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _vuex = __webpack_require__(20);
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading", "center"])),
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])("promotions", ["switchActiveComponent", "updateCenter"]), {
-    locate() {
+exports.default = {
+  computed: _extends({}, (0, _vuex.mapGetters)("promotions", ["isActiveComponentCatalog", "isActiveComponentPromoMap", "isLoading", "center"])),
+  methods: _extends({}, (0, _vuex.mapActions)("promotions", ["switchActiveComponent", "updateCenter"]), {
+    locate: function locate() {
+      var _this = this;
+
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
+        navigator.geolocation.getCurrentPosition(function (position) {
           var pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          this.updateCenter(pos);
+          _this.updateCenter(pos);
         }, function () {
           // Browser supports Geolocation but smth went wrong
         });
@@ -17038,51 +17102,60 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }
     }
   }),
-  mounted() {
+  mounted: function mounted() {
     this.locate();
   }
-});
+};
 
 /***/ }),
 /* 121 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(21);
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _vuex = __webpack_require__(20);
 
+var _helpers = __webpack_require__(21);
 
+var _helpers2 = _interopRequireDefault(_helpers);
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
   props: ["promotion", "center"],
-  data() {
+  data: function data() {
     return {
       distanceRangeFlag: 0
     };
   },
-  computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])("promotions", ["icons"]), {
-    distanceFromCenter() {
-      const locations = this.promotion.locations;
+
+  computed: _extends({}, (0, _vuex.mapGetters)("promotions", ["icons"]), {
+    distanceFromCenter: function distanceFromCenter() {
+      var locations = this.promotion.locations;
       if (locations.length) {
-        const lat = locations[0].location[0];
-        const lng = locations[0].location[1];
-        const distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(this.center, { lat, lng });
+        var lat = locations[0].location[0];
+        var lng = locations[0].location[1];
+        var distance = _helpers2.default.geo.distance(this.center, { lat: lat, lng: lng });
         this.distanceRangeFlag = distance < 4999 ? 0 : 1;
         return distance;
       }
     },
-    distanceClasses() {
+    distanceClasses: function distanceClasses() {
       return {
         label: true,
         "label-success": this.distanceRangeFlag === 0,
         "label-danger": this.distanceRangeFlag === 1
       };
     },
-    popularity() {
-      const applicationsCount = this.promotion.applications.length;
+    popularity: function popularity() {
+      var applicationsCount = this.promotion.applications.length;
       if (applicationsCount === 0) return 1;
       return applicationsCount <= 5 ? applicationsCount : 5;
     }
@@ -17091,78 +17164,98 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     //
   },
   filters: {
-    strLimit: function (str, length) {
-      return __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].filters.strLimit(str, length);
+    strLimit: function strLimit(str, length) {
+      return _helpers2.default.filters.strLimit(str, length);
     },
-    formatDistance: function (distance) {
+    formatDistance: function formatDistance(distance) {
       return distance > 999 ? Math.round(distance / 10) / 100 + " км" : Math.round(distance) + " м";
     }
   },
-  mounted() {
+  mounted: function mounted() {
     //
   }
-});
+};
 
 /***/ }),
 /* 122 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-    strLimit(str, length) {
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    strLimit: function strLimit(str, length) {
         if (!str) return "";
         str = str.toString();
         return length >= str.length ? str : str.substring(0, length) + '...';
     }
-});
+};
 
 /***/ }),
 /* 123 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-    distance(p1, p2) {
-        const R = 6371e3;
-        const ps1 = this.toRadians(p1.lat);
-        const ps2 = this.toRadians(p2.lat);
-        const dp = this.toRadians(p2.lat - p1.lat);
-        const dl = this.toRadians(p2.lng - p1.lng);
 
-        const a = Math.sin(dp / 2) * Math.sin(dp / 2) + Math.cos(ps1) * Math.cos(ps2) * Math.sin(dl / 2) * Math.sin(dl / 2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    distance: function distance(p1, p2) {
+        var R = 6371e3;
+        var ps1 = this.toRadians(p1.lat);
+        var ps2 = this.toRadians(p2.lat);
+        var dp = this.toRadians(p2.lat - p1.lat);
+        var dl = this.toRadians(p2.lng - p1.lng);
+
+        var a = Math.sin(dp / 2) * Math.sin(dp / 2) + Math.cos(ps1) * Math.cos(ps2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
         return R * c;
     },
-    toRadians(ang) {
+    toRadians: function toRadians(ang) {
         return Math.PI * ang / 180;
     }
-});
+};
 
 /***/ }),
 /* 124 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getPromotions(params) {
-    return new Promise((resolve, reject) => {
-      axios.get(`/webapi/promotions`, { params }).then(res => {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getPromotions: function getPromotions(params) {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/promotions", { params: params }).then(function (res) {
         resolve(res);
       });
     });
   }
-});
+};
 
 /***/ }),
 /* 125 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getLocations(data) {
-    return new Promise((resolve, reject) => {
-      axios.get(`/webapi/locations`, {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getLocations: function getLocations(data) {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/locations", {
         params: {
           radius: data.radius,
           lat: data.center.lat,
@@ -17170,95 +17263,140 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           category: 0,
           searchQuery: data.searchQuery
         }
-      }).then(res => {
+      }).then(function (res) {
         resolve(res);
       });
     });
   }
-});
+};
 
 /***/ }),
 /* 126 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_promotions__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(20);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _promotions = __webpack_require__(134);
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */]);
+var _promotions2 = _interopRequireDefault(_promotions);
 
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */].Store({
+var _vue = __webpack_require__(88);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _vuex = __webpack_require__(20);
+
+var _vuex2 = _interopRequireDefault(_vuex);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_vue2.default.use(_vuex2.default);
+
+exports.default = new _vuex2.default.Store({
   modules: {
-    promotions: __WEBPACK_IMPORTED_MODULE_0__modules_promotions__["a" /* default */]
-  }
-}));
-
-/***/ }),
-/* 127 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(30);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  switchActiveComponent({ commit }, value) {
-    commit('switchActiveComponent', value);
-  },
-  updateCenter({ commit }, value) {
-    commit('updateCenter', value);
+    promotions: _promotions2.default
   }
 });
 
 /***/ }),
-/* 128 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(21);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-  updateSearchQuery({ commit }, value) {
+var _api = __webpack_require__(30);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  switchActiveComponent: function switchActiveComponent(_ref, value) {
+    var commit = _ref.commit;
+
+    commit('switchActiveComponent', value);
+  },
+  updateCenter: function updateCenter(_ref2, value) {
+    var commit = _ref2.commit;
+
+    commit('updateCenter', value);
+  }
+};
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(30);
+
+var _api2 = _interopRequireDefault(_api);
+
+var _helpers = __webpack_require__(21);
+
+var _helpers2 = _interopRequireDefault(_helpers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  updateSearchQuery: function updateSearchQuery(_ref, value) {
+    var commit = _ref.commit;
+
     commit('updateSearchQuery', value);
   },
-  getPromotions({ commit, state, rootGetters }, params) {
+  getPromotions: function getPromotions(_ref2, params) {
+    var commit = _ref2.commit,
+        state = _ref2.state,
+        rootGetters = _ref2.rootGetters;
+
     commit('promotions/isLoading', true, { root: true });
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getPromotions(params).then(res => {
+    _api2.default.catalog.getPromotions(params).then(function (res) {
       if (state.searchQuery) {
-        const newPromotions = _.sortBy(calculateDistance(res.data.promotions, rootGetters['promotions/center']), [function (o) {
+        var newPromotions = _.sortBy(calculateDistance(res.data.promotions, rootGetters['promotions/center']), [function (o) {
           return o.distance;
         }]);
         commit('updatePromotions', newPromotions);
       } else {
-        const newPromotions = _.sortBy(res.data.promotions, [function (o) {
+        var _newPromotions = _.sortBy(res.data.promotions, [function (o) {
           return o.applications.length;
         }]);
-        commit('updatePromotions', newPromotions.reverse());
+        commit('updatePromotions', _newPromotions.reverse());
       }
       commit('promotions/isLoading', false, { root: true });
 
       commit('setIsDisplayingMiniCards', state.searchQuery ? false : true);
     });
   },
-  setIsDisplayingMiniCards({ commit }, value) {
+  setIsDisplayingMiniCards: function setIsDisplayingMiniCards(_ref3, value) {
+    var commit = _ref3.commit;
+
     commit('setIsDisplayingMiniCards', value);
   }
-});
+};
 
-const calculateDistance = (promotions, center) => {
+
+var calculateDistance = function calculateDistance(promotions, center) {
   return _.mapValues(promotions, function (promotion) {
     if (promotion.locations.length) {
-      const lat = promotion.locations[0].location[0];
-      const lng = promotion.locations[0].location[1];
-      promotion.distance = __WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* default */].geo.distance(center, { lat, lng });
+      var lat = promotion.locations[0].location[0];
+      var lng = promotion.locations[0].location[1];
+      promotion.distance = _helpers2.default.geo.distance(center, { lat: lat, lng: lng });
     }
     return promotion;
   });
@@ -17266,244 +17404,353 @@ const calculateDistance = (promotions, center) => {
 
 /***/ }),
 /* 129 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getSearchQuery(state) {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getSearchQuery: function getSearchQuery(state) {
     return state.searchQuery;
   },
-  promotions(state) {
+  promotions: function promotions(state) {
     return state.promotions;
   },
-  center(state, getters, rootState, rootGetters) {
+  center: function center(state, getters, rootState, rootGetters) {
     return rootGetters['promotions/center'];
   },
-  isDisplayingMiniCards(state) {
+  isDisplayingMiniCards: function isDisplayingMiniCards(state) {
     return state.isDisplayingMiniCards;
   }
-});
+};
 
 /***/ }),
 /* 130 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(131);
 
 
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  namespaced: true,
-  state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
-  getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */],
-  actions: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* default */],
-  mutations: __WEBPACK_IMPORTED_MODULE_3__mutations__["a" /* default */]
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+
+var _state = __webpack_require__(132);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(129);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(128);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(131);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
 
 /***/ }),
 /* 131 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-    updateSearchQuery(state, value) {
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    updateSearchQuery: function updateSearchQuery(state, value) {
         state.searchQuery = value;
     },
-    updatePromotions(state, promotions) {
+    updatePromotions: function updatePromotions(state, promotions) {
         state.promotions = promotions;
     },
-    setIsDisplayingMiniCards(state, value) {
+    setIsDisplayingMiniCards: function setIsDisplayingMiniCards(state, value) {
         state.isDisplayingMiniCards = value;
     }
-});
+};
 
 /***/ }),
 /* 132 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
   searchQuery: '',
   promotions: [],
   isDisplayingMiniCards: true
-});
+};
 
 /***/ }),
 /* 133 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  isActiveComponentCatalog(state) {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  isActiveComponentCatalog: function isActiveComponentCatalog(state) {
     return state.activeComponent === 'catalog';
   },
-  isActiveComponentPromoMap(state) {
+  isActiveComponentPromoMap: function isActiveComponentPromoMap(state) {
     return state.activeComponent === 'promomap';
   },
-  isLoading(state) {
+  isLoading: function isLoading(state) {
     return state.isLoading;
   },
-  center(state) {
+  center: function center(state) {
     return state.center;
   },
-  icons(state) {
+  icons: function icons(state) {
     return state.icons;
   }
-});
+};
 
 /***/ }),
 /* 134 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__catalog__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__promomap__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__state__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getters__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mutations__ = __webpack_require__(135);
 
 
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  namespaced: true,
-  state: __WEBPACK_IMPORTED_MODULE_2__state__["a" /* default */],
-  getters: __WEBPACK_IMPORTED_MODULE_3__getters__["a" /* default */],
-  actions: __WEBPACK_IMPORTED_MODULE_4__actions__["a" /* default */],
-  mutations: __WEBPACK_IMPORTED_MODULE_5__mutations__["a" /* default */],
-  modules: {
-    catalog: __WEBPACK_IMPORTED_MODULE_0__catalog__["a" /* default */],
-    promomap: __WEBPACK_IMPORTED_MODULE_1__promomap__["a" /* default */]
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+
+var _catalog = __webpack_require__(130);
+
+var _catalog2 = _interopRequireDefault(_catalog);
+
+var _promomap = __webpack_require__(138);
+
+var _promomap2 = _interopRequireDefault(_promomap);
+
+var _state = __webpack_require__(141);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(133);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(127);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(135);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default,
+  modules: {
+    catalog: _catalog2.default,
+    promomap: _promomap2.default
+  }
+};
 
 /***/ }),
 /* 135 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  switchActiveComponent(state, value) {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  switchActiveComponent: function switchActiveComponent(state, value) {
     state.activeComponent = value;
   },
-  isLoading(state, value) {
+  isLoading: function isLoading(state, value) {
     state.isLoading = value;
   },
-  updateCenter(state, value) {
+  updateCenter: function updateCenter(state, value) {
     state.center = value;
   }
-});
+};
 
 /***/ }),
 /* 136 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(30);
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-  updateCenter({ commit }, value) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(30);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  updateCenter: function updateCenter(_ref, value) {
+    var commit = _ref.commit;
+
     commit('updateCenter', value);
   },
-  getLocations({ commit }, data) {
+  getLocations: function getLocations(_ref2, data) {
+    var commit = _ref2.commit;
+
     commit('promotions/isLoading', true, { root: true });
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].promomap.getLocations(data).then(res => {
+    _api2.default.promomap.getLocations(data).then(function (res) {
       commit('updateLocations', res.data);
       commit('promotions/isLoading', false, { root: true });
     });
   },
-  updateSearchQuery({ commit }, value) {
+  updateSearchQuery: function updateSearchQuery(_ref3, value) {
+    var commit = _ref3.commit;
+
     commit('updateSearchQuery', value);
   }
-});
+};
 
 /***/ }),
 /* 137 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  center(state) {
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  center: function center(state) {
     return state.center;
   },
-  locations(state) {
+  locations: function locations(state) {
     return state.locations;
   },
-  icons(state, getters, rootState, rootGetters) {
+  icons: function icons(state, getters, rootState, rootGetters) {
     return rootGetters['promotions/icons'];
   },
-  getSearchQuery(state) {
+  getSearchQuery: function getSearchQuery(state) {
     return state.searchQuery;
   }
-});
+};
 
 /***/ }),
 /* 138 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(139);
 
 
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  namespaced: true,
-  state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
-  getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */],
-  actions: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* default */],
-  mutations: __WEBPACK_IMPORTED_MODULE_3__mutations__["a" /* default */]
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+
+var _state = __webpack_require__(140);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(137);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(136);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(139);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
 
 /***/ }),
 /* 139 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-    updateCenter(state, value) {
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    updateCenter: function updateCenter(state, value) {
         state.center = value;
     },
-    updateLocations(state, value) {
+    updateLocations: function updateLocations(state, value) {
         state.locations = value;
     },
-    updateSearchQuery(state, value) {
+    updateSearchQuery: function updateSearchQuery(state, value) {
         state.searchQuery = value;
     }
-});
+};
 
 /***/ }),
 /* 140 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
   searchQuery: '',
   center: { lat: 59.9307772, lng: 30.3276762 },
   locations: []
-});
+};
 
 /***/ }),
 /* 141 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
   isLoading: false,
   activeComponent: 'catalog',
   center: { lat: 59.9307772, lng: 30.3276762 },
@@ -17552,7 +17799,7 @@ const calculateDistance = (promotions, center) => {
       icon: "/img/map/" + "ic_default.png"
     }
   }
-});
+};
 
 /***/ }),
 /* 142 */
