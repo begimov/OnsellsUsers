@@ -1,10 +1,14 @@
 <?php
 
-Route::get('/', 'IndexController@index');
+// Route::get('/', 'IndexController@index');
+
+Route::group(['namespace' => 'V2'], function () {
+  Route::get('/', 'IndexController@index');
+});
 
 Route::get('/categories/{category}', 'Promotions\CategoryController@show')->name('category.show');
 
-Route::get('/search', 'SearchController@index')->name('search.index');
+// Route::get('/search', 'SearchController@index')->name('search.index');
 
 Route::get('/promotions/{promotion}', 'Promotions\PromotionController@show')->name('promotion.show');
 
@@ -33,9 +37,3 @@ Auth::routes();
 
 // User dashboard and profile
 Route::get('/home', 'HomeController@index')->name('home');
-
-// TODO: SWITCH to '/'
-// 'prefix' => 'v2' & 'namespace' => 'V2'
-Route::group(['prefix' => 'v2', 'namespace' => 'V2'], function () {
-  Route::get('/', 'IndexController@index');
-});
