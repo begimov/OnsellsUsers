@@ -46,7 +46,7 @@
             @isset($promotion->website)
               <p>
                 <strong>Сайт:</strong><br>
-                <a href="{{ route('redirect.external', $promotion->id) }}">{{ $promotion->website }}</a>
+                <a href="{{ route('redirect.external', $promotion->id) }}" target="_blank">{{ $promotion->website }}</a>
               </p>
             @endisset
             <p>
