@@ -25,7 +25,7 @@ class LocationController extends Controller
                     ->orWhere('promotionname', 'like', "%{$searchQuery}%")
                     ->orWhere('promotiondesc', 'like', "%{$searchQuery}%");
                 })->distance($searchRadius,"{$lat},{$lng}")
-                    ->with('promotion')->with('promotion.category')->with('promotion.smallImage')->take(100)->get();
+                    ->with('promotion')->with('promotion.category')->with('promotion.smallImage')->take($radius < 2000 ? round($radius/100) : 100)->get();
         } else {
             $locations = Location::distance($searchRadius,"{$lat},{$lng}")
             ->whereHas('promotion', function ($query) use ($category){
