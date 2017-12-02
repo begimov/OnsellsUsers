@@ -19,13 +19,13 @@ class LocationController extends Controller
         $searchRadius = $radius + $radius/(5/($radius/800));
         // \DB::enableQueryLog();
         if ($category < 1) {
-            $locations = Location::distance($searchRadius,"{$lat},{$lng}")
-                ->whereHas('promotion', function ($query) use ($category, $searchQuery){
+            $locations = Location::whereHas('promotion', function ($query) use ($category, $searchQuery){
                     $query->where('active', 1)
                     ->where('company', 'like', "%{$searchQuery}%")
                     ->orWhere('promotionname', 'like', "%{$searchQuery}%")
                     ->orWhere('promotiondesc', 'like', "%{$searchQuery}%");
-                })->with('promotion')->with('promotion.category')->with('promotion.smallImage')->take(100)->get();
+                })->distance($searchRadius,"{$lat},{$lng}")
+                    ->with('promotion')->with('promotion.category')->with('promotion.smallImage')->take($radius < 2000 ? round($radius/100) : 100)->get();
         } else {
             $locations = Location::distance($searchRadius,"{$lat},{$lng}")
             ->whereHas('promotion', function ($query) use ($category){
