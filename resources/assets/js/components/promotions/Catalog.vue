@@ -39,6 +39,15 @@
           </div>
         </div>
       </div>
+
+      <div class="row" v-if="!promotions.length">
+        <div class="col-md-12 text-center">
+          <p>
+            <span class="lead"><strong><span class="glyphicon glyphicon-search" aria-hidden="true"></span></strong></span><br>
+            К сожалению, по вашему запросу ничего не найдено.
+          </p>
+        </div>
+      </div>
     </div>
 </template>
 
