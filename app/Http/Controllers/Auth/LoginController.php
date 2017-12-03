@@ -30,7 +30,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        $prevViewedPromotionUrl = session('promotion');
+        $prevViewedPromotionUrl = session('prevViewedPromotionUrl');
         return $prevViewedPromotionUrl ? redirect($prevViewedPromotionUrl) : redirect('/');
     }
 
@@ -41,12 +41,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $previousUrl = url()->previous();
-
-        if (preg_match("/promotions/", $previousUrl)) {
-            session(['promotion' => $previousUrl]);
-        }
-        
         $this->middleware('guest')->except('logout');
+        
+        $previousUrl = url()->previous();
+        
+        if (preg_match("/promotions/", $previousUrl)) {
+            session(['prevViewedPromotionUrl' => $previousUrl]);
+        }
     }
 }
