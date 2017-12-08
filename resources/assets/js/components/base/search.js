@@ -11,6 +11,9 @@ export default {
     clear () {
       this.query = ''
       this.changed()
+    },
+    enterPressed () {
+      this.$emit('enterPressed')
     }
   },
   computed: {

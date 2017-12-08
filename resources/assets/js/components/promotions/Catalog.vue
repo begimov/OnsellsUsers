@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <search v-model="searchQuery" v-on:input="textSearch"></search>
+          <search v-model="searchQuery" v-on:input="textSearch" v-on:enterPressed="instaTextSearch"></search>
         </div>
       </div>
 
