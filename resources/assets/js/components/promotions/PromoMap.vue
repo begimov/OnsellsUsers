@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <search v-model="searchQuery" v-on:input="textSearch"></search>
+        <search v-model="searchQuery" v-on:input="textSearch" v-on:enterPressed="instaTextSearch"></search>
       </div>
     </div>
     <div class="row">
@@ -131,11 +131,14 @@ export default {
     textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(
-        function() {
-          this.reloadLocations();
+        function () {
+          this.instaTextSearch();
         }.bind(this),
         1000
       );
+    },
+    instaTextSearch() {
+      this.reloadLocations();
     },
     reloadLocations() {
       this.getLocations({

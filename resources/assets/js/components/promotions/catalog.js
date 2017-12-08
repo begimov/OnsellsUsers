@@ -24,20 +24,23 @@ export default {
   },
   methods: {
     ...mapActions("promotions/catalog", [
-      "updateSearchQuery", 
+      "updateSearchQuery",
       "getPromotions",
       "setIsDisplayingMiniCards"
     ]),
     textSearch() {
       clearTimeout(this.timer);
       this.timer = setTimeout(
-        function() {
-          this.getPromotions({
-            searchQuery: this.searchQuery
-          });
+        function () {
+          this.instaTextSearch();
         }.bind(this),
         1000
       );
+    },
+    instaTextSearch() {
+      this.getPromotions({
+        searchQuery: this.searchQuery
+      });
     }
   },
   mounted() {
