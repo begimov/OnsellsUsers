@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="ga('send', 'event', 'Buttons', 'Click', 'SignIn');">
                                     Войти
                                 </button>
 
@@ -74,7 +74,7 @@
                 <div class="panel-heading"><h4 class="">Впервые на Onsells?</h4></div>
                   <div class="panel-body">
                     <p>Зарегистрируйтесь за несколько секунд.</p>
-                    <a class="btn btn-primary" href="{{ route('register') }}" role="button">Зарегистрироваться</a>
+                    <a class="btn btn-primary" href="{{ route('register') }}" role="button" onclick="ga('send', 'event', 'Buttons', 'Click', 'Go to Signup page');">Зарегистрироваться</a>
                   </div>
             </div>
         </div>
