@@ -16018,169 +16018,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var _vuex = __webpack_require__(20);
-
-var _helpers = __webpack_require__(21);
-
-var _helpers2 = _interopRequireDefault(_helpers);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  data: function data() {
-    return {
-      showInfo: [],
-      radius: 5000
-    };
-  },
-
-  computed: _extends({}, (0, _vuex.mapGetters)("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]), {
-    searchQuery: {
-      get: function get() {
-        return this.getSearchQuery;
-      },
-      set: function set(value) {
-        this.updateSearchQuery(value);
-      }
-    }
-  }),
-  methods: _extends({}, (0, _vuex.mapActions)("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]), {
-    clicked: function clicked(index, position) {
-      this.showInfo = [];
-      this.showInfo[index] = true;
-    },
-    locate: function locate() {
-      var _this = this;
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          _this.updateCenter(pos);
-        }, function () {
-          // Browser supports Geolocation but smth went wrong
-        });
-      } else {
-        // Browser doesn't support Geolocation
-      }
-    },
-    radiusChanged: function radiusChanged(radius) {
-      this.radius = radius;
-      this.reloadLocations();
-    },
-    centerChanged: function centerChanged(e) {
-      var newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
-      this.updateCenter(newCenter);
-      this.reloadLocations();
-    },
-    textSearch: function textSearch() {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(function () {
-        this.instaTextSearch();
-      }.bind(this), 1000);
-    },
-    instaTextSearch: function instaTextSearch() {
-      this.reloadLocations();
-    },
-    reloadLocations: function reloadLocations() {
-      this.getLocations({
-        center: this.center,
-        radius: this.radius,
-        searchQuery: this.searchQuery
-      });
-    }
-  }),
-  filters: {
-    strLimit: function strLimit(str, length) {
-      return _helpers2.default.filters.strLimit(str, length);
-    }
-  },
-  mounted: function mounted() {
-    this.locate();
-    this.reloadLocations();
-  }
-};
-
-/***/ }),
+/* 110 */,
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17040,7 +16878,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _vuex = __webpack_require__(20);
 
+var _textsearch = __webpack_require__(298);
+
+var _textsearch2 = _interopRequireDefault(_textsearch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
+  mixins: [_textsearch2.default],
   data: function data() {
     return {
       timer: 0
@@ -17058,12 +16903,6 @@ exports.default = {
     }
   }),
   methods: _extends({}, (0, _vuex.mapActions)("promotions/catalog", ["updateSearchQuery", "getPromotions", "setIsDisplayingMiniCards"]), {
-    textSearch: function textSearch() {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(function () {
-        this.instaTextSearch();
-      }.bind(this), 1000);
-    },
     instaTextSearch: function instaTextSearch() {
       if (!this.isLoading) {
         clearTimeout(this.timer);
@@ -53176,7 +53015,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(110),
+  __webpack_require__(299),
   /* template */
   __webpack_require__(269),
   /* scopeId */
@@ -54843,6 +54682,134 @@ function install(Vue, options) {
 __webpack_require__(90);
 module.exports = __webpack_require__(91);
 
+
+/***/ }),
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    methods: {
+        textSearch: function textSearch() {
+            clearTimeout(this.timer);
+            this.timer = setTimeout(function () {
+                this.instaTextSearch();
+            }.bind(this), 1000);
+        }
+    }
+};
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _vuex = __webpack_require__(20);
+
+var _helpers = __webpack_require__(21);
+
+var _helpers2 = _interopRequireDefault(_helpers);
+
+var _textsearch = __webpack_require__(298);
+
+var _textsearch2 = _interopRequireDefault(_textsearch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  mixins: [_textsearch2.default],
+  data: function data() {
+    return {
+      showInfo: [],
+      radius: 5000
+    };
+  },
+
+  computed: _extends({}, (0, _vuex.mapGetters)("promotions/promomap", ["center", "locations", "icons", "getSearchQuery"]), (0, _vuex.mapGetters)("promotions", ["isLoading"]), {
+    searchQuery: {
+      get: function get() {
+        return this.getSearchQuery;
+      },
+      set: function set(value) {
+        this.updateSearchQuery(value);
+      }
+    }
+  }),
+  methods: _extends({}, (0, _vuex.mapActions)("promotions/promomap", ["updateCenter", "getLocations", "updateSearchQuery"]), {
+    clicked: function clicked(index, position) {
+      this.showInfo = [];
+      this.showInfo[index] = true;
+    },
+    locate: function locate() {
+      var _this = this;
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          _this.updateCenter(pos);
+        }, function () {
+          // Browser supports Geolocation but smth went wrong
+        });
+      } else {
+        // Browser doesn't support Geolocation
+      }
+    },
+    radiusChanged: function radiusChanged(radius) {
+      this.radius = radius;
+      this.reloadLocations();
+    },
+    centerChanged: function centerChanged(e) {
+      var newCenter = { lat: e.latLng.lat(), lng: e.latLng.lng() };
+      this.updateCenter(newCenter);
+      this.reloadLocations();
+    },
+    instaTextSearch: function instaTextSearch() {
+      if (!this.isLoading) {
+        clearTimeout(this.timer);
+        this.reloadLocations();
+      }
+    },
+    reloadLocations: function reloadLocations() {
+      this.getLocations({
+        center: this.center,
+        radius: this.radius,
+        searchQuery: this.searchQuery
+      });
+    }
+  }),
+  filters: {
+    strLimit: function strLimit(str, length) {
+      return _helpers2.default.filters.strLimit(str, length);
+    }
+  },
+  mounted: function mounted() {
+    this.locate();
+    this.reloadLocations();
+  }
+};
 
 /***/ })
 /******/ ]);

@@ -1,6 +1,8 @@
 import { mapActions, mapGetters } from "vuex";
+import textSearch from "../mixins/textsearch";
 
 export default {
+  mixins: [textSearch],
   data() {
     return {
       timer: 0
@@ -31,15 +33,6 @@ export default {
       "getPromotions",
       "setIsDisplayingMiniCards"
     ]),
-    textSearch() {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(
-        function () {
-          this.instaTextSearch();
-        }.bind(this),
-        1000
-      );
-    },
     instaTextSearch() {
       if (!this.isLoading) {
         clearTimeout(this.timer);
