@@ -13,6 +13,9 @@ export default {
       "center",
       "isDisplayingMiniCards"
     ]),
+    ...mapGetters("promotions", [
+      "isLoading"
+    ]),
     searchQuery: {
       get() {
         return this.getSearchQuery;
@@ -38,9 +41,12 @@ export default {
       );
     },
     instaTextSearch() {
-      this.getPromotions({
-        searchQuery: this.searchQuery
-      });
+      if (!this.isLoading) {
+        clearTimeout(this.timer);
+        this.getPromotions({
+          searchQuery: this.searchQuery
+        });
+      }
     }
   },
   mounted() {
