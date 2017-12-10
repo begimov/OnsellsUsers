@@ -11,7 +11,7 @@
           </ul>
       </div>
       <div class="col-md-6 col-xs-6">
-        <ul class="list-inline">
+        <ul class="list-inline" style="margin-bottom:10px;">
           <li class="text-footer">Больше клиентов для вашего бизнеса:</li>
           <li><a class="btn btn-primary btn-xs" href="https://admin.onsells.ru" role="button">Добавить акцию</a></li>
         </ul>
