@@ -8,7 +8,7 @@
 
   <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-md-12">
             <h3>Пользовательское соглашение</h3>
             <p>Настоящее Соглашение определяет условия использования Пользователями материалов и&nbsp;сервисов сайта www.onsells.ru (далее&nbsp;&mdash; &laquo;Сайт&raquo;).</p>
             <p><ol>
