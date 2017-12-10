@@ -15,6 +15,10 @@
           <li class="text-footer">Больше клиентов для вашего бизнеса:</li>
           <li><a class="btn btn-primary btn-xs" href="https://admin.onsells.ru" role="button">Добавить акцию</a></li>
         </ul>
+        <ul class="list-inline">
+          <li><a href="{{ route('legal.terms') }}">Пользовательское соглашение</a></li>
+          <li><a href="{{ route('legal.privacy') }}">Политика конфиденциальности</a></li>
+        </ul>
       </div>
     </div>
   </div>
