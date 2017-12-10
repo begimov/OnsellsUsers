@@ -37,3 +37,13 @@ Auth::routes();
 
 // User dashboard and profile
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Legal documents
+Route::group(['prefix' => 'legal'], function () {
+  Route::get('/terms', function () {
+    return view('legal.terms');
+  })->name('legal.terms');
+  Route::get('/privacy', function () {
+    return view('legal.privacy');
+  })->name('legal.privacy');
+});
