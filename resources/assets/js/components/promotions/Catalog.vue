@@ -6,6 +6,34 @@
         </div>
       </div>
 
+      <div class="row" v-if="isDisplayingMiniCards && promotions.length" style="margin-bottom:10px;">
+        <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+            <p>
+              <a href="categories/kliniki"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Клиники</a><br>
+              <a href="categories/stomatologii"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Стоматологии</a>
+            </p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+            <p>
+              <a href="categories/massazh"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Массаж</a><br>
+              <a href="categories/attrakciony"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Аттракционы</a>
+            </p>
+            <p></p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+            <p>
+              <a href="categories/eda"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Еда</a><br>
+              <a href="categories/razvlecheniya"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Развлечения</a>
+            </p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+            <p>
+              <a href="categories/uslugi"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Услуги</a><br>
+              <a href="categories/meropriyatiya"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Мероприятия</a>
+            </p>
+        </div>
+      </div>
+
       <div class="row popular-minicards--container" v-if="isDisplayingMiniCards && promotions.length">
         <div class="col-md-12">
           <h4 class="header">Популярные акции</h4>
