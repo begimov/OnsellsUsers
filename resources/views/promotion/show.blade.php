@@ -28,11 +28,11 @@
       <div class="panel panel-default">
         <div class="panel-heading"><h4>{{ $promotion->company }}</h4></div>
         <div class="panel-body">
+          <p>
+            <strong>Адрес:</strong><br>
+            {{ $promotion->address }}
+          </p>
           @if($applied)
-            <p>
-              <strong>Адрес:</strong><br>
-              {{ $promotion->address }}
-            </p>
             <p>
               @if (count($promotion->locations) > 1)
                 <strong>Дополнительные адреса:</strong><br>
