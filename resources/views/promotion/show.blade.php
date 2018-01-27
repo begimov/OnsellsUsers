@@ -28,11 +28,12 @@
       <div class="panel panel-default">
         <div class="panel-heading"><h4>{{ $promotion->company }}</h4></div>
         <div class="panel-body">
+          <p>
+            <strong>Адрес:</strong><br>
+            {{ $promotion->address }}
+          </p>
+          <p class="lead"><span class="label label-danger">Время акции ограничено</span></p>
           @if($applied)
-            <p>
-              <strong>Адрес:</strong><br>
-              {{ $promotion->address }}
-            </p>
             <p>
               @if (count($promotion->locations) > 1)
                 <strong>Дополнительные адреса:</strong><br>
@@ -82,6 +83,7 @@
           @endif
         </div>
         <div class="panel-footer">
+          <p><strong>Понравилась акция?</strong><br>Расскажите о&nbsp;ней своим друзьям!</p>
           <div class="ya-share2"
             data-services="vkontakte,odnoklassniki,whatsapp,telegram,twitter"
             data-title="{{ str_limit($promotion->promotionname, 30) }}"
