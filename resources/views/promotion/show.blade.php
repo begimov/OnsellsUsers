@@ -83,6 +83,7 @@
           @endif
         </div>
         <div class="panel-footer">
+          <p><strong>Понравилась акция?</strong><br>Расскажите о&nbsp;ней своим друзьям!</p>
           <div class="ya-share2"
             data-services="vkontakte,odnoklassniki,whatsapp,telegram,twitter"
             data-title="{{ str_limit($promotion->promotionname, 30) }}"
