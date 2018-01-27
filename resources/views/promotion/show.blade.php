@@ -32,6 +32,7 @@
             <strong>Адрес:</strong><br>
             {{ $promotion->address }}
           </p>
+          <p class="lead"><span class="label label-danger">Время акции ограничено</span></p>
           @if($applied)
             <p>
               @if (count($promotion->locations) > 1)
