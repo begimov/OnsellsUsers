@@ -1,58 +1,38 @@
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <!-- Collapsed Hamburger -->
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-        <span class="sr-only">Toggle Navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- Branding Image -->
-      <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{ asset('img/navigation/logo.png') }}">
-      </a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="app-navbar-collapse">
-      <!-- Left Side Of Navbar -->
-      <ul class="nav navbar-nav">
-        @if (count($categories) > 0)
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Категории <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            @foreach ($categories as $category)
-            <li><a href="{{ route('category.show', $category) }}">{{ $category->name }}</a></li>
-            @endforeach
-          </ul>
-        </li>
-        @endif
-      </ul>
-      <!-- Right Side Of Navbar -->
-      <ul class="nav navbar-nav navbar-right">
-        <!-- Authentication Links -->
-        @if (Auth::guest())
-        <li><a href="{{ route('login') }}">Войти</a></li>
-        @else
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            {{ Auth::user()->name }} <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li>
-              <a href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">
-              Выйти
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              {{ csrf_field() }}
-            </form>
-          </li>
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #150e16;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">&nbsp;</ul>
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item mr-4">
+                <a class="nav-link" href="https://admin.onsells.ru">Добавить акции</a>
+            </li>
+            <!-- Authentication Links -->
+            @if (Auth::guest())
+            <li class="nav-item mr-4">
+                <a class="nav-link" href="{{ route('login') }}">Войти</a>
+            </li>
+            @else
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        Выйти
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            @endif
         </ul>
-      </li>
-      @endif
-    </ul>
-  </div>
-</div>
+    </div>
 </nav>
