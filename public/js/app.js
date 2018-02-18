@@ -53377,233 +53377,420 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "container-fluid block-header"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-12 align-self-center text-center"
+  }, [_c('p', [_c('img', {
+    attrs: {
+      "src": "img/V2/header_logo.png"
+    }
+  })]), _vm._v(" "), _c('h1', {
+    staticClass: "font-weight-normal block-header-title"
+  }, [_vm._v("Поиск акций и скидок")]), _vm._v(" "), _c('h3', {
+    staticClass: "font-weight-light block-header-subtitle"
+  }, [_vm._v("До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-3 text-right align-self-center"
+  }, [_c('a', {
+    staticClass: "btn btn-success",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("в каталоге")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-6"
+  }, [_c('form', {
+    attrs: {
+      "action": ""
+    }
+  }, [_c('div', {
+    staticClass: "form-group m-0"
+  }, [_c('input', {
+    staticClass: "form-control form-control-lg",
+    attrs: {
+      "type": "text",
+      "placeholder": "Введите название акции, товара или услуги..."
+    }
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-3 align-self-center"
+  }, [_c('a', {
+    staticClass: "btn btn-light",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("на карте")])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid block"
+  }, [_c('div', {
+    staticClass: "row block-title"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Популярные акции")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid block block-features"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-4 text-center block-features-1"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col text-center"
+  }, [_c('h3', {
+    staticClass: "block-features-title"
+  }, [_vm._v(" ")])])]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("В режиме реального времени отслеживать акции")]), _vm._v(" и интересные предложения от компаний поблизости.")]), _vm._v(" "), _c('img', {
+    staticClass: "img-fluid",
+    attrs: {
+      "src": "img/V2/features_mark_1.png"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-4 text-center block-features-2"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col text-center"
+  }, [_c('h3', {
+    staticClass: "block-features-title font-weight-bold"
+  }, [_vm._v("Onsells помогает вам")])])]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Не тратить лишнего")]), _vm._v(" и испытывать удовольствие от жизни, получать больше и лучше, за меньшие деньги.")]), _vm._v(" "), _c('img', {
+    staticClass: "img-fluid",
+    attrs: {
+      "src": "img/V2/features_mark_2.png"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-4 text-center block-features-3"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col text-center"
+  }, [_c('h3', {
+    staticClass: "block-features-title"
+  }, [_vm._v(" ")])])]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Найти нужный товар или услугу по самой выгодной цене.")]), _vm._v(" Экономить время, тысячи рублей на ваших любимых услугах и развлечениях.")]), _vm._v(" "), _c('img', {
+    staticClass: "img-fluid",
+    attrs: {
+      "src": "img/V2/features_mark_3.png"
+    }
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid block"
+  }, [_c('div', {
+    staticClass: "row block-title"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Популярные категории")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-xl-4 col-no-padding"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-1 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h3', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Еда")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.")])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-6 block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-2 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Салоны красоты")]), _vm._v(" "), _c('p', [_vm._v("Посещать салоны красоты с Onsells выгодно, ведь скидки на услуги достигают 90%.")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-6 block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-3 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Стоматологии")]), _vm._v(" "), _c('p', [_vm._v("У нас представлены скидки в стоматологических клиниках СПб на такие услуги, как лечение кариеса, удаление и отбеливание зубов, лингвальные брекеты, и т.д.")])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 block-categories col-no-padding"
+  }, [_c('div', {
+    staticClass: "card block-categories-4 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Клиники")]), _vm._v(" "), _c('p', [_vm._v("На нашем сайте представлены акции от лучших клиник СПб. Скидки на анализы, проведение МРТ, ПЦР, гинекологическое и узи обследование.")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-4 col-no-padding"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-6 block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-5 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Развлечения")]), _vm._v(" "), _c('p', [_vm._v("Благодаря Onsells вы можете получить скидку на развлечения, купить билеты со скидкой и просто хорошо отдохнуть в одном из заведений СПб.")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-6 block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-6 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Массаж")]), _vm._v(" "), _c('p', [_vm._v("Скидки на недорогой массаж спины и другие виды лечебного массажа в СПб. Заходите, стоимость вас приятно удивит.")])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-7 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h3', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Автосервисы")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("На Onsells вы сможете получить скидку на услуги автосервиса и профессиональный уход за автомобилем, аксессуары для своей машины, помыть ее или отремонтировать поломку, сэкономив при этом значительную денежную сумму.")])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-2 col-no-padding"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-8 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Дети")]), _vm._v(" "), _c('p', [_vm._v("Самые актуальные акции на проведение детских праздников. Скидки на организацию праздников, аниматоры на детский праздник и т.д.")])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col block-categories"
+  }, [_c('div', {
+    staticClass: "card block-categories-9 h-100"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer card-footer-no-border"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Обучение")]), _vm._v(" "), _c('p', [_vm._v("Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.")])])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "container-fluid"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('search', {
-    on: {
-      "input": _vm.textSearch,
-      "enterPressed": _vm.instaTextSearch
-    },
-    model: {
-      value: (_vm.searchQuery),
-      callback: function($$v) {
-        _vm.searchQuery = $$v
-      },
-      expression: "searchQuery"
-    }
-  })], 1)]), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
-    staticClass: "row",
-    staticStyle: {
-      "margin-bottom": "10px"
-    }
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
-    staticClass: "row popular-minicards--container"
+    staticClass: "col-xl-5"
   }, [_c('div', {
-    staticClass: "col-md-12"
+    staticClass: "row block-title block"
+  }, [_c('div', {
+    staticClass: "col"
   }, [_c('h4', {
-    staticClass: "header"
-  }, [_vm._v("Популярные акции")]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, _vm._l((_vm.promotions), function(promotion, index) {
-    return (index < 6) ? _c('promo-mini-card', {
-      key: promotion.id,
-      attrs: {
-        "promotion": promotion
-      }
-    }) : _vm._e()
-  }))])]) : _vm._e(), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
-    staticClass: "row equal"
-  }, [_vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)]) : _vm._e(), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
-    staticClass: "row",
-    staticStyle: {
-      "margin": "20px"
-    }
-  }, [_vm._m(7)]) : _vm._e(), _vm._v(" "), (!_vm.isDisplayingMiniCards) ? _c('div', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Как воспользоваться скидкой на Onsells?")])])]), _vm._v(" "), _c('div', {
+    staticClass: "card block-howto"
+  }, [_c('div', {
+    staticClass: "card-body col-no-padding text-white"
+  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-12"
+    staticClass: "col-md-6 p-3"
   }, [_c('div', {
-    staticClass: "popular-cards--container equal"
+    staticClass: "media"
+  }, [_c('img', {
+    staticClass: "mr-2",
+    attrs: {
+      "src": "img/V2/howto_mark_1.png"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "media-body"
+  }, [_c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Заходите")]), _vm._v(" на интересующую вас акцию,\n                                  ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 p-3"
   }, [_c('div', {
-    staticClass: "row equal"
-  }, _vm._l((_vm.promotions), function(promotion) {
-    return _c('promo-card', {
-      key: promotion.id,
-      attrs: {
-        "promotion": promotion,
-        "center": _vm.center
-      }
-    })
-  }))])])]) : _vm._e(), _vm._v(" "), (!_vm.promotions.length) ? _c('div', {
+    staticClass: "media"
+  }, [_c('img', {
+    staticClass: "mr-2",
+    attrs: {
+      "src": "img/V2/howto_mark_2.png"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "media-body"
+  }, [_c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Нажимаете")]), _vm._v(" кнопку «получить скидку» и указываете контактный номер,\n                                  ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
-  }, [_vm._m(8)]) : _vm._e()])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-3 col-sm-3 col-xs-6 text-center"
-  }, [_c('p', [_c('a', {
+  }, [_c('div', {
+    staticClass: "col p-3"
+  }, [_c('div', {
+    staticClass: "media"
+  }, [_c('img', {
+    staticClass: "mr-2",
     attrs: {
-      "href": "categories/kliniki"
+      "src": "img/V2/howto_mark_3.png"
     }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "media-body"
+  }, [_vm._v("\n                                      Ваша заявка с контактными данными указанными при регистрации, автоматически направляется ответственному лицу компании, после чего "), _c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("вы можете смело воспользоваться скидкой;")])])])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xl-7"
+  }, [_c('div', {
+    staticClass: "row block-title block"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('h4', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Внимание!")])])]), _vm._v(" "), _c('div', {
+    staticClass: "card block-attention-1"
+  }, [_c('div', {
+    staticClass: "card-body col-no-padding text-white"
+  }, [_c('div', {
+    staticClass: "row block-attention-1"
+  }, [_c('div', {
+    staticClass: "col p-3"
+  }, [_c('div', {
+    staticClass: "media"
+  }, [_c('img', {
+    staticClass: "mr-2",
+    attrs: {
+      "src": "img/V2/howto_question_mark.png"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "media-body lead"
   }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Клиники")]), _c('br'), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "categories/stomatologii"
-    }
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Ваши данные будут использоваться только внутри проекта Onsells,")]), _vm._v(" для максимально простого получения скидки вами у наших партнеров.\n                                  ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row block-attention-2"
+  }, [_c('div', {
+    staticClass: "col-md-5 p-3"
+  }, [_vm._v("\n                              После получения скидки и отправки данных партнеру Onsells, он может с вами связаться для обсуждения деталей акции;\n                          ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-7 p-3"
+  }, [_vm._v("\n                              Возможно, понадобится сделать еще одно привычное действие: в случае, если в условиях акции сказано «Необходима предварительная запись по телефону ...», то вам необходимо самим позвонить по указанному номеру и забронировать место или, например, столик в ресторане. При бронировании обязательно сообщите, что вы по акции от Onsells;\n                          ")])]), _vm._v(" "), _c('div', {
+    staticClass: "row block-attention-3"
+  }, [_c('div', {
+    staticClass: "col p-3 lead"
   }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Стоматологии")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-3 col-sm-3 col-xs-6 text-center"
-  }, [_c('p', [_c('a', {
-    attrs: {
-      "href": "categories/massazh"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Массаж")]), _c('br'), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "categories/attrakciony"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Аттракционы")])]), _vm._v(" "), _c('p')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-3 col-sm-3 col-xs-6 text-center"
-  }, [_c('p', [_c('a', {
-    attrs: {
-      "href": "categories/eda"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Еда")]), _c('br'), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "categories/razvlecheniya"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Развлечения")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-3 col-sm-3 col-xs-6 text-center"
-  }, [_c('p', [_c('a', {
-    attrs: {
-      "href": "categories/uslugi"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Услуги")]), _c('br'), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "categories/meropriyatiya"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-menu-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Мероприятия")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-4 col-sm-4 text-center feature-card--left"
-  }, [_c('h2', {
-    staticClass: "text-info",
-    staticStyle: {
-      "font-size": "3em"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-map-marker",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })]), _vm._v(" "), _c('p', [_vm._v("Onsells позволяет в режиме реального времени отслеживать акции и интересные предложения от компаний поблизости.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-4 col-sm-4 text-center feature-card--center"
-  }, [_c('h2', {
-    staticClass: "text-info",
-    staticStyle: {
-      "font-size": "3em"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-heart",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })]), _vm._v(" "), _c('p', [_vm._v("Мы знаем как важно не тратить лишнего и получать удовольствие от жизни. Наш сервис создан, чтобы Вы получали больше и лучше, за меньшие деньги!")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-4 col-sm-4 text-center feature-card--right"
-  }, [_c('h2', {
-    staticClass: "text-info",
-    staticStyle: {
-      "font-size": "3em"
-    }
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-piggy-bank",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })]), _vm._v(" "), _c('p', [_vm._v("Найдите нужный товар или услугу по самой выгодной цене. Не упустите лучшие предложение. Экономьте время, сотни и тысячи рублей на ваших любимых услугах и развлечениях.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-12"
-  }, [_c('p', [_c('span', {
-    staticClass: "lead"
-  }, [_c('strong', {
-    staticClass: "text-info"
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-question-sign",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Как воспользоваться скидкой на Onsells:")])])]), _vm._v(" "), _c('ol', [_c('li', [_vm._v("Заходите на интересующую вас акцию,")]), _vm._v(" "), _c('li', [_vm._v("Нажимаете кнопку «получить скидку» и указываете контактный номер,")]), _vm._v(" "), _c('li', [_vm._v("Ваша заявка с контактными данными указанными при регистрации, автоматически направляется ответственному лицу компании, после чего вы можете смело воспользоваться скидкой;")])]), _vm._v(" "), _c('p', [_c('span', {
-    staticClass: "lead"
-  }, [_c('strong', {
-    staticClass: "text-danger"
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-exclamation-sign",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Внимание!")])])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v("Ваши данные будут использоваться только внутри проекта Onsells,")]), _vm._v(" для максимально простого получения скидки вами у наших партнеров.")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("После получения скидки и отправки данных партнеру Onsells, он может с вами связаться для обсуждения деталей акции;")]), _vm._v(" "), _c('li', [_vm._v("Возможно, понадобится сделать еще одно привычное действие: в случае, если в условиях акции сказано «Необходима предварительная запись по телефону ...», то вам необходимо самим позвонить по указанному номеру и забронировать место или, например, столик в ресторане. При бронировании обязательно сообщите, что вы по акции от Onsells;")]), _vm._v(" "), _c('li', [_vm._v("В случае если с вами никто не связался, придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-12 text-center"
-  }, [_c('p', [_c('span', {
-    staticClass: "lead"
-  }, [_c('strong', [_c('span', {
-    staticClass: "glyphicon glyphicon-search",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })])]), _c('br'), _vm._v("\n        К сожалению, по вашему запросу ничего не найдено.\n      ")])])
+    staticClass: "font-weight-bold"
+  }, [_vm._v("В случае если с вами никто не связался,")]), _vm._v(" придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;\n                          ")])])])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
