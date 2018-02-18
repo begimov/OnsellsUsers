@@ -1,3 +1,43 @@
+<div class="container-fluid bg-light block p-4">
+    <div class="row">
+        <div class="col">
+            <img src="img/V2/footer_logo.png" class="img-fluid mb-4 mr-4">
+            <img src="img/V2/vk.png" class="align-top mt-1">
+            <img src="img/V2/instagram.png" class="align-top mb-4 mt-1">
+            <img src="img/V2/facebook.png" class="align-top mb-4 mt-1">
+            <img src="img/V2/telegram.png" class="align-top mb-4 mt-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-2 col-lg-4 col-sm-6">
+            <p>
+                <a href="">Пользовательское соглашение</a><br>
+                <a href="">Политика конфиденциальности</a>
+            </p>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6">
+            <p>
+                АЗС<br>
+                Автосервисы<br>
+                Cалоны<br>
+                Мойки<br>
+                Страхование<br>
+                Авто
+            </p>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6">
+            <p>
+                Мебель<br>
+                Техника<br>
+                Шторы<br>
+            </p>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6">4</div>
+        <div class="col-xl-2 col-lg-4 col-sm-6">5</div>
+        <div class="col-xl-2 col-lg-4 col-sm-6">6</div>
+    </div>
+</div>
+
 <footer class="footer">
   <div class="container">
     <div class="row">
