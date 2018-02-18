@@ -16090,17 +16090,6 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 /* 112 */
@@ -53846,17 +53835,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     style: ({
       backgroundImage: ("url('" + (_vm.promotion.medium_image.path) + "')")
     })
-  }), _vm._v(" "), _vm._m(0)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }), _vm._v(" "), _c('div', {
     staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+  }, [_c('h5', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 30)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 50)))]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-secondary btn-sm",
     attrs: {
-      "href": ""
+      "href": '/promotions/' + _vm.promotion.id,
+      "target": "_blank"
     }
-  }, [_vm._v("ПОЛУЧИТЬ")])])
-}]}
+  }, [_vm._v("ПОЛУЧИТЬ")])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
