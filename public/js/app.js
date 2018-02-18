@@ -53376,9 +53376,31 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
+  return _c('div', [_c('div', {
+    staticClass: "container-fluid block-header"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-6"
+  }, [_c('search', {
+    on: {
+      "input": _vm.textSearch,
+      "enterPressed": _vm.instaTextSearch
+    },
+    model: {
+      value: (_vm.searchQuery),
+      callback: function($$v) {
+        _vm.searchQuery = $$v
+      },
+      expression: "searchQuery"
+    }
+  })], 1), _vm._v(" "), _vm._m(2)])])])]), _vm._v(" "), _c('div', {
     staticClass: "container-fluid block"
-  }, [_vm._m(1), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
+  }, [_vm._m(3), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.promotions), function(promotion, index) {
     return (index < 12) ? _c('promo-mini-card', {
@@ -53387,15 +53409,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "promotion": promotion
       }
     }) : _vm._e()
-  })) : _vm._e()]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])
+  })) : _vm._e()]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container-fluid block-header"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-12 align-self-center text-center"
@@ -53407,37 +53423,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "font-weight-normal block-header-title"
   }, [_vm._v("Поиск акций и скидок")]), _vm._v(" "), _c('h3', {
     staticClass: "font-weight-light block-header-subtitle"
-  }, [_vm._v("До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.")])])]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
+  }, [_vm._v("До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "col-sm-3 text-right align-self-center"
   }, [_c('a', {
     staticClass: "btn btn-success",
     attrs: {
       "href": ""
     }
-  }, [_vm._v("в каталоге")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-6"
-  }, [_c('form', {
-    attrs: {
-      "action": ""
-    }
-  }, [_c('div', {
-    staticClass: "form-group m-0"
-  }, [_c('input', {
-    staticClass: "form-control form-control-lg",
-    attrs: {
-      "type": "text",
-      "placeholder": "Введите название акции, товара или услуги..."
-    }
-  })])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("в каталоге")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "col-sm-3 align-self-center"
   }, [_c('a', {
     staticClass: "btn btn-light",
     attrs: {
       "href": ""
     }
-  }, [_vm._v("на карте")])])])])])])
+  }, [_vm._v("на карте")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row block-title"
@@ -53882,11 +53886,9 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "search--container"
-  }, [_c('div', {
+  return _c('div', [_c('div', {
     class: {
-      'input-group': _vm.query, 'form-group': true
+      'input-group': _vm.query, 'form-group': true, 'm-0': true
     }
   }, [_c('input', {
     directives: [{
@@ -53895,7 +53897,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.query),
       expression: "query"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control form-control-lg",
     attrs: {
       "type": "text",
       "placeholder": "Введите название акции, товара или услуги..."
@@ -53930,17 +53932,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])]) : _vm._e()]), _vm._v(" "), _vm._m(0)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "help-block help-block--searchbox"
-  }, [_c('span', {
-    staticClass: "glyphicon glyphicon-info-sign",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Например, скидка на меню 50%, кофе, стрижка, массаж.")])
-}]}
+  })])]) : _vm._e()])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

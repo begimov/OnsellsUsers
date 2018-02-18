@@ -1,7 +1,7 @@
 <template>
-  <div class="search--container">
-    <div :class="{ 'input-group': query, 'form-group': true }">
-      <input type="text" class="form-control" placeholder="Введите название акции, товара или услуги..."
+  <div>
+    <div :class="{ 'input-group': query, 'form-group': true, 'm-0': true }">
+      <input type="text" class="form-control form-control-lg" placeholder="Введите название акции, товара или услуги..."
         v-model="query"
         @input="changed"
         @keyup.enter="enterPressed">
@@ -11,7 +11,6 @@
         </a>
       </span>
     </div>
-    <span class="help-block help-block--searchbox"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Например, скидка на меню 50%, кофе, стрижка, массаж.</span>
   </div>
 </template>
 

@@ -15,11 +15,7 @@
                   <div class="row">
                       <div class="col-sm-3 text-right align-self-center"><a href="" class="btn btn-success">в каталоге</a></div>
                       <div class="col-sm-6">
-                          <form action="">
-                              <div class="form-group m-0">
-                                  <input type="text" class="form-control form-control-lg" placeholder="Введите название акции, товара или услуги...">
-                              </div>
-                          </form>
+                          <search v-model="searchQuery" v-on:input="textSearch" v-on:enterPressed="instaTextSearch"></search>
                       </div>
                       <div class="col-sm-3 align-self-center"><a href="" class="btn btn-light">на карте</a></div>
                   </div>
