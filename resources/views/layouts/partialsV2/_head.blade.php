@@ -6,9 +6,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Custom title and meta tags -->
   @yield('titleandmetatags')
-  <!-- Styles -->
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,900,900i&amp;subset=cyrillic" rel="stylesheet">
   <!-- Scripts -->
   <script>
     window.Laravel = {!! json_encode([
