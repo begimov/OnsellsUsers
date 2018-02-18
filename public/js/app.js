@@ -53398,7 +53398,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "searchQuery"
     }
-  })], 1), _vm._v(" "), _vm._m(2)])])])]), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _vm._m(2)])])])]), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', [_c('div', {
     staticClass: "container-fluid block"
   }, [_vm._m(3), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
     staticClass: "row"
@@ -53409,7 +53409,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "promotion": promotion
       }
     }) : _vm._e()
-  })) : _vm._e()]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)])
+  })) : _vm._e()]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid"
+  }, [(!_vm.isDisplayingMiniCards) ? _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('div', {
+    staticClass: "popular-cards--container equal"
+  }, [_c('div', {
+    staticClass: "row equal"
+  }, _vm._l((_vm.promotions), function(promotion) {
+    return _c('promo-card', {
+      key: promotion.id,
+      attrs: {
+        "promotion": promotion,
+        "center": _vm.center
+      }
+    })
+  }))])])]) : _vm._e(), _vm._v(" "), (!_vm.promotions.length) ? _c('div', {
+    staticClass: "row"
+  }, [_vm._m(7)]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
@@ -53427,19 +53447,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-sm-3 text-right align-self-center"
-  }, [_c('a', {
+  }, [_c('button', {
     staticClass: "btn btn-success",
     attrs: {
-      "href": ""
+      "disabled": ""
     }
   }, [_vm._v("в каталоге")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-sm-3 align-self-center"
-  }, [_c('a', {
+  }, [_c('button', {
     staticClass: "btn btn-light",
     attrs: {
-      "href": ""
+      "disabled": ""
     }
   }, [_vm._v("на карте")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -53663,7 +53683,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "media-body"
   }, [_c('span', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Заходите")]), _vm._v(" на интересующую вас акцию,\n                                  ")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Заходите")]), _vm._v(" на интересующую вас акцию,\n                                        ")])])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 p-3"
   }, [_c('div', {
     staticClass: "media"
@@ -53676,7 +53696,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "media-body"
   }, [_c('span', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Нажимаете")]), _vm._v(" кнопку «получить скидку» и указываете контактный номер,\n                                  ")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Нажимаете")]), _vm._v(" кнопку «получить скидку» и указываете контактный номер,\n                                        ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col p-3"
@@ -53689,7 +53709,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "media-body"
-  }, [_vm._v("\n                                      Ваша заявка с контактными данными указанными при регистрации, автоматически направляется ответственному лицу компании, после чего "), _c('span', {
+  }, [_vm._v("\n                                            Ваша заявка с контактными данными указанными при регистрации, автоматически направляется ответственному лицу компании, после чего "), _c('span', {
     staticClass: "font-weight-bold"
   }, [_vm._v("вы можете смело воспользоваться скидкой;")])])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-xl-7"
@@ -53718,19 +53738,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "media-body lead"
   }, [_c('span', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Ваши данные будут использоваться только внутри проекта Onsells,")]), _vm._v(" для максимально простого получения скидки вами у наших партнеров.\n                                  ")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Ваши данные будут использоваться только внутри проекта Onsells,")]), _vm._v(" для максимально простого получения скидки вами у наших партнеров.\n                                        ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "row block-attention-2"
   }, [_c('div', {
     staticClass: "col-md-5 p-3"
-  }, [_vm._v("\n                              После получения скидки и отправки данных партнеру Onsells, он может с вами связаться для обсуждения деталей акции;\n                          ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                                    После получения скидки и отправки данных партнеру Onsells, он может с вами связаться для обсуждения деталей акции;\n                                ")]), _vm._v(" "), _c('div', {
     staticClass: "col-md-7 p-3"
-  }, [_vm._v("\n                              Возможно, понадобится сделать еще одно привычное действие: в случае, если в условиях акции сказано «Необходима предварительная запись по телефону ...», то вам необходимо самим позвонить по указанному номеру и забронировать место или, например, столик в ресторане. При бронировании обязательно сообщите, что вы по акции от Onsells;\n                          ")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                                    Возможно, понадобится сделать еще одно привычное действие: в случае, если в условиях акции сказано «Необходима предварительная запись по телефону ...», то вам необходимо самим позвонить по указанному номеру и забронировать место или, например, столик в ресторане. При бронировании обязательно сообщите, что вы по акции от Onsells;\n                                ")])]), _vm._v(" "), _c('div', {
     staticClass: "row block-attention-3"
   }, [_c('div', {
     staticClass: "col p-3 lead"
   }, [_c('span', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("В случае если с вами никто не связался,")]), _vm._v(" придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;\n                          ")])])])])])])])
+  }, [_vm._v("В случае если с вами никто не связался,")]), _vm._v(" придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;\n                                ")])])])])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-12 text-center"
+  }, [_c('p', [_c('span', {
+    staticClass: "lead"
+  }, [_c('strong', [_c('span', {
+    staticClass: "glyphicon glyphicon-search",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])]), _c('br'), _vm._v("\n                К сожалению, по вашему запросу ничего не найдено.\n            ")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
