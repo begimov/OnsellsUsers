@@ -16091,6 +16091,16 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 112 */
@@ -53377,9 +53387,20 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid block"
+  }, [_vm._m(1), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
+    staticClass: "row"
+  }, _vm._l((_vm.promotions), function(promotion, index) {
+    return (index < 12) ? _c('promo-mini-card', {
+      key: promotion.id,
+      attrs: {
+        "promotion": promotion
+      }
+    }) : _vm._e()
+  })) : _vm._e()]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
+  return _c('div', {
     staticClass: "container-fluid block-header"
   }, [_c('div', {
     staticClass: "row"
@@ -53427,95 +53448,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": ""
     }
-  }, [_vm._v("на карте")])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "container-fluid block"
-  }, [_c('div', {
+  }, [_vm._v("на карте")])])])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "row block-title"
   }, [_c('div', {
     staticClass: "col"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Популярные акции")])])]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
-  }, [_c('div', {
-    staticClass: "card text-center"
-  }, [_c('div', {
-    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-secondary btn-sm",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
-  }, [_c('div', {
-    staticClass: "card text-center"
-  }, [_c('div', {
-    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-secondary btn-sm",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
-  }, [_c('div', {
-    staticClass: "card text-center"
-  }, [_c('div', {
-    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-secondary btn-sm",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
-  }, [_c('div', {
-    staticClass: "card text-center"
-  }, [_c('div', {
-    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-secondary btn-sm",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
-  }, [_c('div', {
-    staticClass: "card text-center"
-  }, [_c('div', {
-    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-secondary btn-sm",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("ПОЛУЧИТЬ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
-  }, [_c('div', {
-    staticClass: "card text-center"
-  }, [_c('div', {
-    staticClass: "card-header bg-danger text-white text-uppercase text-center block-popularpromos-header"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-secondary btn-sm",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("ПОЛУЧИТЬ")])])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Популярные акции")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "container-fluid block block-features"
   }, [_c('div', {
     staticClass: "row"
@@ -53570,7 +53513,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": "img/V2/features_mark_3.png"
     }
-  })])])]), _vm._v(" "), _c('div', {
+  })])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "container-fluid block"
   }, [_c('div', {
     staticClass: "row block-title"
@@ -53692,7 +53637,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Обучение")]), _vm._v(" "), _c('p', [_vm._v("Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.")])])])])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Обучение")]), _vm._v(" "), _c('p', [_vm._v("Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.")])])])])])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "container-fluid"
   }, [_c('div', {
     staticClass: "row"
@@ -53790,7 +53737,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col p-3 lead"
   }, [_c('span', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("В случае если с вами никто не связался,")]), _vm._v(" придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;\n                          ")])])])])])])])])
+  }, [_vm._v("В случае если с вами никто не связался,")]), _vm._v(" придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;\n                          ")])])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -53891,25 +53838,25 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-2 col-sm-4 col-xs-6"
-  }, [_c('a', {
-    staticClass: "thumbnail thumbnail--mini-card",
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+  }, [_c('div', {
+    staticClass: "card text-center"
+  }, [_c('div', {
+    staticClass: "card-header block-popularpromos-header",
+    style: ({
+      backgroundImage: ("url('" + (_vm.promotion.medium_image.path) + "')")
+    })
+  }), _vm._v(" "), _vm._m(0)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card-body"
+  }, [_c('h5', [_vm._v("Бесплатный шот")]), _vm._v(" "), _c('p', [_vm._v("Угощаем домашней фирменной настойкой всех клиентов наших парикмахеров после 18:00.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm",
     attrs: {
-      "href": '/promotions/' + _vm.promotion.id,
-      "target": "_blank"
+      "href": ""
     }
-  }, [_c('img', {
-    staticClass: "img-rounded",
-    attrs: {
-      "src": _vm.promotion.medium_image.path
-    }
-  })]), _vm._v(" "), _c('p', [_c('strong', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)))]), _c('br'), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": '/promotions/' + _vm.promotion.id,
-      "target": "_blank"
-    }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 30)) + "\n          ")])])])
-},staticRenderFns: []}
+  }, [_vm._v("ПОЛУЧИТЬ")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
