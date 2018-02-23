@@ -53466,7 +53466,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "row mb-5"
   }, [_c('div', {
-    staticClass: "col"
+    staticClass: "col pl-2"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
   }, [_vm._v("Популярные акции")])])])
@@ -53533,7 +53533,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row mb-5"
   }, [_c('div', {
-    staticClass: "col"
+    staticClass: "col pl-2"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
   }, [_vm._v("Популярные категории")])])]), _vm._v(" "), _c('div', {
@@ -53697,7 +53697,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row mb-5 mt-5"
   }, [_c('div', {
-    staticClass: "col"
+    staticClass: "col pl-2"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
   }, [_vm._v("Как воспользоваться скидкой на Onsells?")])])]), _vm._v(" "), _c('div', {
@@ -53752,7 +53752,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row mb-5 mt-5"
   }, [_c('div', {
-    staticClass: "col"
+    staticClass: "col pl-2"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
   }, [_vm._v("Внимание!")])])]), _vm._v(" "), _c('div', {

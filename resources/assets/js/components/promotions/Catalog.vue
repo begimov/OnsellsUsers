@@ -25,7 +25,7 @@
         <div v-if="isDisplayingMiniCards && promotions.length">
             <div class="container-fluid mt-5">
                 <div class="row mb-5">
-                    <div class="col"><h4 class="font-weight-bold">Популярные акции</h4></div>
+                    <div class="col pl-2"><h4 class="font-weight-bold">Популярные акции</h4></div>
                 </div>
                 <div class="row" v-if="isDisplayingMiniCards && promotions.length">
                     <promo-mini-card  v-for="(promotion, index) in promotions" v-if="index < 12" :key="promotion.id" :promotion="promotion"></promo-mini-card>
@@ -55,7 +55,7 @@
 
             <div class="container-fluid mt-5">
                 <div class="row mb-5">
-                    <div class="col"><h4 class="font-weight-bold">Популярные категории</h4></div>
+                    <div class="col pl-2"><h4 class="font-weight-bold">Популярные категории</h4></div>
                 </div>
                 <div class="row">
                     <div class="col-xl-4 p-0">
@@ -182,7 +182,7 @@
                 <div class="row">
                     <div class="col-xl-5">
                         <div class="row mb-5 mt-5">
-                            <div class="col"><h4 class="font-weight-bold">Как воспользоваться скидкой на Onsells?</h4></div>
+                            <div class="col pl-2"><h4 class="font-weight-bold">Как воспользоваться скидкой на Onsells?</h4></div>
                         </div>
                         <div class="card block-howto">
                             <div class="card-body p-0 text-white">
@@ -219,7 +219,7 @@
                     </div>
                     <div class="col-xl-7">
                         <div class="row mb-5 mt-5">
-                            <div class="col"><h4 class="font-weight-bold">Внимание!</h4></div>
+                            <div class="col pl-2"><h4 class="font-weight-bold">Внимание!</h4></div>
                         </div>
                         <div class="card block-attention-1">
                             <div class="card-body p-0 text-white">
