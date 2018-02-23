@@ -1,10 +1,8 @@
 <template>
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 promo-card--container" style="margin-bottom:20px;">
-      <div class="thumbnail thumbnail--promo-card">
-        <a :href="'/promotions/' + promotion.id" target="_blank">
-          <img class="img-rounded" :src="promotion.medium_image.path">
-        </a>
-        <div class="caption text-center promo-card-caption">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-2">
+      <div class="card">
+        <div class="card-header block-popularpromos-header" :style="{ backgroundImage: `url('${promotion.medium_image.path}')` }"></div>
+        <div class="card-body text-center">
           <img :src="(icons[promotion.category.parent_id])
             ? (icons[promotion.category.parent_id].icon)
             : (icons['default'].icon)">

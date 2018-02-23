@@ -53833,24 +53833,16 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-lg-3 col-md-4 col-sm-6 col-xs-12 promo-card--container",
-    staticStyle: {
-      "margin-bottom": "20px"
-    }
+    staticClass: "col-lg-3 col-md-4 col-sm-6 col-xs-12 p-2"
   }, [_c('div', {
-    staticClass: "thumbnail thumbnail--promo-card"
-  }, [_c('a', {
-    attrs: {
-      "href": '/promotions/' + _vm.promotion.id,
-      "target": "_blank"
-    }
-  }, [_c('img', {
-    staticClass: "img-rounded",
-    attrs: {
-      "src": _vm.promotion.medium_image.path
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "caption text-center promo-card-caption"
+    staticClass: "card"
+  }, [_c('div', {
+    staticClass: "card-header block-popularpromos-header",
+    style: ({
+      backgroundImage: ("url('" + (_vm.promotion.medium_image.path) + "')")
+    })
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body text-center"
   }, [_c('img', {
     attrs: {
       "src": (_vm.icons[_vm.promotion.category.parent_id]) ?
