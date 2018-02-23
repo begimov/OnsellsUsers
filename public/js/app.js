@@ -53399,7 +53399,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "searchQuery"
     }
   })], 1), _vm._v(" "), _vm._m(2)])])])]), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', [_c('div', {
-    staticClass: "container-fluid block"
+    staticClass: "container-fluid mt-5"
   }, [_vm._m(3), _vm._v(" "), (_vm.isDisplayingMiniCards && _vm.promotions.length) ? _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.promotions), function(promotion, index) {
@@ -53440,9 +53440,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "img/V2/header_logo.png"
     }
   })]), _vm._v(" "), _c('h1', {
-    staticClass: "font-weight-normal block-header-title"
+    staticClass: "font-weight-normal mt-4"
   }, [_vm._v("Поиск акций и скидок")]), _vm._v(" "), _c('h3', {
-    staticClass: "font-weight-light block-header-subtitle"
+    staticClass: "font-weight-light mb-5"
   }, [_vm._v("До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
@@ -53464,7 +53464,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("на карте")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "row block-title"
+    staticClass: "row mb-5"
   }, [_c('div', {
     staticClass: "col"
   }, [_c('h4', {
@@ -53472,17 +53472,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Популярные акции")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container-fluid block block-features"
+    staticClass: "container-fluid mt-5 block-features"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-4 text-center block-features-1"
+    staticClass: "col-md-4 text-center block-features-1 pb-5"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col text-center"
   }, [_c('h3', {
-    staticClass: "block-features-title"
+    staticClass: "my-5 mx-1"
   }, [_vm._v(" ")])])]), _vm._v(" "), _c('p', {
     staticClass: "lead"
   }, [_c('span', {
@@ -53493,13 +53493,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "img/V2/features_mark_1.png"
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-4 text-center block-features-2"
+    staticClass: "col-md-4 text-center block-features-2 pb-5"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col text-center"
   }, [_c('h3', {
-    staticClass: "block-features-title font-weight-bold"
+    staticClass: "my-5 mx-1 font-weight-bold"
   }, [_vm._v("Onsells помогает вам")])])]), _vm._v(" "), _c('p', {
     staticClass: "lead"
   }, [_c('span', {
@@ -53510,13 +53510,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "img/V2/features_mark_2.png"
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-4 text-center block-features-3"
+    staticClass: "col-md-4 text-center block-features-3 pb-5"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col text-center"
   }, [_c('h3', {
-    staticClass: "block-features-title"
+    staticClass: "my-5 mx-1"
   }, [_vm._v(" ")])])]), _vm._v(" "), _c('p', {
     staticClass: "lead"
   }, [_c('span', {
@@ -53529,9 +53529,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container-fluid block"
+    staticClass: "container-fluid mt-5"
   }, [_c('div', {
-    staticClass: "row block-title"
+    staticClass: "row mb-5"
   }, [_c('div', {
     staticClass: "col"
   }, [_c('h4', {
@@ -53539,11 +53539,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Популярные категории")])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-xl-4 col-no-padding"
+    staticClass: "col-xl-4 p-0"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/eda"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-1 h-100"
   }, [_c('div', {
@@ -53554,10 +53558,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "font-weight-bold"
   }, [_vm._v("Еда")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
-  }, [_vm._v("Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.")])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.")])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-6 block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-2 h-100"
   }, [_c('div', {
@@ -53566,7 +53574,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Салоны красоты")]), _vm._v(" "), _c('p', [_vm._v("Посещать салоны красоты с Onsells выгодно, ведь скидки на услуги достигают 90%.")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Салоны красоты")]), _vm._v(" "), _c('p', [_vm._v("Посещать салоны красоты с Onsells выгодно, ведь скидки на услуги достигают 90%.")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-6 block-categories"
   }, [_c('div', {
     staticClass: "card block-categories-3 h-100"
@@ -53577,7 +53585,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h4', {
     staticClass: "font-weight-bold"
   }, [_vm._v("Стоматологии")]), _vm._v(" "), _c('p', [_vm._v("У нас представлены скидки в стоматологических клиниках СПб на такие услуги, как лечение кариеса, удаление и отбеливание зубов, лингвальные брекеты, и т.д.")])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 block-categories col-no-padding"
+    staticClass: "col-xl-2 block-categories p-0"
   }, [_c('div', {
     staticClass: "card block-categories-4 h-100"
   }, [_c('div', {
@@ -53587,7 +53595,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h4', {
     staticClass: "font-weight-bold"
   }, [_vm._v("Клиники")]), _vm._v(" "), _c('p', [_vm._v("На нашем сайте представлены акции от лучших клиник СПб. Скидки на анализы, проведение МРТ, ПЦР, гинекологическое и узи обследование.")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-4 col-no-padding"
+    staticClass: "col-xl-4 p-0"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
@@ -53625,7 +53633,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Автосервисы")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
   }, [_vm._v("На Onsells вы сможете получить скидку на услуги автосервиса и профессиональный уход за автомобилем, аксессуары для своей машины, помыть ее или отремонтировать поломку, сэкономив при этом значительную денежную сумму.")])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-xl-2 col-no-padding"
+    staticClass: "col-xl-2 p-0"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
@@ -53659,7 +53667,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-xl-5"
   }, [_c('div', {
-    staticClass: "row block-title block"
+    staticClass: "row mb-5 mt-5"
   }, [_c('div', {
     staticClass: "col"
   }, [_c('h4', {
@@ -53667,7 +53675,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Как воспользоваться скидкой на Onsells?")])])]), _vm._v(" "), _c('div', {
     staticClass: "card block-howto"
   }, [_c('div', {
-    staticClass: "card-body col-no-padding text-white"
+    staticClass: "card-body p-0 text-white"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
@@ -53714,7 +53722,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("вы можете смело воспользоваться скидкой;")])])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-xl-7"
   }, [_c('div', {
-    staticClass: "row block-title block"
+    staticClass: "row mb-5 mt-5"
   }, [_c('div', {
     staticClass: "col"
   }, [_c('h4', {
@@ -53722,7 +53730,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Внимание!")])])]), _vm._v(" "), _c('div', {
     staticClass: "card block-attention-1"
   }, [_c('div', {
-    staticClass: "card-body col-no-padding text-white"
+    staticClass: "card-body p-0 text-white"
   }, [_c('div', {
     staticClass: "row block-attention-1"
   }, [_c('div', {
@@ -53862,7 +53870,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-xl-2 col-lg-4 col-sm-6 col-padding"
+    staticClass: "col-xl-2 col-lg-4 col-sm-6 p-2"
   }, [_c('div', {
     staticClass: "card text-center"
   }, [_c('div', {

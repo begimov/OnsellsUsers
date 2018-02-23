@@ -8,12 +8,6 @@ body {
     margin: 0px;
 }
 /* CUSTOM */
-.block {
-    margin-top: 35px;
-}
-.block-title {
-    margin-bottom: 30px;
-}
 .block-header {
     background-image: url('./../img/V2/header_bg.jpg');
     background-size: cover;
@@ -21,16 +15,7 @@ body {
     color: #fff;
     margin-top: -40px;
 }
-.block-header-title {
-    margin-top: 30px;
-}
-.block-header-subtitle {
-    margin-bottom: 50px;
-}
 
-.col-padding {
-    padding: 5px;
-}
 .block-popularpromos-header {
     background-size: cover;
     height: 200px;
@@ -42,25 +27,16 @@ body {
     color: #fff;
     padding:0;
 }
-.block-features-title {
-    margin:40px 10px;
-}
 .block-features-1 {
     background-color: rgba(122, 0, 84, 0.5);
-    padding-bottom: 40px;
 }
 .block-features-2 {
     background-color: rgba(34, 0, 88, 0.5);
-    padding-bottom: 40px;
 }
 .block-features-3 {
     background-color: rgba(0, 4, 138, 0.5);
-    padding-bottom: 40px;
 }
 
-.col-no-padding {
-    padding: 0;
-}
 .card-footer-no-border {
     border: none !important;
     background: none;
@@ -71,6 +47,10 @@ body {
     margin-bottom: 5px;
     padding: 0 3px;
     min-height: 350px;
+    a, a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 .block-categories-1 {
     background-image: url('./../img/V2/categories_bg_01.jpg');
@@ -78,44 +58,36 @@ body {
     border: none !important;
 }
 .block-categories-2 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_02.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-3 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_03.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-4 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_04.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-5 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_05.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-6 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_06.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-7 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_07.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-8 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_08.jpg');
-    background-size: cover;
-    border: none !important;
 }
 .block-categories-9 {
+    @extend .block-categories-1;
     background-image: url('./../img/V2/categories_bg_09.jpg');
-    background-size: cover;
-    border: none !important;
 }
 
 .block-howto {

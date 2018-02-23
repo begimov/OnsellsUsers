@@ -7,8 +7,8 @@
                     <div class="row">
                         <div class="col-12 align-self-center text-center">
                             <p><img src="img/V2/header_logo.png"></p>
-                            <h1 class="font-weight-normal block-header-title">Поиск акций и скидок</h1>
-                            <h3 class="font-weight-light block-header-subtitle">До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.</h3>
+                            <h1 class="font-weight-normal mt-4">Поиск акций и скидок</h1>
+                            <h3 class="font-weight-light mb-5">До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.</h3>
                         </div>  
                     </div>
                     <div class="row">
@@ -23,8 +23,8 @@
         </div>
         <!-- PROMOTIONS -->
         <div v-if="isDisplayingMiniCards && promotions.length">
-            <div class="container-fluid block">
-                <div class="row block-title">
+            <div class="container-fluid mt-5">
+                <div class="row mb-5">
                     <div class="col"><h4 class="font-weight-bold">Популярные акции</h4></div>
                 </div>
                 <div class="row" v-if="isDisplayingMiniCards && promotions.length">
@@ -32,53 +32,57 @@
                 </div>
             </div>
 
-            <div class="container-fluid block block-features">
+            <div class="container-fluid mt-5 block-features">
                 
                 <div class="row">
-                    <div class="col-md-4 text-center block-features-1">
-                        <div class="row"><div class="col text-center"><h3 class="block-features-title">&nbsp;</h3></div></div>
+                    <div class="col-md-4 text-center block-features-1 pb-5">
+                        <div class="row"><div class="col text-center"><h3 class="my-5 mx-1">&nbsp;</h3></div></div>
                         <p class="lead"><span class="font-weight-bold">В режиме реального времени отслеживать акции</span> и интересные предложения от компаний поблизости.</p>
                         <img src="img/V2/features_mark_1.png" class="img-fluid">
                     </div>
-                    <div class="col-md-4 text-center block-features-2">
-                        <div class="row"><div class="col text-center"><h3 class="block-features-title font-weight-bold">Onsells помогает вам</h3></div></div>
+                    <div class="col-md-4 text-center block-features-2 pb-5">
+                        <div class="row"><div class="col text-center"><h3 class="my-5 mx-1 font-weight-bold">Onsells помогает вам</h3></div></div>
                         <p class="lead"><span class="font-weight-bold">Не тратить лишнего</span> и испытывать удовольствие от жизни, получать больше и лучше, за меньшие деньги.</p>
                         <img src="img/V2/features_mark_2.png" class="img-fluid">
                     </div>
-                    <div class="col-md-4 text-center block-features-3">
-                        <div class="row"><div class="col text-center"><h3 class="block-features-title">&nbsp;</h3></div></div>
+                    <div class="col-md-4 text-center block-features-3 pb-5">
+                        <div class="row"><div class="col text-center"><h3 class="my-5 mx-1">&nbsp;</h3></div></div>
                         <p class="lead"><span class="font-weight-bold">Найти нужный товар или услугу по самой выгодной цене.</span> Экономить время, тысячи рублей на ваших любимых услугах и развлечениях.</p>
                         <img src="img/V2/features_mark_3.png" class="img-fluid">
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid block">
-                <div class="row block-title">
+            <div class="container-fluid mt-5">
+                <div class="row mb-5">
                     <div class="col"><h4 class="font-weight-bold">Популярные категории</h4></div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-no-padding">
+                    <div class="col-xl-4 p-0">
                         <div class="row">
                             <div class="col block-categories">
-                                <div class="card block-categories-1 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h3 class="font-weight-bold">Еда</h3>
-                                        <p class="lead">Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.</p>
+                                <a href="categories/eda">
+                                    <div class="card block-categories-1 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h3 class="font-weight-bold">Еда</h3>
+                                            <p class="lead">Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6 block-categories">
-                                <div class="card block-categories-2 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h4 class="font-weight-bold">Салоны красоты</h4>
-                                        <p>Посещать салоны красоты с Onsells выгодно, ведь скидки на услуги достигают 90%.</p>
+                                <a href="#">
+                                    <div class="card block-categories-2 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h4 class="font-weight-bold">Салоны красоты</h4>
+                                            <p>Посещать салоны красоты с Onsells выгодно, ведь скидки на услуги достигают 90%.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 block-categories">
                                 <div class="card block-categories-3 h-100">
@@ -91,7 +95,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 block-categories col-no-padding">
+                    <div class="col-xl-2 block-categories p-0">
                         <div class="card block-categories-4 h-100">
                             <div class="card-body">&nbsp;</div>
                             <div class="card-footer card-footer-no-border">
@@ -100,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-no-padding">
+                    <div class="col-xl-4 p-0">
                         <div class="row">
                             <div class="col-sm-6 block-categories">
                                 <div class="card block-categories-5 h-100">
@@ -133,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-no-padding">
+                    <div class="col-xl-2 p-0">
                         <div class="row">
                             <div class="col block-categories">
                                 <div class="card block-categories-8 h-100">
@@ -163,11 +167,11 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-5">
-                        <div class="row block-title block">
+                        <div class="row mb-5 mt-5">
                             <div class="col"><h4 class="font-weight-bold">Как воспользоваться скидкой на Onsells?</h4></div>
                         </div>
                         <div class="card block-howto">
-                            <div class="card-body col-no-padding text-white">
+                            <div class="card-body p-0 text-white">
                                 <div class="row">
                                     <div class="col-md-6 p-3">
                                         <div class="media">
@@ -200,11 +204,11 @@
                         </div>
                     </div>
                     <div class="col-xl-7">
-                        <div class="row block-title block">
+                        <div class="row mb-5 mt-5">
                             <div class="col"><h4 class="font-weight-bold">Внимание!</h4></div>
                         </div>
                         <div class="card block-attention-1">
-                            <div class="card-body col-no-padding text-white">
+                            <div class="card-body p-0 text-white">
                                 <div class="row block-attention-1">
                                     <div class="col p-3">
                                         <div class="media">

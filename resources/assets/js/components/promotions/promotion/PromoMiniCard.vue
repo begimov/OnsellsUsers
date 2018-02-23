@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xl-2 col-lg-4 col-sm-6 col-padding">
+    <div class="col-xl-2 col-lg-4 col-sm-6 p-2">
         <div class="card text-center">
             <div class="card-header block-popularpromos-header" :style="{ backgroundImage: `url('${promotion.medium_image.path}')` }"></div>
             <div class="card-body">
