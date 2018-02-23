@@ -2,7 +2,7 @@
 <html lang="{{ config('app.locale') }}">
 <!-- HEAD -->
 @include('layouts.partialsV2._head')
-<body>
+<body class="bg-white">
   <div id="app">
     <!-- NAVIGATION -->
     @include('layouts.partialsV2._navigation')
