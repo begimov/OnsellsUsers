@@ -255,17 +255,11 @@
 
         <div class="container-fluid">
             <div class="row" v-if="!isDisplayingMiniCards">
-                <div class="col-md-12">
-                    <div class="popular-cards--container equal">
-                        <div class="row equal">
-                        <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
-                        </div>
-                    </div>
-                </div>
+                <promo-card v-for="promotion in promotions" :promotion="promotion" :center="center" :key="promotion.id"></promo-card>
             </div>
 
             <div class="row" v-if="!promotions.length">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center p-5">
                 <p>
                     <span class="lead"><strong><span class="glyphicon glyphicon-search" aria-hidden="true"></span></strong></span><br>
                     К сожалению, по вашему запросу ничего не найдено.

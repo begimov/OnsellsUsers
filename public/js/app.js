@@ -53413,12 +53413,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container-fluid"
   }, [(!_vm.isDisplayingMiniCards) ? _c('div', {
     staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [_c('div', {
-    staticClass: "popular-cards--container equal"
-  }, [_c('div', {
-    staticClass: "row equal"
   }, _vm._l((_vm.promotions), function(promotion) {
     return _c('promo-card', {
       key: promotion.id,
@@ -53427,7 +53421,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "center": _vm.center
       }
     })
-  }))])])]) : _vm._e(), _vm._v(" "), (!_vm.promotions.length) ? _c('div', {
+  })) : _vm._e(), _vm._v(" "), (!_vm.promotions.length) ? _c('div', {
     staticClass: "row"
   }, [_vm._m(7)]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -53789,7 +53783,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("В случае если с вами никто не связался,")]), _vm._v(" придя в место получения скидки, сообщите, что вы оставили заявку на Onsells и назовите свои имя/фамилию, которую указывали в анкете на сайте;\n                                ")])])])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-12 text-center"
+    staticClass: "col-md-12 text-center p-5"
   }, [_c('p', [_c('span', {
     staticClass: "lead"
   }, [_c('strong', [_c('span', {
