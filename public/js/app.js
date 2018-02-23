@@ -54053,7 +54053,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('keep-alive', [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e()], 1), _vm._v(" "), _c('keep-alive', [(_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)], 1)
+  return _c('div', [_c('div', {
+    class: {
+      'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
+    }
+  }), _vm._v(" "), _c('keep-alive', [(_vm.isActiveComponentCatalog) ? _c('catalog') : _vm._e()], 1), _vm._v(" "), _c('keep-alive', [(_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
