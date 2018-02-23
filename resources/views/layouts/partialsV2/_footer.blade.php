@@ -19,12 +19,9 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6">
             <p>
-                АЗС<br>
-                Автосервисы<br>
-                Cалоны<br>
-                Мойки<br>
-                Страхование<br>
-                Авто
+                @foreach ($categories[3]->subcategories as $subcategory)
+                <a href="{{ route('category.show', $subcategory) }}">{{ $subcategory->name }}</a><br>
+                @endforeach
             </p>
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6">
