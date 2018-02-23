@@ -74,7 +74,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6 block-categories">
-                                <a href="#">
+                                <a href="categories/krasota-i-zdorovye-salony">
                                     <div class="card block-categories-2 h-100">
                                         <div class="card-body">&nbsp;</div>
                                         <div class="card-footer card-footer-no-border">
@@ -85,79 +85,93 @@
                                 </a>
                             </div>
                             <div class="col-sm-6 block-categories">
-                                <div class="card block-categories-3 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h4 class="font-weight-bold">Стоматологии</h4>
-                                        <p>У нас представлены скидки в стоматологических клиниках СПб на такие услуги, как лечение кариеса, удаление и отбеливание зубов, лингвальные брекеты, и т.д.</p>
+                                <a href="categories/stomatologii">
+                                    <div class="card block-categories-3 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h4 class="font-weight-bold">Стоматологии</h4>
+                                            <p>У нас представлены скидки в стоматологических клиниках СПб на такие услуги, как лечение кариеса, удаление и отбеливание зубов, лингвальные брекеты, и т.д.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 block-categories p-0">
-                        <div class="card block-categories-4 h-100">
-                            <div class="card-body">&nbsp;</div>
-                            <div class="card-footer card-footer-no-border">
-                                <h4 class="font-weight-bold">Клиники</h4>
-                                <p>На нашем сайте представлены акции от лучших клиник СПб. Скидки на анализы, проведение МРТ, ПЦР, гинекологическое и узи обследование.</p>
+                        <a href="categories/kliniki">
+                            <div class="card block-categories-4 h-100">
+                                <div class="card-body">&nbsp;</div>
+                                <div class="card-footer card-footer-no-border">
+                                    <h4 class="font-weight-bold">Клиники</h4>
+                                    <p>На нашем сайте представлены акции от лучших клиник СПб. Скидки на анализы, проведение МРТ, ПЦР, гинекологическое и узи обследование.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-xl-4 p-0">
                         <div class="row">
                             <div class="col-sm-6 block-categories">
-                                <div class="card block-categories-5 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h4 class="font-weight-bold">Развлечения</h4>
-                                        <p>Благодаря Onsells вы можете получить скидку на развлечения, купить билеты со скидкой и просто хорошо отдохнуть в одном из заведений СПб.</p>
+                                <a href="categories/razvlecheniya">
+                                    <div class="card block-categories-5 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h4 class="font-weight-bold">Развлечения</h4>
+                                            <p>Благодаря Onsells вы можете получить скидку на развлечения, купить билеты со скидкой и просто хорошо отдохнуть в одном из заведений СПб.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 block-categories">
-                                <div class="card block-categories-6 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h4 class="font-weight-bold">Массаж</h4>
-                                        <p>Скидки на недорогой массаж спины и другие виды лечебного массажа в СПб. Заходите, стоимость вас приятно удивит.</p>
+                                <a href="categories/massazh">
+                                    <div class="card block-categories-6 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h4 class="font-weight-bold">Массаж</h4>
+                                            <p>Скидки на недорогой массаж спины и другие виды лечебного массажа в СПб. Заходите, стоимость вас приятно удивит.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col block-categories">
-                                <div class="card block-categories-7 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h3 class="font-weight-bold">Автосервисы</h3>
-                                        <p class="lead">На Onsells вы сможете получить скидку на услуги автосервиса и профессиональный уход за автомобилем, аксессуары для своей машины, помыть ее или отремонтировать поломку, сэкономив при этом значительную денежную сумму.</p>
+                                <a href="categories/avtoservisy">
+                                    <div class="card block-categories-7 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h3 class="font-weight-bold">Автосервисы</h3>
+                                            <p class="lead">На Onsells вы сможете получить скидку на услуги автосервиса и профессиональный уход за автомобилем, аксессуары для своей машины, помыть ее или отремонтировать поломку, сэкономив при этом значительную денежную сумму.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 p-0">
                         <div class="row">
                             <div class="col block-categories">
-                                <div class="card block-categories-8 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h4 class="font-weight-bold">Дети</h4>
-                                        <p>Самые актуальные акции на проведение детских праздников. Скидки на организацию праздников, аниматоры на детский праздник и т.д.</p>
+                                <a href="categories/deti">
+                                    <div class="card block-categories-8 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h4 class="font-weight-bold">Дети</h4>
+                                            <p>Самые актуальные акции на проведение детских праздников. Скидки на организацию праздников, аниматоры на детский праздник и т.д.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col block-categories">
-                                <div class="card block-categories-9 h-100">
-                                    <div class="card-body">&nbsp;</div>
-                                    <div class="card-footer card-footer-no-border">
-                                        <h4 class="font-weight-bold">Обучение</h4>
-                                        <p>Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.</p>
+                                <a href="categories/obuchenie">
+                                    <div class="card block-categories-9 h-100">
+                                        <div class="card-body">&nbsp;</div>
+                                        <div class="card-footer card-footer-no-border">
+                                            <h4 class="font-weight-bold">Обучение</h4>
+                                            <p>Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>

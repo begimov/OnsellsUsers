@@ -53564,7 +53564,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-sm-6 block-categories"
   }, [_c('a', {
     attrs: {
-      "href": "#"
+      "href": "categories/krasota-i-zdorovye-salony"
     }
   }, [_c('div', {
     staticClass: "card block-categories-2 h-100"
@@ -53576,6 +53576,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "font-weight-bold"
   }, [_vm._v("Салоны красоты")]), _vm._v(" "), _c('p', [_vm._v("Посещать салоны красоты с Onsells выгодно, ведь скидки на услуги достигают 90%.")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-6 block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/stomatologii"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-3 h-100"
   }, [_c('div', {
@@ -53584,8 +53588,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Стоматологии")]), _vm._v(" "), _c('p', [_vm._v("У нас представлены скидки в стоматологических клиниках СПб на такие услуги, как лечение кариеса, удаление и отбеливание зубов, лингвальные брекеты, и т.д.")])])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Стоматологии")]), _vm._v(" "), _c('p', [_vm._v("У нас представлены скидки в стоматологических клиниках СПб на такие услуги, как лечение кариеса, удаление и отбеливание зубов, лингвальные брекеты, и т.д.")])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-xl-2 block-categories p-0"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/kliniki"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-4 h-100"
   }, [_c('div', {
@@ -53594,12 +53602,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Клиники")]), _vm._v(" "), _c('p', [_vm._v("На нашем сайте представлены акции от лучших клиник СПб. Скидки на анализы, проведение МРТ, ПЦР, гинекологическое и узи обследование.")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Клиники")]), _vm._v(" "), _c('p', [_vm._v("На нашем сайте представлены акции от лучших клиник СПб. Скидки на анализы, проведение МРТ, ПЦР, гинекологическое и узи обследование.")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-xl-4 p-0"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-6 block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/razvlecheniya"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-5 h-100"
   }, [_c('div', {
@@ -53608,8 +53620,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Развлечения")]), _vm._v(" "), _c('p', [_vm._v("Благодаря Onsells вы можете получить скидку на развлечения, купить билеты со скидкой и просто хорошо отдохнуть в одном из заведений СПб.")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Развлечения")]), _vm._v(" "), _c('p', [_vm._v("Благодаря Onsells вы можете получить скидку на развлечения, купить билеты со скидкой и просто хорошо отдохнуть в одном из заведений СПб.")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-6 block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/massazh"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-6 h-100"
   }, [_c('div', {
@@ -53618,10 +53634,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Массаж")]), _vm._v(" "), _c('p', [_vm._v("Скидки на недорогой массаж спины и другие виды лечебного массажа в СПб. Заходите, стоимость вас приятно удивит.")])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Массаж")]), _vm._v(" "), _c('p', [_vm._v("Скидки на недорогой массаж спины и другие виды лечебного массажа в СПб. Заходите, стоимость вас приятно удивит.")])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/avtoservisy"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-7 h-100"
   }, [_c('div', {
@@ -53632,12 +53652,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "font-weight-bold"
   }, [_vm._v("Автосервисы")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
-  }, [_vm._v("На Onsells вы сможете получить скидку на услуги автосервиса и профессиональный уход за автомобилем, аксессуары для своей машины, помыть ее или отремонтировать поломку, сэкономив при этом значительную денежную сумму.")])])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("На Onsells вы сможете получить скидку на услуги автосервиса и профессиональный уход за автомобилем, аксессуары для своей машины, помыть ее или отремонтировать поломку, сэкономив при этом значительную денежную сумму.")])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col-xl-2 p-0"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/deti"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-8 h-100"
   }, [_c('div', {
@@ -53646,10 +53670,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Дети")]), _vm._v(" "), _c('p', [_vm._v("Самые актуальные акции на проведение детских праздников. Скидки на организацию праздников, аниматоры на детский праздник и т.д.")])])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Дети")]), _vm._v(" "), _c('p', [_vm._v("Самые актуальные акции на проведение детских праздников. Скидки на организацию праздников, аниматоры на детский праздник и т.д.")])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col block-categories"
+  }, [_c('a', {
+    attrs: {
+      "href": "categories/obuchenie"
+    }
   }, [_c('div', {
     staticClass: "card block-categories-9 h-100"
   }, [_c('div', {
@@ -53658,7 +53686,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h4', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Обучение")]), _vm._v(" "), _c('p', [_vm._v("Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.")])])])])])])])])
+  }, [_vm._v("Обучение")]), _vm._v(" "), _c('p', [_vm._v("Овладевать новыми знаниями очень важно. Мы предоставляем возможность получить скидки на обучение до 90%.")])])])])])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container-fluid"
