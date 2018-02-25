@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #333333;
+}
+/* MODS */
+.row {
+    margin: 0px;
+}
+/* CUSTOM */
+.block-header {
+    background-image: url('./../img/V2/header_bg.jpg');
+    background-size: cover;
+    padding: 100px 20px;
+    color: #fff;
+    margin-top: -40px;
+}
+
+.block-popularpromos-header {
+    background-size: cover;
+    height: 200px;
+}
+
+.block-features {
+    background-image: url('./../img/V2/features_bg.jpg');
+    background-size: cover;
+    color: #fff;
+    padding:0;
+}
+.block-features-1 {
+    background-color: rgba(122, 0, 84, 0.5);
+}
+.block-features-2 {
+    background-color: rgba(34, 0, 88, 0.5);
+}
+.block-features-3 {
+    background-color: rgba(0, 4, 138, 0.5);
+}
+
+.card-footer-no-border {
+    border: none !important;
+    background: none;
+    background: linear-gradient(rgba(0, 0, 0, 0), #000);
+}
+.block-categories {
+    color: #fff;
+    margin-bottom: 5px;
+    padding: 0 3px;
+    min-height: 350px;
+    a, a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+.block-categories-1 {
+    background-image: url('./../img/V2/categories_bg_01.jpg');
+    background-size: cover;
+    border: none !important;
+}
+.block-categories-2 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_02.jpg');
+}
+.block-categories-3 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_03.jpg');
+}
+.block-categories-4 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_04.jpg');
+}
+.block-categories-5 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_05.jpg');
+}
+.block-categories-6 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_06.jpg');
+}
+.block-categories-7 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_07.jpg');
+}
+.block-categories-8 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_08.jpg');
+}
+.block-categories-9 {
+    @extend .block-categories-1;
+    background-image: url('./../img/V2/categories_bg_09.jpg');
+}
+
+.block-howto {
+    background-color: #4e0e60;
+}
+.block-attention-1 {
+    background-color: #9b2065;
+}
+.block-attention-2 {
+    background-color: #791e51;
+}
+.block-attention-3 {
+    background-color: #631340;
+}

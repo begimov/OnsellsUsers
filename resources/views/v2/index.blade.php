@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appV2')
 
 @section('titleandmetatags')
   @include('layouts.partials._metatags')
@@ -6,10 +6,6 @@
 
 @section('content')
 
-  <div class="container-fluid">
-
-    <index></index>
-
-  </div>
+  <index></index>
 
 @endsection
