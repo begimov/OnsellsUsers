@@ -21,7 +21,11 @@
           </h4>
           <hr>
           <p>{{ promotion.promotiondesc | strLimit(100) }}</p>
-          <p>{{ promotion.category.name  | strLimit(30) }}</p>
+          <p v-if="promotion.promotiondesc.length > 100">
+            <a tabindex="0" class="btn btn-light btn-sm" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" :data-content="promotion.promotiondesc">
+              ...
+            </a>
+          </p>
           <a :href="'/promotions/' + promotion.id" target="_blank" class="btn btn-secondary btn-sm mb-3">ПОЛУЧИТЬ</a>
         </div>
       </div>

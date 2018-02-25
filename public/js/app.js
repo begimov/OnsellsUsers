@@ -17096,6 +17096,10 @@ var _helpers = __webpack_require__(21);
 
 var _helpers2 = _interopRequireDefault(_helpers);
 
+var _jquery = __webpack_require__(146);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -17142,7 +17146,11 @@ exports.default = {
     }
   },
   mounted: function mounted() {
-    //
+    (0, _jquery2.default)(document).ready(function () {
+      (0, _jquery2.default)(function () {
+        (0, _jquery2.default)('[data-toggle="popover"]').popover();
+      });
+    });
   }
 };
 
@@ -53871,7 +53879,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })])
   })), _vm._v(" "), (_vm.distanceFromCenter) ? _c('span', {
     class: _vm.distanceClasses
-  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))]), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), (_vm.promotion.promotiondesc.length > 100) ? _c('p', [_c('a', {
+    staticClass: "btn btn-light btn-sm",
+    attrs: {
+      "tabindex": "0",
+      "data-container": "body",
+      "data-toggle": "popover",
+      "data-trigger": "focus",
+      "data-placement": "top",
+      "data-content": _vm.promotion.promotiondesc
+    }
+  }, [_vm._v("\n            ...\n          ")])]) : _vm._e(), _vm._v(" "), _c('a', {
     staticClass: "btn btn-secondary btn-sm mb-3",
     attrs: {
       "href": '/promotions/' + _vm.promotion.id,

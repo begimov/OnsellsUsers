@@ -1,5 +1,6 @@
 import { mapActions, mapGetters } from "vuex";
 import helpers from "../../../helpers";
+import $ from 'jquery';
 
 export default {
   props: ["promotion", "center"],
@@ -49,6 +50,10 @@ export default {
     }
   },
   mounted() {
-    //
+    $( document ).ready(function() {
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
+    });
   }
 };
