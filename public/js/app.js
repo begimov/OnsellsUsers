@@ -53558,7 +53558,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-footer card-footer-no-border"
   }, [_c('h3', {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Еда")]), _vm._v(" "), _c('p', {
+  }, [_vm._v("Еда1")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
   }, [_vm._v("Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.")])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "row"

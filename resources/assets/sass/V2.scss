@@ -59,6 +59,7 @@ body {
     background-image: url('./../img/V2/categories_bg_01.jpg');
     background-size: cover;
     border: none !important;
+    min-height: 350px;
 }
 .block-categories-2 {
     @extend .block-categories-1;
