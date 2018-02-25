@@ -7,6 +7,9 @@ body {
 .row {
     margin: 0px;
 }
+.row:before, row:after {
+    display: none;
+}
 /* CUSTOM */
 .block-header {
     background-image: url('./../img/V2/header_bg.jpg');
