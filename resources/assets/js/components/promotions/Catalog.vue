@@ -65,7 +65,7 @@
                                     <div class="card block-categories-1 h-100">
                                         <div class="card-body">&nbsp;</div>
                                         <div class="card-footer card-footer-no-border">
-                                            <h3 class="font-weight-bold">Еда</h3>
+                                            <h3 class="font-weight-bold">Еда1</h3>
                                             <p class="lead">Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.</p>
                                         </div>
                                     </div>
