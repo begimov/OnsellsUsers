@@ -5,10 +5,10 @@
         <div class="card-body text-center">
           <img :src="(icons[promotion.category.parent_id])
             ? (icons[promotion.category.parent_id].icon)
-            : (icons['default'].icon)">
+            : (icons['default'].icon)" style="margin-top: -50px;">
           <h4>
             <a :href="'/promotions/' + promotion.id" target="_blank">
-              {{ promotion.promotionname | strLimit(20) }}
+              {{ promotion.promotionname | strLimit(50) }}
             </a>
           </h4>
           <h4>
@@ -22,6 +22,7 @@
           <hr>
           <p>{{ promotion.promotiondesc | strLimit(100) }}</p>
           <p>{{ promotion.category.name  | strLimit(30) }}</p>
+          <a :href="'/promotions/' + promotion.id" target="_blank" class="btn btn-secondary btn-sm mb-3">ПОЛУЧИТЬ</a>
         </div>
       </div>
   </div>

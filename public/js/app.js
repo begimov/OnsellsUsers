@@ -53844,6 +53844,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', {
     staticClass: "card-body text-center"
   }, [_c('img', {
+    staticStyle: {
+      "margin-top": "-50px"
+    },
     attrs: {
       "src": (_vm.icons[_vm.promotion.category.parent_id]) ?
         (_vm.icons[_vm.promotion.category.parent_id].icon) :
@@ -53854,7 +53857,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": '/promotions/' + _vm.promotion.id,
       "target": "_blank"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 20)) + "\n          ")])]), _vm._v(" "), _c('h4', [_c('span', {
+  }, [_vm._v("\n            " + _vm._s(_vm._f("strLimit")(_vm.promotion.promotionname, 50)) + "\n          ")])]), _vm._v(" "), _c('h4', [_c('span', {
     staticClass: "label label-warning"
   }, _vm._l((_vm.popularity), function(n) {
     return _c('span', {
@@ -53868,7 +53871,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })])
   })), _vm._v(" "), (_vm.distanceFromCenter) ? _c('span', {
     class: _vm.distanceClasses
-  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))])])])])
+  }, [_vm._v(_vm._s(_vm._f("formatDistance")(_vm.distanceFromCenter)))]) : _vm._e()]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.promotiondesc, 100)))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm._f("strLimit")(_vm.promotion.category.name, 30)))]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-secondary btn-sm mb-3",
+    attrs: {
+      "href": '/promotions/' + _vm.promotion.id,
+      "target": "_blank"
+    }
+  }, [_vm._v("ПОЛУЧИТЬ")])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
