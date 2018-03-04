@@ -7,16 +7,16 @@
                     <div class="row">
                         <div class="col-12 align-self-center text-center">
                             <p><img src="img/V2/header_logo.png"></p>
-                            <h1 class="font-weight-normal mt-4">Поиск акций и скидок</h1>
-                            <h3 class="font-weight-light mb-5">До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.</h3>
+                            <h1 class="font-weight-normal mt-4 mb-5">Поиск акций и скидок</h1>
+                            <h3 class="font-weight-light mb-5 d-none d-md-block">До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.</h3>
                         </div>  
                     </div>
                     <div class="row">
-                        <div class="col-sm-3 text-right align-self-center"><button class="btn btn-success" disabled>в каталоге</button></div>
+                        <div class="col-sm-3 text-right align-self-center d-none d-sm-block"><button class="btn btn-success" disabled>в каталоге</button></div>
                         <div class="col-sm-6">
                             <search v-model="searchQuery" v-on:input="textSearch" v-on:enterPressed="instaTextSearch"></search>
                         </div>
-                        <div class="col-sm-3 align-self-center"><button class="btn btn-light" disabled>на карте</button></div>
+                        <div class="col-sm-3 align-self-center d-none d-sm-block"><button class="btn btn-light" disabled>на карте</button></div>
                     </div>
                 </div>
             </div>
@@ -33,23 +33,29 @@
             </div>
 
             <div class="container-fluid mt-5 block-features">
-                
                 <div class="row">
-                    <div class="col-md-4 text-center block-features-1 pb-5">
-                        <div class="row"><div class="col text-center"><h3 class="my-5 mx-1">&nbsp;</h3></div></div>
+                    <div class="col-md-4 block-features-1"></div>
+                    <div class="col-md-4 text-center block-features-2"><h3 class="my-5 mb-md-0 mx-1 font-weight-bold">Onsells помогает вам</h3></div>
+                    <div class="col-md-4 block-features-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center block-features-1 py-5">
                         <p class="lead"><span class="font-weight-bold">В режиме реального времени отслеживать акции</span> и интересные предложения от компаний поблизости.</p>
-                        <img src="img/V2/features_mark_1.png" class="img-fluid">
+                        <img src="img/V2/features_mark_1.png" class="img-fluid d-md-none">
                     </div>
-                    <div class="col-md-4 text-center block-features-2 pb-5">
-                        <div class="row"><div class="col text-center"><h3 class="my-5 mx-1 font-weight-bold">Onsells помогает вам</h3></div></div>
+                    <div class="col-md-4 text-center block-features-2 py-5">
                         <p class="lead"><span class="font-weight-bold">Не тратить лишнего</span> и испытывать удовольствие от жизни, получать больше и лучше, за меньшие деньги.</p>
-                        <img src="img/V2/features_mark_2.png" class="img-fluid">
+                        <img src="img/V2/features_mark_2.png" class="img-fluid d-md-none">
                     </div>
-                    <div class="col-md-4 text-center block-features-3 pb-5">
-                        <div class="row"><div class="col text-center"><h3 class="my-5 mx-1">&nbsp;</h3></div></div>
+                    <div class="col-md-4 text-center block-features-3 py-5">
                         <p class="lead"><span class="font-weight-bold">Найти нужный товар или услугу по самой выгодной цене.</span> Экономить время, тысячи рублей на ваших любимых услугах и развлечениях.</p>
-                        <img src="img/V2/features_mark_3.png" class="img-fluid">
+                        <img src="img/V2/features_mark_3.png" class="img-fluid d-md-none">
                     </div>
+                </div>
+                <div class="row d-none d-lg-block">
+                    <div class="col-md-4 text-center block-features-1 pb-5"><img src="img/V2/features_mark_1.png" class="img-fluid"></div>
+                    <div class="col-md-4 text-center block-features-2 pb-5"><img src="img/V2/features_mark_2.png" class="img-fluid"></div>
+                    <div class="col-md-4 text-center block-features-3 pb-5"><img src="img/V2/features_mark_3.png" class="img-fluid"></div>
                 </div>
             </div>
 
@@ -65,7 +71,7 @@
                                     <div class="card block-categories-1 h-100">
                                         <div class="card-body">&nbsp;</div>
                                         <div class="card-footer card-footer-no-border">
-                                            <h3 class="font-weight-bold">Еда1</h3>
+                                            <h3 class="font-weight-bold">Рестораны</h3>
                                             <p class="lead">Недорогой ужин в ресторане СПб со скидкой от Onsells – это реальность. Большой выбор заведений и самые выгодные предложения.</p>
                                         </div>
                                     </div>
