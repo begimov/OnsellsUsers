@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light py-5 mt-5">
+<div class="container-fluid bg-light py-5">
     <div class="row mb-5">
         <div class="col">
             <img src="img/V2/footer_logo.png" class="img-fluid mr-4">

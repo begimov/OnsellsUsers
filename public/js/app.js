@@ -53250,6 +53250,8 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
+    staticClass: "container-fluid block-map-header"
+  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-3 text-right align-self-center d-none d-sm-block"
@@ -53275,8 +53277,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "searchQuery"
     }
-  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid p-0"
+  }, [_c('div', {
     staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col p-0"
   }, [_c('gmap-map', {
     staticStyle: {
       "width": "100%",
@@ -53349,7 +53355,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": ("/promotions/" + (m.promotion.id)),
         "target": "_blank"
       }
-    }, [_vm._v(_vm._s(_vm._f("strLimit")(m.promotion.promotionname, 25)))])]), _vm._v("\n            " + _vm._s(_vm._f("strLimit")(m.promotion.promotiondesc, 110)) + "\n          ")])])])], 1)
+    }, [_vm._v(_vm._s(_vm._f("strLimit")(m.promotion.promotionname, 25)))])]), _vm._v("\n                " + _vm._s(_vm._f("strLimit")(m.promotion.promotiondesc, 110)) + "\n              ")])])])], 1)
   }), _vm._v(" "), _c('gmap-circle', {
     attrs: {
       "center": _vm.center,
@@ -53385,7 +53391,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "font-size": "0.7em",
       "border-radius": "3px"
     }
-  }, [_vm._v("\n          " + _vm._s(_vm.radius / 1000 >= 1 ? Math.round(_vm.radius / 1000 * 100) / 100 + " км" : Math.round(_vm.radius) + " м") + "\n        ")])])], 2)], 1)])
+  }, [_vm._v("\n              " + _vm._s(_vm.radius / 1000 >= 1 ? Math.round(_vm.radius / 1000 * 100) / 100 + " км" : Math.round(_vm.radius) + " м") + "\n            ")])])], 2)], 1)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-sm-3 align-self-center d-none d-sm-block"
