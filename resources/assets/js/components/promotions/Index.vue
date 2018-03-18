@@ -1,8 +1,8 @@
 <template>
   <div>
       <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
-      <keep-alive><catalog v-if="isActiveComponentCatalog"></catalog></keep-alive>
-      <keep-alive><promomap v-if="isActiveComponentPromoMap"></promomap></keep-alive>
+      <keep-alive><catalog v-if="isActiveComponentCatalog" @setMapAsActive="switchActiveComponent('promomap')"></catalog></keep-alive>
+      <keep-alive><promomap v-if="isActiveComponentPromoMap" @setCatalogAsActive="switchActiveComponent('catalog')"></promomap></keep-alive>
   </div>
 </template>
 

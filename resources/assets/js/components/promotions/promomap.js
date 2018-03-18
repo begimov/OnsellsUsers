@@ -78,6 +78,9 @@ export default {
         radius: this.radius,
         searchQuery: this.searchQuery
       });
+    },
+    setCatalogAsActive() {
+      this.$emit('setCatalogAsActive')
     }
   },
   filters: {
