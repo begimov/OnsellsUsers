@@ -12,11 +12,11 @@
                         </div>  
                     </div>
                     <div class="row">
-                        <div class="col-sm-3 text-right align-self-center d-none d-sm-block"><button class="btn btn-success" disabled>в каталоге</button></div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-3 align-self-center text-center text-md-right"><button class="btn btn-success" disabled>в каталоге</button></div>
+                        <div class="col-sm-6 my-2">
                             <search v-model="searchQuery" v-on:input="textSearch" v-on:enterPressed="instaTextSearch"></search>
                         </div>
-                        <div class="col-sm-3 align-self-center d-none d-sm-block"><button class="btn btn-light" @click.prevent="setMapAsActive">на карте</button></div>
+                        <div class="col-sm-3 align-self-center text-center text-md-left"><button class="btn btn-light" @click.prevent="setMapAsActive">на карте</button></div>
                     </div>
                 </div>
             </div>

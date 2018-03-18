@@ -53254,7 +53254,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-sm-3 text-right align-self-center d-none d-sm-block"
+    staticClass: "col-sm-3 align-self-center text-center text-md-right"
   }, [_c('button', {
     staticClass: "btn btn-success",
     on: {
@@ -53264,7 +53264,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("в каталоге")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-6"
+    staticClass: "col-sm-6 my-2"
   }, [_c('search', {
     on: {
       "input": _vm.textSearch,
@@ -53394,7 +53394,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("\n              " + _vm._s(_vm.radius / 1000 >= 1 ? Math.round(_vm.radius / 1000 * 100) / 100 + " км" : Math.round(_vm.radius) + " м") + "\n            ")])])], 2)], 1)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-sm-3 align-self-center d-none d-sm-block"
+    staticClass: "col-sm-3 align-self-center text-center text-md-left"
   }, [_c('button', {
     staticClass: "btn btn-light",
     attrs: {
@@ -53424,7 +53424,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_vm._m(1), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-6"
+    staticClass: "col-sm-6 my-2"
   }, [_c('search', {
     on: {
       "input": _vm.textSearch,
@@ -53438,7 +53438,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "searchQuery"
     }
   })], 1), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-3 align-self-center d-none d-sm-block"
+    staticClass: "col-sm-3 align-self-center text-center text-md-left"
   }, [_c('button', {
     staticClass: "btn btn-light",
     on: {
@@ -53489,7 +53489,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("До 90% и больше в ресторанах, кафе, салонах красоты, медицинских клиниках, стоматологиях и других категориях.")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-sm-3 text-right align-self-center d-none d-sm-block"
+    staticClass: "col-sm-3 align-self-center text-center text-md-right"
   }, [_c('button', {
     staticClass: "btn btn-success",
     attrs: {
