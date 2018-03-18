@@ -40,6 +40,9 @@ export default {
           searchQuery: this.searchQuery
         });
       }
+    },
+    setMapAsActive() {
+      this.$emit('setMapAsActive')
     }
   },
   mounted() {
