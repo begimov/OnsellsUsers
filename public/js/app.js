@@ -27327,6 +27327,9 @@ exports.default = {
         radius: this.radius,
         searchQuery: this.searchQuery
       });
+    },
+    setCatalogAsActive: function setCatalogAsActive() {
+      this.$emit('setCatalogAsActive');
     }
   }),
   filters: {
@@ -53249,7 +53252,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
+    staticClass: "col-sm-3 text-right align-self-center d-none d-sm-block"
+  }, [_c('button', {
+    staticClass: "btn btn-success",
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setCatalogAsActive($event)
+      }
+    }
+  }, [_vm._v("в каталоге")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-6"
   }, [_c('search', {
     on: {
       "input": _vm.textSearch,
@@ -53262,7 +53275,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "searchQuery"
     }
-  })], 1)]), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('gmap-map', {
     staticStyle: {
@@ -53373,7 +53386,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "border-radius": "3px"
     }
   }, [_vm._v("\n          " + _vm._s(_vm.radius / 1000 >= 1 ? Math.round(_vm.radius / 1000 * 100) / 100 + " км" : Math.round(_vm.radius) + " м") + "\n        ")])])], 2)], 1)])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-3 align-self-center d-none d-sm-block"
+  }, [_c('button', {
+    staticClass: "btn btn-light",
+    attrs: {
+      "disabled": ""
+    }
+  }, [_vm._v("на карте")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -54095,7 +54117,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.switchActiveComponent('promomap')
       }
     }
-  }) : _vm._e()], 1), _vm._v(" "), _c('keep-alive', [(_vm.isActiveComponentPromoMap) ? _c('promomap') : _vm._e()], 1)], 1)
+  }) : _vm._e()], 1), _vm._v(" "), _c('keep-alive', [(_vm.isActiveComponentPromoMap) ? _c('promomap', {
+    on: {
+      "setCatalogAsActive": function($event) {
+        _vm.switchActiveComponent('catalog')
+      }
+    }
+  }) : _vm._e()], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-sm-3 text-right align-self-center d-none d-sm-block"><button class="btn btn-success" @click.prevent="setCatalogAsActive">в каталоге</button></div>
+      <div class="col-sm-6">
         <search v-model="searchQuery" v-on:input="textSearch" v-on:enterPressed="instaTextSearch"></search>
       </div>
+      <div class="col-sm-3 align-self-center d-none d-sm-block"><button class="btn btn-light" disabled>на карте</button></div>
     </div>
     <div class="row">
       <gmap-map
