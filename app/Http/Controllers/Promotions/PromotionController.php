@@ -20,7 +20,7 @@ class PromotionController extends Controller
             ->where('id', '!=', $promotion->id)
             ->with('images')
             ->with('mediumImage')
-            ->take(3)
+            ->take(2)
             ->get();
         return view('promotion.show', compact('promotion', 'applied', 'promotions'));
     }
