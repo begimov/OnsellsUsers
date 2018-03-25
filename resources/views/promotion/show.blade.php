@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-8">
+    <div class="col-md-7">
       <div class="panel panel-default">
         <div class="panel-heading"><h4>{{ $promotion->promotionname }}</h4></div>
         <div class="panel-body">
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-heading"><h4>{{ $promotion->company }}</h4></div>
         <div class="panel-body">
@@ -111,6 +111,8 @@
                     {{ str_limit($promotion->promotionname, 60) }}
                   </a>
                 </h4>
+                <p>{{ str_limit($promotion->promotiondesc, 150) }}</p>
+                <p><a href="{{ route('promotion.show', $promotion->id) }}" class="btn btn-primary">ПОЛУЧИТЬ</a></p>
               </div>
             </div>
           </div>
