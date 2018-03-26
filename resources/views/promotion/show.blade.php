@@ -30,23 +30,23 @@
       </div>
 
       <div class="row">
-        @if (count($promotions) > 0) @foreach ($promotions as $promotion)
-        <div class="col-sm-6 col-md-6" style="padding:0;">
+        @if (count($promotions) > 0) @foreach ($promotions as $addpromotion)
+        <div class="col-sm-6 col-md-6" style="padding:5px;">
           <div class="thumbnail">
-            @if (count($promotion->images) > 0)
-            <a href="{{ route('promotion.show', $promotion->id) }}">
-              <img class="img-rounded" src="{{ $promotion->mediumImage->path }}" alt="{{ $promotion->promotionname }}">
+            @if (count($addpromotion->images) > 0)
+            <a href="{{ route('promotion.show', $addpromotion->id) }}">
+              <img class="img-rounded" src="{{ $addpromotion->mediumImage->path }}" alt="{{ $addpromotion->promotionname }}">
             </a>
             @endif
             <div class="caption text-center">
               <h4>
-                <a href="{{ route('promotion.show', $promotion->id) }}">
-                  {{ str_limit($promotion->promotionname, 60) }}
+                <a href="{{ route('promotion.show', $addpromotion->id) }}">
+                  {{ str_limit($addpromotion->promotionname, 60) }}
                 </a>
               </h4>
-              <p>{{ str_limit($promotion->promotiondesc, 150) }}</p>
+              <p>{{ str_limit($addpromotion->promotiondesc, 150) }}</p>
               <p>
-                <a href="{{ route('promotion.show', $promotion->id) }}" class="btn btn-primary">ПОЛУЧИТЬ</a>
+                <a href="{{ route('promotion.show', $addpromotion->id) }}" class="btn btn-primary">ПОЛУЧИТЬ</a>
               </p>
             </div>
           </div>
